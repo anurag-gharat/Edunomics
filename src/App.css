@@ -3,6 +3,7 @@ body {
   box-sizing: border-box;
   padding: 0px;
   background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif !important;
 }
 .logo{
   height: 50px;
@@ -27,11 +28,12 @@ nav{
   height: 50px;
   width: 200px;
   border: none;
+  z-index: -2 !important;
+  cursor: pointer !important;
 }
 .heroimage{
   margin-top: 50px;
-  height: 600px;
-  max-width: 100%;
+  max-width: 90%;
 }
 footer{
   padding-top: 50px;

@@ -1,5 +1,10 @@
 import React from 'react'
 import Heroimage from '../images/heroimage.png'
+import About from '../images/about.png'
+import SemiBlock from '../Components/SemiBlock'
+import Heading from '../Components/Heading'
+import { GiBookshelf } from 'react-icons/gi'
+
 
 export default function Home() {
     return (
@@ -16,16 +21,52 @@ export default function Home() {
 
                         </div>
                         <div className="d-flex space-between">
-                            <button className="button pink waves-effect lighten-1 white-text left">Learning </button>
-                            <button className="button waves-effect white-text light-green accent-4 right">Career </button>
+                            <button className="button pink waves-effect lighten-1 white-text left m-t-10">Learning </button>
+                            <button className="button waves-effect white-text light-green accent-4 right m-t-10">Career </button>
                         </div>
                     </div>
                     <div className=" col l6 m12 s12 ">
-                        <img src={Heroimage}  className="img-responsive heroimage"></img>zxc
+                        <img src={Heroimage}  style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
                     </div>
-
                 </div>
             </section>
+            <section className="aboutsection">
+                <Heading title="ABOUT EDUNOMICS" />
+                <SemiBlock 
+                img={About} 
+                text="We are a bootstrap startup with a vision to impact education and economics solving a complex problems with simple solutions.
+                Edunomics combines tech expertise and business intelligence to catalyze change and deliver results. We are employing top talent to provide a uniquely matching solution for your unique problem." 
+                isbutton={true}
+                buttontext="Know More?"
+                buttonpath="/knowmore"
+                />
+                
+            </section>
+
+            <section className="impactsecion">
+                <Heading title="HOW EDUNOMICS CAN IMPACT ECONOMY" />
+                <div className="container">
+                    <div className="row">
+                        <div className="col s6 l3">
+                            <div className="center">
+                                <div className="card-image center">
+                                    <h1><GiBookshelf/></h1>
+
+                                </div>
+                                <h6 className="card-title">Quality Education</h6>
+                                <div className="card-content">
+                                    <p>
+                                    Skills with optimum experience will be shared to make a great transition to a professional world  
+                                    </p>    
+                                </div> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     )
 }
