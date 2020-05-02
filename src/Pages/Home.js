@@ -3,7 +3,8 @@ import Heroimage from '../images/heroimage.png'
 import About from '../images/about.png'
 import SemiBlock from '../Components/SemiBlock'
 import Heading from '../Components/Heading'
-import { GiBookshelf } from 'react-icons/gi'
+import { GiBookshelf,GiSupersonicArrow} from 'react-icons/gi'
+import ImpactCard from '../Components/ImpactCard'
 
 
 export default function Home() {
@@ -48,20 +49,37 @@ export default function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="col s6 l3">
-                            <div className="center">
-                                <div className="card-image center">
-                                    <h1><GiBookshelf/></h1>
 
-                                </div>
-                                <h6 className="card-title">Quality Education</h6>
-                                <div className="card-content">
-                                    <p>
-                                    Skills with optimum experience will be shared to make a great transition to a professional world  
-                                    </p>    
-                                </div> 
-                                
-                            </div>
+                        <ImpactCard 
+                            title="Quality Education" 
+                            text="Skills with optimum experience will be shared to make a great transition to a professional world."    
+                            >
+                                <GiBookshelf />
+                            </ImpactCard>
+                        
+                        
                         </div>
+                        <div className="col s6 l3">
+
+                        <ImpactCard 
+                            title="Better Talent" 
+                            text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
+                        >
+                        <GiSupersonicArrow />
+                        </ImpactCard>
+                        </div>
+
+                        <div className="col s6 l3">
+
+                        <ImpactCard 
+                        title="Better Talent" 
+                        text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
+                        >
+                        <GiSupersonicArrow />
+                        </ImpactCard>
+                        </div>
+                    
+                    
                     </div>
                 </div>
             </section>
