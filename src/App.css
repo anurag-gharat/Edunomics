@@ -2,9 +2,9 @@ body {
   margin: 0px;
   box-sizing: border-box;
   padding: 0px;
-  background-color: #f5f5f5 ;
+  background-color: #fafafa;
 }
-.logonavbar{
+.logo{
   height: 50px;
   margin:5px 10px ;
 }
@@ -20,7 +20,7 @@ nav{
   padding: 0px 20px !important; 
   border: 2px solid black !important;
   margin-top: 0px !important;
-  background-color: white !important;
+ 
 }
 .button{
   border-radius: 25px;
@@ -33,12 +33,55 @@ nav{
   height: 600px;
   max-width: 100%;
 }
-
+footer{
+  padding-top: 50px;
+}
+footer>div>a{
+  color:black;
+  margin:30px 40px 10px 30px;
+}
+.border-left{
+  margin:10px 0px;
+  padding:0px 30px;
+  border-right: 1px solid black;
+}
+.border-left-0{
+  margin:10px 0px;
+  padding:0px 30px;
+  border-right: 0px solid black;
+}
 
 /* MY UTILITIES */
+.p-10{
+  padding: 10px;
+}
+.m-t-10{
+  margin-top: 10px;
+}
+.no-pad{
+  padding:0px ;
+}
+.no-mar{
+  margin: 0px;
+}
 .d-flex{
   display: flex;
+  flex-direction: row;
   width: 100% !important;
   margin: 0px;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.flex-col{
+  flex-direction: column;
+}
+.space-between{
   justify-content: space-between;
+}
+.socialicon{
+  font-size: 60px;
+  border-radius: 30px;
+  padding: 10px !important;
+  
 }

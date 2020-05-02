@@ -15,8 +15,8 @@ export default function Home() {
                         <input type="text" placeholder="Enter your search" className="search"></input>
 
                         </div>
-                        <div className="d-flex">
-                            <button className="button pink waves-effect lighten-1 white-text">Learning </button>
+                        <div className="d-flex space-between">
+                            <button className="button pink waves-effect lighten-1 white-text left">Learning </button>
                             <button className="button waves-effect white-text light-green accent-4 right">Career </button>
                         </div>
                     </div>

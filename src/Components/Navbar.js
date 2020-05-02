@@ -26,7 +26,7 @@ export default function Navbar() {
         <div>
             <nav className="nav-extended white">
             <div className="nav-wrapper">
-            <a href="#" className="brand-logo"><img src={Logo} height="50px" className="logonavbar" /></a>
+            <a href="#" className="brand-logo"><img src={Logo} className="logo" /></a>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons green-text darken-4">menu</i></a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a  className="black-text darken-4" href="">Impact</a></li>
