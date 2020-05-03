@@ -1,9 +1,8 @@
 import React from 'react'
 import Heading from '../Components/Heading'
-import {GrWorkshop} from 'react-icons/gr'
-import {FaRegLightbulb,FaHandshake} from 'react-icons/fa'
+import {FaRegLightbulb,FaHandshake,FaUserTie} from 'react-icons/fa'
 import {BsGraphUp} from 'react-icons/bs'
-import {MdSecurity} from 'react-icons/md'
+import {MdSecurity,MdVerifiedUser} from 'react-icons/md'
 import { GiBookshelf,GiSupersonicArrow} from 'react-icons/gi'
 import ImpactCard from '../Components/ImpactCard'
 
@@ -30,7 +29,7 @@ export default function ImpactSection() {
                 title="Better Talent" 
                 text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
             >
-            <GiSupersonicArrow />
+            <GiSupersonicArrow  className="light-green-text accent-4" />
             </ImpactCard>
             </div>
 
@@ -40,7 +39,7 @@ export default function ImpactSection() {
             title="Productivity at jobs" 
             text="Talented workforce will enable innovation and productivity led mission for quality output."    
             >
-            <GrWorkshop />
+            <FaUserTie  className="light-green-text accent-4" />
             </ImpactCard>
             </div>
 
@@ -49,7 +48,7 @@ export default function ImpactSection() {
             title="Innovation Drive" 
             text="Further industry will innovate to claim the value available with more demand & hence more talented people."    
             >
-            <FaRegLightbulb />
+            <FaRegLightbulb className="light-green-text accent-4"  />
             </ImpactCard>
             </div>
             </div>
@@ -60,7 +59,7 @@ export default function ImpactSection() {
             title="More Profits" 
             text="When productivity is more and rejections are less, lead to more sales and profits."    
             >
-            <BsGraphUp />
+            <BsGraphUp className="light-green-text accent-4"  />
             </ImpactCard>
             </div>
             <div className="col s6 l4 center">
@@ -68,7 +67,7 @@ export default function ImpactSection() {
             title="Need Capacity Enhancement" 
             text="Invite opportunity for Existing & New industry to come up with new facilities."    
             >
-            <MdSecurity />
+            <MdVerifiedUser className="light-green-text accent-4"  />
             </ImpactCard>
             </div>
             <div className="white col s6 l4">
@@ -76,7 +75,7 @@ export default function ImpactSection() {
             title="More Jobs" 
             text="As consumption, industry and innovation peaks will also lead to increasing number of jobs and hence create a circle."    
             >
-            <FaHandshake />
+            <FaHandshake className="light-green-text accent-4"  />
             </ImpactCard>
             </div>
             </div>

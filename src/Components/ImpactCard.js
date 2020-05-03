@@ -11,7 +11,7 @@ export default function ImpactCard(props) {
                     </div>
                     <h6 className="card-title">{props.title}</h6>
                     <div className="card-content">
-                    <p>
+                    <p className="grey-text lighten-1">
                         {props.text}                                  
                     </p>    
                     </div> 
