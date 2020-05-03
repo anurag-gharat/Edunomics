@@ -85,6 +85,7 @@ z-index: -10 !important;
 .no-mar{
   margin: 0px;
 }
+
 .d-flex{
   display: flex;
   flex-direction: row;
@@ -110,4 +111,14 @@ z-index: -10 !important;
   display: flex !important;
   flex-direction: row !important;
   justify-content:start !important;
+}
+@media only screen and (max-width: 600px) {
+ .reverse{
+  display: flex;
+  flex-direction: column;
+  
+ }
+ .reverse>a{
+  border: 0px;
+ }
 }

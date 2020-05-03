@@ -26,12 +26,12 @@ export default function Footer() {
                     <AiFillLinkedin className="socialicon  hoverable"/>
                     </Link>
                 </div>
-                <div className="d-flex justify-content-center">
-                    <Link className="border-left">TERMS OF USE</Link>
-                    <Link  className="border-left">COOKIE POLICY</Link>
-                    <Link className="border-left">JOIN US</Link>
-                    <Link className="border-left">TECH</Link>
-                    <Link className="border-left-0">PRIVACY POLICY</Link>
+                <div className="d-flex justify-content-center reverse">
+                    <Link className="border-left"><p>TERMS OF USE</p></Link>
+                    <Link  className="border-left"><p>COOKIE POLICY</p></Link>
+                    <Link className="border-left"><p>JOIN US</p></Link>
+                    <Link className="border-left"><p>TECH</p></Link>
+                    <Link className="border-left-0"><p>PRIVACY POLICY</p></Link>
 
                 </div>
                 <div className="footer-copyright green darken-4 white-text p-10 m-t-10" >
