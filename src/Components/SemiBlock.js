@@ -6,13 +6,20 @@ export default function SemiBlock(props) {
     <div className="container">
             <div className="row">
                 <div className="col s12 l6 m6">
-                    <img src={props.img} className="heroimage" />
+                    {props.children}
                 </div>
                 <div className="col s12 l6 m6 "  style={{marginTop:"50px"}}>
+                    <h4>{props.title}</h4>
                     <p className="m-10">
                         {props.text}
                     </p>
-                {props.isbutton ? <Link to={props.buttonpath}><button className="button pink lighten-1 white-text m-t-10">{props.buttontext}</button></Link>:<></>}
+                    <div className="row">
+                        <div className="col s6 left">  {props.isbutton1 ? <Link to={props.button1path}><button className="button  hoverable pink lighten-1 waves-effect white-text m-t-10">{props.button1text}</button></Link>:<></>}</div>
+                        <div className="col s6 right">  {props.isbutton2 ? <Link to={props.button2path}><button className="hoverable button light-green accent-4 waves-effect white-text m-t-10">{props.button2text}</button></Link>:<></>}</div>
+
+                    
+                    </div>
+              
                 </div>
             </div>
     </div>

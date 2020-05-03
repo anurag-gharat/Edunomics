@@ -5,6 +5,7 @@ import SemiBlock from '../Components/SemiBlock'
 import Heading from '../Components/Heading'
 import ImpactSection from '../Content/ImpactSection'
 import OpportunitySection from '../Content/OpportunitySection'
+import InitiativesSection from '../Content/InitiativesSection'
 
 
 export default function Home() {
@@ -34,18 +35,23 @@ export default function Home() {
             <section className="aboutsection">
                 <Heading title="ABOUT EDUNOMICS" />
                 <SemiBlock 
-                img={About} 
+                
                 text="We are a bootstrap startup with a vision to impact education and economics solving a complex problems with simple solutions.
                 Edunomics combines tech expertise and business intelligence to catalyze change and deliver results. We are employing top talent to provide a uniquely matching solution for your unique problem." 
-                isbutton={true}
-                buttontext="Know More?"
-                buttonpath="/knowmore"
-                />
+                isbutton1={true}
+                button1text="Know More?"
+                button2path="/knowmore"
+                >
+                    <img src={About} className="heroimage" />
+                </SemiBlock>
                 
             </section>
             <ImpactSection />
            
             <OpportunitySection />
+
+            <InitiativesSection />
+
 
         </div>
     )
