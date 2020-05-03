@@ -4,6 +4,7 @@ import About from '../images/about.png'
 import SemiBlock from '../Components/SemiBlock'
 import Heading from '../Components/Heading'
 import ImpactSection from '../Content/ImpactSection'
+import OpportunitySection from '../Content/OpportunitySection'
 
 
 export default function Home() {
@@ -43,7 +44,8 @@ export default function Home() {
                 
             </section>
             <ImpactSection />
-
+           
+            <OpportunitySection />
 
         </div>
     )
