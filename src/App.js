@@ -12,6 +12,7 @@ import Application from './Pages/Application'
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import Knowmore from './Pages/Knowmore';
+import Error from './Pages/Error';
 
 
 
@@ -26,8 +27,10 @@ function App() {
           <Switch>
               <Route path="/" exact component={Home}    />
               <Route path="/knowmore" exact component={Knowmore}    />
+              <Route path="/applynow" component={Application}    />
 
-              <Route path="/" component={Application}    />
+              <Route component={Error}    />
+
 
             
           </Switch>
