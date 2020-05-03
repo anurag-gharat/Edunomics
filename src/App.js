@@ -7,6 +7,8 @@ import './App.css';
 
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home'
+import Application from './Pages/Application'
+
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 
@@ -22,6 +24,8 @@ function App() {
           <Navbar />
           <Switch>
               <Route path="/" exact component={Home}    />
+              <Route path="/" component={Application}    />
+
             
           </Switch>
           <Footer />
