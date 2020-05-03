@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function FirstForm() {
+export default function FirstForm(props) {
+
+    const conti = e => {
+        e.preventDefault();
+        props.nextStep();
+    };
+  
+
+
+
     return (
         <div className="container lower">
                 <form>
@@ -124,11 +133,68 @@ export default function FirstForm() {
                 </div>
 
 
+                <div className="col s12">
+                <h4>Technologies you know:</h4>
+                </div>
 
+                <div className="col s12">
+                <h6>React JS</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
+                <div className="col s12">
+                <h6>Angular JS</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
+                <div className="col s12">
+                <h6>Python JS</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
+                <div className="col s12">
+                <h6>Java JS</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
+                <div className="col s12">
+                <h6>Node JS</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
+                <div className="col s12">
+                <h6>Swift</h6>
+                <p class="range-field">
+                    <p className="left">1</p><p className="right">5</p>
+                    <input type="range" id="test5" min="1" max="5" />
+                </p>
+ 
+                </div>
 
-
-
-
+                <div className="input-field col s12">
+                <i className="material-icons prefix">code</i>
+                <input id="icon_prefix" type="email" className="validate" />
+                <label for="icon_prefix">Your github profile link</label>
+                </div>
+     
+                <div className="col s12 center">
+                    <button type="submit" className="btn large light-green accent-4" onClick={conti}>Next<i class="material-icons right">arrow_forward</i></button>
+                </div>
 
                 </div>
 
