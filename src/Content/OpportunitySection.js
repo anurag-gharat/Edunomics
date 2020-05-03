@@ -10,7 +10,7 @@ import Dreams from '../images/dreams.svg'
 
 export default function OpportunitySection() {
     return (
-        <section className="opportunitysection section" id="opportunity">
+        <section className="opportunitysection section" id="opportunities">
             <Heading title="INFINITE OPPORTUNITIES" />
             <HalfBlock
             img1={Teacher}
