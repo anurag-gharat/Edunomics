@@ -13,25 +13,25 @@ export default function Footer() {
                     <img src={Logo} className="logo" />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Link >
+                    <Link to="https://www.facebook.com/edunomics2020/">
                     <FaFacebook className="socialicon   hoverable" />
                     </Link>
-                    <Link >
+                    <Link to="https://www.instagram.com/edunomics2020/">
                         <AiOutlineInstagram className="socialicon  hoverable"/>
                     </Link>
-                    <Link >
+                    <Link to="https://twitter.com/Edunomics2">
                         <AiFillTwitterCircle className="socialicon  hoverable" />
                     </Link>
-                    <Link >
+                    <Link to="https://www.linkedin.com/company/edunomics/">
                     <AiFillLinkedin className="socialicon  hoverable"/>
                     </Link>
                 </div>
                 <div className="d-flex justify-content-center reverse">
-                    <Link className="border-left"><p>TERMS OF USE</p></Link>
-                    <Link  className="border-left"><p>COOKIE POLICY</p></Link>
-                    <Link className="border-left"><p>JOIN US</p></Link>
-                    <Link className="border-left"><p>TECH</p></Link>
-                    <Link className="border-left-0"><p>PRIVACY POLICY</p></Link>
+                    <Link className="border-left" to="#"><p>TERMS OF USE</p></Link>
+                    <Link  className="border-left" to="#"><p>COOKIE POLICY</p></Link>
+                    <Link className="border-left" to="#"><p>JOIN US</p></Link>
+                    <Link className="border-left" to="#"><p>TECH</p></Link>
+                    <Link className="border-left-0" to="#"><p>PRIVACY POLICY</p></Link>
 
                 </div>
                 <div className="footer-copyright green darken-4 white-text p-10 m-t-10" >
