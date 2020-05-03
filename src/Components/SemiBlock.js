@@ -5,10 +5,10 @@ export default function SemiBlock(props) {
     return (
     <div className="container">
             <div className="row">
-                <div className="col s12 l6 m6 ">
+                <div className="col s12 l6 m6 "  data-aos="fade-right">
                     {props.children}
                 </div>
-                <div className="col s12 l6 m6 p-t-100">
+                <div className="col s12 l6 m6 p-t-100"  data-aos="fade-left">
                     <h4>{props.title}</h4>
                     <p className="grey-text">
                         {props.text}

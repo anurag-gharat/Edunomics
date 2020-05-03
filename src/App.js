@@ -4,7 +4,8 @@ import logo from './logo.svg';
 import 'materialize-css/dist/css/materialize.min.css'
 import "materialize-css/dist/js/materialize.min.js";
 import './App.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home'
 import Application from './Pages/Application'
@@ -21,6 +22,10 @@ import Search from './Pages/Search';
 
 function App() {
   
+useEffect(()=>{
+  AOS.init();
+},[])
+
   return (
     <div>
         <Router>

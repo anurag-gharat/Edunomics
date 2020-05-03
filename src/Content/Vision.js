@@ -7,7 +7,7 @@ export default function Vision() {
         <section className="section">
             <div className="container center">
                 <Heading title='OUR VISION' />
-                <img src={vision} width="100%" />
+                <img src={vision} width="100%"  data-aos="fade-in"/>
                 <h4>EDUNOMICS will bridge the gap
 Between</h4>
             </div>

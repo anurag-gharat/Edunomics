@@ -4,6 +4,7 @@ body {
   padding: 0px;
   background-color: #fff !important;
   font-family: 'Montserrat', sans-serif !important;
+  scroll-behavior: smooth !important;
 }
 .logo{
   height: 50px;
