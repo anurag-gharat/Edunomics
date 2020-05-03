@@ -2,7 +2,7 @@ body {
   margin: 0px;
   box-sizing: border-box;
   padding: 0px;
-  background-color: #fafafa;
+  background-color: #fff !important;
   font-family: 'Montserrat', sans-serif !important;
 }
 .logo{
@@ -86,4 +86,9 @@ footer>div>a{
   border-radius: 30px;
   padding: 10px !important;
   
+}
+.justify-content-around{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content:start !important;
 }

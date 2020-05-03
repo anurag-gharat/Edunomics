@@ -3,8 +3,7 @@ import Heroimage from '../images/heroimage.png'
 import About from '../images/about.png'
 import SemiBlock from '../Components/SemiBlock'
 import Heading from '../Components/Heading'
-import { GiBookshelf,GiSupersonicArrow} from 'react-icons/gi'
-import ImpactCard from '../Components/ImpactCard'
+import ImpactSection from '../Content/ImpactSection'
 
 
 export default function Home() {
@@ -43,46 +42,7 @@ export default function Home() {
                 />
                 
             </section>
-
-            <section className="impactsecion">
-                <Heading title="HOW EDUNOMICS CAN IMPACT ECONOMY" />
-                <div className="container">
-                    <div className="row">
-                        <div className="col s6 l3">
-
-                        <ImpactCard 
-                            title="Quality Education" 
-                            text="Skills with optimum experience will be shared to make a great transition to a professional world."    
-                            >
-                                <GiBookshelf />
-                            </ImpactCard>
-                        
-                        
-                        </div>
-                        <div className="col s6 l3">
-
-                        <ImpactCard 
-                            title="Better Talent" 
-                            text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
-                        >
-                        <GiSupersonicArrow />
-                        </ImpactCard>
-                        </div>
-
-                        <div className="col s6 l3">
-
-                        <ImpactCard 
-                        title="Better Talent" 
-                        text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
-                        >
-                        <GiSupersonicArrow />
-                        </ImpactCard>
-                        </div>
-                    
-                    
-                    </div>
-                </div>
-            </section>
+            <ImpactSection />
 
 
         </div>
