@@ -39,7 +39,7 @@ export default function Home() {
                 Edunomics combines tech expertise and business intelligence to catalyze change and deliver results. We are employing top talent to provide a uniquely matching solution for your unique problem." 
                 isbutton1={true}
                 button1text="Know More?"
-                button2path="/knowmore"
+                button1path="/knowmore"
                 >
                     <img src={About} className="heroimage" />
                 </SemiBlock>

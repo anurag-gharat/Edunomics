@@ -14,9 +14,9 @@ export default function InitiativesSection() {
         isbutton1={true}
         isbutton2={true}
         button1text="Know More?"
-        button1path="\knowmore"
+        button1path="/knowmore"
         button2text="Apply Now"
-        button2path="\applynow"
+        button2path="/applynow"
     >
         <img 
         src={Education} 
