@@ -1,6 +1,7 @@
 import React from 'react'
 import SemiBlockReverse from '../Components/SemiBlockReverse'
 import knowmore from '../images/knowmorehero.png'
+import HowDoesItWork from '../Content/HowDoesItWork'
 
 export default function Knowmore() {
     return (
@@ -22,6 +23,18 @@ export default function Knowmore() {
 
     </SemiBlockReverse>
             </section>
+
+
+            <HowDoesItWork />
+
+
+
+
+
+
+
+
+
         </div>
     )
 }
