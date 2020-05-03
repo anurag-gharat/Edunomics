@@ -14,16 +14,16 @@ export default function Footer() {
                 </div>
                 <div className="d-flex justify-content-center">
                     <Link >
-                    <FaFacebook className="socialicon white-text black hoverable" />
+                    <FaFacebook className="socialicon   hoverable" />
                     </Link>
                     <Link >
-                        <AiOutlineInstagram className="socialicon white-text black hoverable"/>
+                        <AiOutlineInstagram className="socialicon  hoverable"/>
                     </Link>
                     <Link >
-                        <AiFillTwitterCircle className="socialicon white-text black hoverable" />
+                        <AiFillTwitterCircle className="socialicon  hoverable" />
                     </Link>
                     <Link >
-                    <AiFillLinkedin className="socialicon  white-text black hoverable"/>
+                    <AiFillLinkedin className="socialicon  hoverable"/>
                     </Link>
                 </div>
                 <div className="d-flex justify-content-center">

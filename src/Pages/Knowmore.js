@@ -2,6 +2,9 @@ import React from 'react'
 import SemiBlockReverse from '../Components/SemiBlockReverse'
 import knowmore from '../images/knowmorehero.png'
 import HowDoesItWork from '../Content/HowDoesItWork'
+import AvailableTraining from '../Content/AvailableTraining'
+import Vision from '../Content/Vision'
+import OurAim from '../Content/OurAim'
 
 export default function Knowmore() {
     return (
@@ -25,9 +28,12 @@ export default function Knowmore() {
             </section>
 
 
-            <HowDoesItWork />
-
-
+        <HowDoesItWork />
+        <Vision />
+        <OurAim />
+        <AvailableTraining />
+        
+        
 
 
 

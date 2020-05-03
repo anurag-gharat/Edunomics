@@ -12,9 +12,6 @@ import FaqsSection from '../Content/FaqsSection'
 
 export default function Home() {
     return (
-
-
-
         <div >
             <section className="homecontainer section" id="home"> 
                 <div className="row ">

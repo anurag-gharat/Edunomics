@@ -55,6 +55,14 @@ footer>div>a{
 }
 
 /* MY UTILITIES */
+.rounded{
+  border-radius: 10px;
+  background: linear-gradient(to right,#56ab2f,#a8e063);
+}
+.vcenter{
+  vertical-align: center !important;
+  margin: 25px 0px !important;
+}
 .lower{
 z-index: -10 !important;
 }
@@ -96,7 +104,7 @@ z-index: -10 !important;
   font-size: 60px;
   border-radius: 30px;
   padding: 10px !important;
-  
+  color:#a8e063;
 }
 .justify-content-around{
   display: flex !important;
