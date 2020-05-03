@@ -11,6 +11,7 @@ import Application from './Pages/Application'
 
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
+import Knowmore from './Pages/Knowmore';
 
 
 
@@ -24,6 +25,8 @@ function App() {
           <Navbar />
           <Switch>
               <Route path="/" exact component={Home}    />
+              <Route path="/knowmore" exact component={Knowmore}    />
+
               <Route path="/" component={Application}    />
 
             
