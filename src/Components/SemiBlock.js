@@ -5,12 +5,12 @@ export default function SemiBlock(props) {
     return (
     <div className="container">
             <div className="row">
-                <div className="col s12 l6 m6">
+                <div className="col s12 l6 m6 ">
                     {props.children}
                 </div>
-                <div className="col s12 l6 m6 "  style={{marginTop:"50px"}}>
+                <div className="col s12 l6 m6 p-t-100">
                     <h4>{props.title}</h4>
-                    <p className="m-10">
+                    <p className="grey-text">
                         {props.text}
                     </p>
                     <div className="row">

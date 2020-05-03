@@ -32,7 +32,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="aboutsection">
+            <section className="aboutsection section">
                 <Heading title="ABOUT EDUNOMICS" />
                 <SemiBlock 
                 

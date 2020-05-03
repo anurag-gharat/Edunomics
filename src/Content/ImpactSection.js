@@ -8,7 +8,7 @@ import ImpactCard from '../Components/ImpactCard'
 
 export default function ImpactSection() {
     return (
-        <section className="impactsecion">
+        <section className="impactsecion section grey lighten-4">
         <Heading title="IMPACT OF EDUNOMICS ON ECONOMY" />
         <div className="container">
         <div className="row ">
@@ -70,7 +70,7 @@ export default function ImpactSection() {
             <MdVerifiedUser className="light-green-text accent-3"  />
             </ImpactCard>
             </div>
-            <div className="white col s6 l4">
+            <div className=" col s6 l4">
             <ImpactCard 
             title="More Jobs" 
             text="As consumption, industry and innovation peaks will also lead to increasing number of jobs and hence create a circle."    
