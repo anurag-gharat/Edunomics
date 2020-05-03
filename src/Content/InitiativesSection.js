@@ -39,6 +39,19 @@ export default function InitiativesSection() {
 
     </SemiBlockReverse>
 
+    <SemiBlock
+        title="Lets Aspire You to Create A New World"
+        text="With Edunomics connect, you will be going to connected with people who aspire you to be best of yourself."
+ 
+    >
+        
+      <div class="video-container" style={{marginTop:"100px"}} >
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/MzHCsji0LNc" frameborder="0" className="m-t-10" allowfullscreen></iframe>
+      </div>
+    </SemiBlock>
+
+
+
 </section>
     )
 }
