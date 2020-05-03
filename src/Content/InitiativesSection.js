@@ -45,7 +45,7 @@ export default function InitiativesSection() {
  
     >
         
-      <div class="video-container" style={{marginTop:"100px"}} >
+      <div class="video-container lower" style={{marginTop:"100px"}} >
         <iframe width="853" height="480" src="https://www.youtube.com/embed/MzHCsji0LNc" frameborder="0" className="m-t-10" allowfullscreen></iframe>
       </div>
     </SemiBlock>

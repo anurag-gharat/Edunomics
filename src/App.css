@@ -54,6 +54,10 @@ footer>div>a{
 }
 
 /* MY UTILITIES */
+.lower{
+z-index: -2;
+}
+
 .p-10{
   padding: 10px;
 }

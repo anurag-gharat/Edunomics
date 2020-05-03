@@ -6,6 +6,8 @@ import Heading from '../Components/Heading'
 import ImpactSection from '../Content/ImpactSection'
 import OpportunitySection from '../Content/OpportunitySection'
 import InitiativesSection from '../Content/InitiativesSection'
+import TechEdunomicsSection from '../Content/TechEdunomicsSection'
+import FaqsSection from '../Content/FaqsSection'
 
 
 export default function Home() {
@@ -52,7 +54,9 @@ export default function Home() {
 
             <InitiativesSection />
 
+            <TechEdunomicsSection />
 
+            <FaqsSection />
         </div>
     )
 }
