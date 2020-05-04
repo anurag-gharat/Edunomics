@@ -1,6 +1,4 @@
 import React,{useEffect} from 'react';
-import $ from "jquery";
-import logo from './logo.svg';
 import 'materialize-css/dist/css/materialize.min.css'
 import "materialize-css/dist/js/materialize.min.js";
 import './App.css';
@@ -9,7 +7,6 @@ import 'aos/dist/aos.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home'
 import Application from './Pages/Application'
-
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import Knowmore from './Pages/Knowmore';
@@ -19,8 +16,8 @@ import Search from './Pages/Search';
 
 
 
-
-function App() {
+function App(){
+  
   
 useEffect(()=>{
   AOS.init();
@@ -28,8 +25,9 @@ useEffect(()=>{
 
   return (
     <div>
-        <Router>
+        <Router >
           <Navbar />
+          
           <Switch>
               <Route path="/" exact component={Home}    />
               <Route path="/knowmore" exact component={Knowmore}    />
@@ -42,6 +40,7 @@ useEffect(()=>{
 
             
           </Switch>
+          
           <Footer />
         </Router>
     </div>
