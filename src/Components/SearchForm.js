@@ -55,7 +55,7 @@ export default function SearchForm() {
                 
                     <div className="input-field">
                         <input type="text" id="autocomplete-input" className="autocomplete" onChange={handleChange} />
-                        <label for="autocomplete-input">Enter Your Query</label>
+                        <label htmlFor="autocomplete-input">Enter Your Query</label>
                 </div>
             </div>
             <div className="col s12 l5 m-t-10">

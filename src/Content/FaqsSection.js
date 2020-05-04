@@ -21,7 +21,7 @@ export default function FaqsSection() {
                     <div className="col s12 m6 l6 m-t-10">
 
                         <h5 className="center">For Students</h5>
-                        <ul class="collapsible popout ">
+                        <ul className="collapsible popout ">
                         <Collapsible
                         question="How does Edunomics work?"
                         answer="We at edunomics basically combine technological expertise with business intelligence and deliver it to those who are in need, connecting the students with real world industry experts who will give the right training and development needed with accordance to the real world experiences. Edunomics works by providing online textbook depositories, helps to develop and exercise skills by providing different courses of their domain of interest. Differentiated lessons along with diagnostic tools we are completely open sourced."
@@ -58,7 +58,7 @@ export default function FaqsSection() {
 
                     
                     <h5 className="center">For Companies</h5>
-                        <ul class="collapsible popout">
+                        <ul className="collapsible popout">
                         <Collapsible
                         question="Is there a cost to hire students from edunomics?"
                         answer="No. We are completely open sourced. We just emphasis on the companies to give the best in the market packages for our students, since they are of the utmost quality and talent"

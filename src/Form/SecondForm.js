@@ -38,7 +38,7 @@ export default function SecondForm(props) {
                    
                    <div className="input-field col s12">
                     
-                    <select multiple>
+                    <select multiple defaultValue="">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">Salary & Compensation</option>
                         <option value="2">Challenging environment of startup
