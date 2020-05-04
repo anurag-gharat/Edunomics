@@ -27,11 +27,11 @@ export default function Footer() {
                     </Link>
                 </div>
                 <div className="d-flex justify-content-center reverse">
-                    <Link className="border-left" to="#"><p>TERMS OF USE</p></Link>
-                    <Link  className="border-left" to="#"><p>COOKIE POLICY</p></Link>
-                    <Link className="border-left" to="#"><p>JOIN US</p></Link>
-                    <Link className="border-left" to="#"><p>TECH</p></Link>
-                    <Link className="border-left-0" to="#"><p>PRIVACY POLICY</p></Link>
+                    <Link className="border-left" to="#">TERMS OF USE</Link>
+                    <Link  className="border-left" to="#">COOKIE POLICY</Link>
+                    <Link className="border-left" to="#">JOIN US</Link>
+                    <Link className="border-left" to="#">TECH</Link>
+                    <Link className="border-left-0" to="#">PRIVACY POLICY</Link>
 
                 </div>
                 <div className="footer-copyright green darken-4 white-text p-10 m-t-10" >

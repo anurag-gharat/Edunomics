@@ -50,16 +50,16 @@ export default function SearchForm() {
     return (
         <form onSubmit={(e)=>handleSubmit(e)}>
             
-        <div className="row">
-            <div className="col s7">
+        <div className="row m-t-10">
+            <div className="col s12 l7">
                 
                     <div className="input-field">
-                        <input type="text" id="autocomplete-input" class="autocomplete" onChange={handleChange} />
+                        <input type="text" id="autocomplete-input" className="autocomplete" onChange={handleChange} />
                         <label for="autocomplete-input">Enter Your Query</label>
                 </div>
             </div>
-            <div className="col s5 m-t-10">
-                <button type="submit" className="button m-t-10">Search</button>
+            <div className="col s12 l5 m-t-10">
+                <button type="submit" className="button m-t-10 gradient1 white-text hoverable">Search</button>
             </div>
         </div>
         </form>
