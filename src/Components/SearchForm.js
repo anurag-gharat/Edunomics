@@ -43,7 +43,7 @@ export default function SearchForm() {
     }
     if (redirect) {
         return <Redirect to={{
-          pathname: '/searchquery',
+          pathname: '/search',
           state: { data:query}
         }} />
       } else {         
