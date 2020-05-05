@@ -9,15 +9,15 @@ setName(props.location.state.data)
 
     return (
         <div>
-                <section className="section p-t-100">
+                <section className="section p-t-20">
                     <div className="container center">
-                        <h4>
+                        <h1>
                         How can you learn externally
-                        </h4>
-                        <span className="green-text no-mar"><h4>{name}</h4></span>
-                        <h4>
+                        </h1>
+                        <span className="green-text no-mar"><nobr><h2>"{name}"</h2></nobr></span>
+                        <h1>
                         meanwhile we are coming with distinct approach?
-                        </h4>
+                        </h1>
                         <div className="row m-t-10 p-10">
                         <h5><b>The unique platform of Edunomics</b></h5>
                         <p className="grey-text">This one of a kind platform is currently in construction, being devised with the most effectual and productive learning ecosystem for especially those students who have the urge to firstly find their deep hidden talents which they can excel with. And secondly for those curious souls who don't quite believe in the concept of learning merely by THEORETICAL ways. Who feel that a learning process should be stressed upon the PRACTICAL and real life scenarios because the things you grasp by such a realistic study, gets embedded into your memory with a profound clarity that no other teaching method can give you. Agreed? You surely must have felt this in your school and college days.

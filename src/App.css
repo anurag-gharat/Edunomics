@@ -56,6 +56,9 @@ footer>div>a{
 }
 
 /* MY UTILITIES */
+.p-t-20{
+  padding-top: 30px !important;
+}
 .rounded{
   border-radius: 10px;
   background: linear-gradient(to right,#56ab2f,#a8e063);
