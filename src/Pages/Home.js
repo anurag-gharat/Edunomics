@@ -12,7 +12,7 @@ import SearchForm from '../Components/SearchForm'
 
 export default function Home() {
     return (
-        <div >
+        <div className="" >
             <section className="homecontainer section" id="home"> 
                 <div className="row ">
                     <div className="col l6 m12 s12 section landingpagediv">
@@ -21,7 +21,7 @@ export default function Home() {
 
                     </div>
                     <div className=" col l6 m12 s12 ">
-                        <img src={Heroimage}  style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
+                        <img src={Heroimage} alt="Home page image" style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
                     </div>
                 </div>
             </section>

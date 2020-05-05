@@ -9,7 +9,7 @@ export default function FaqsSection() {
   
     useEffect(()=>{
         let collapsible = document.querySelectorAll('.collapsible');
-          M.Collapsible.init(collapsible);
+        M.Collapsible.init(collapsible);
         },[])
 
 
@@ -17,6 +17,7 @@ export default function FaqsSection() {
         <section className="section" id="faqs">
             <Heading title="Frequently Asked Questions" />
             <div className="container">
+                
                 <div className="row">
                     <div className="col s12 m6 l6 m-t-10">
 

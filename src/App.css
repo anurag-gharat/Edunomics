@@ -122,8 +122,19 @@ z-index: -10 !important;
  .reverse{
   display: flex;
   flex-direction: column;
-  
  }
+ .landingpagediv{
+  padding:100px 20px !important;
+  text-align: center;
+}
+.button{
+  border-radius: 25px;
+  height: 50px;
+  width: 150px;
+  border: none;
+  z-index: -2 !important;
+  cursor: pointer !important;
+}
  .reverse>a{
   border: 0px;
  }
