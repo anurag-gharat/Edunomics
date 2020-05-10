@@ -4,9 +4,6 @@ import M from  'materialize-css/dist/js/materialize.min.js';
 import Logo from '../images/logo.png'
 
 
-
-
-
 export default function Navbar() {
 
     

@@ -9,10 +9,9 @@ export const signupuser=user=>{
         body:JSON.stringify(user),
         redirect: 'follow'
       };
-      
-      fetch("http://wenestor.rachitpahwa.codes/api/user/signup", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+      return fetch("http://wenestor.rachitpahwa.codes/api/user/signup", requestOptions)
+        .then(response =>response.text())
+        .then(result =>{return result})
         .catch(error => console.log('error', error));
 }
 
@@ -27,9 +26,8 @@ var requestOptions = {
 },
   body: JSON.stringify(user),
 };
-
-fetch("http://wenestor.rachitpahwa.codes/api/user/login", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
+  return fetch("http://wenestor.rachitpahwa.codes/api/user/login", requestOptions)
+  .then(response =>response.text())
+  .then(result => {return result})
   .catch(error => console.log('error', error));
 }

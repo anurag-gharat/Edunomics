@@ -22,8 +22,11 @@ export default function Signup() {
             ...values
         })
         signupuser({name,dob,contact_no,email,password})
+        .then(data=>console.log("response",data))
+//more conditions to be applied here 
+
+
     }
-    console.log(values)
 
     useEffect(()=>{
         let date = document.querySelector(".datepicker")
