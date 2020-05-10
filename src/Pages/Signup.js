@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import M from  'materialize-css/dist/js/materialize.min.js';
-import {signupuser} from '../Authentication/UserRoutes'
+import {signupuser} from '../API/UserRoutes'
 
 
 export default function Signup() {

@@ -14,6 +14,7 @@ import Error from './Pages/Error';
 import Search from './Pages/Search';
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
+import AllBlogs from './Pages/AllBlogs'
 
 
 
@@ -38,6 +39,8 @@ useEffect(()=>{
               <Route path="/search" component={Search}    />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
+              <Route path="/allblogs" component={AllBlogs} />
+
 
 
 
