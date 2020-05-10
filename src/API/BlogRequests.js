@@ -22,3 +22,18 @@ export const getAllBlogs=()=>{
         
     })
 }
+
+
+export const getAllCategories=()=>{
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };    
+    return fetch("http://wenestor.rachitpahwa.codes/api/category", requestOptions)
+    .then(response=>{
+        return response.json()
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}
