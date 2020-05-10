@@ -12,6 +12,9 @@ import Footer from "./Components/Footer"
 import Knowmore from './Pages/Knowmore';
 import Error from './Pages/Error';
 import Search from './Pages/Search';
+import Login from './Pages/Login'
+import Signup from './Pages/Signup'
+
 
 
 
@@ -33,6 +36,9 @@ useEffect(()=>{
               <Route path="/knowmore" exact component={Knowmore}    />
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+
 
 
               <Route component={Error}    />
