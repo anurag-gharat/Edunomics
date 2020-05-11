@@ -27,7 +27,7 @@ var requestOptions = {
   body: JSON.stringify(user),
 };
   return fetch("http://wenestor.rachitpahwa.codes/api/user/login", requestOptions)
-  .then(response =>response.text())
+  .then(response =>response.json())
   .then(result => {return result})
   .catch(error => console.log('error', error));
 }

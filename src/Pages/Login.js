@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 export default function Login() {
 
     const [values,setValues]=useState({
-        email:"",
-        password:""
+        email:"test12@test.com",
+        password:"12345"
     })
     const {email,password}= values
 
@@ -18,8 +18,16 @@ export default function Login() {
         event.preventDefault()
         setValues({...values})
         login({email,password})
-        .then(result=>console.log(result))
-        //more conditions to be applied here
+        .then(result=>{if(result.success){
+            alert(result.msg)
+        }
+        else{
+            alert(result.msg)
+        }
+        
+    })
+        
+        
     }
     
     
@@ -63,7 +71,7 @@ export default function Login() {
                             </div>
                             </div>
                             <div className="row">
-                                <button className="button green white-text  hoverable" type="submit">Submit</button>
+                                <button className="button green white-text hoverable" type="submit">Submit</button>
                             </div>
                             <div className="row">
                                 <Link to="/signup"> Sign up now!</Link>

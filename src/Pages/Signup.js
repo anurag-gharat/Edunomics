@@ -70,6 +70,7 @@ export default function Signup() {
                                 onChange={handleChange("email")}
                                 value={email}
                                 name="email"
+                                required
                                 />
                                 
                                 <label htmlFor="email">Your Email Address</label>
@@ -87,6 +88,7 @@ export default function Signup() {
                                 onChange={handleChange("contact_no")}
                                 value={contact_no}
                                 name="contact_no"
+                                required
                                 />
                                 
                                 <label htmlFor="contact_no">Your Phone Number</label>
@@ -104,6 +106,7 @@ export default function Signup() {
                                 onChange={handleChange("password")}
                                 value={password}
                                 name="password"
+                                required
                                 />
                                 
                                 <label htmlFor="password">Your Password</label>
@@ -118,6 +121,7 @@ export default function Signup() {
                                 name="dob"
                                 onChange={handleChange("dob")}
                                 value={dob}
+                                required
                                 ></input>
                                 <label htmlFor="dob">Your Date of Birth (in form of 27/07/199)</label>
                             </div>
