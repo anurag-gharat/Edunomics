@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
-import M from 'materialize-css';
+import M from  'materialize-css/dist/js/materialize.min.js';
+
 
 export default function Test() {
 

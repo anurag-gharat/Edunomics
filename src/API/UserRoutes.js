@@ -1,5 +1,5 @@
 export const signupuser=user=>{
-  console.log(user)
+
     var requestOptions = {
         method: 'POST',
         headers:{
@@ -10,7 +10,7 @@ export const signupuser=user=>{
         redirect: 'follow'
       };
       return fetch("http://wenestor.rachitpahwa.codes/api/user/signup", requestOptions)
-        .then(response =>response.text())
+        .then(response =>response.json())
         .then(result =>{return result})
         .catch(error => console.log('error', error));
 }

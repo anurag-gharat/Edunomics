@@ -5,6 +5,8 @@ import {signupuser} from '../API/UserRoutes'
 
 export default function Signup() {
     
+    const dobref = React.useRef()
+    
     const [values,setValues]=useState({
         name:"",
         dob:"",
@@ -12,28 +14,48 @@ export default function Signup() {
         email:"",
         password:""
     })
-    const {name,email,contact_no,dob,password}=values
+
+    const handleDate = () => {
+        setValues({
+            ...values,
+            dob: dobref.current.value,
+        })
+
+    }
+    const {name,email,dob,contact_no,password}=values
+
     const handleChange=name=>event=>{
         setValues({...values,[name]:event.target.value})
     }
+    
     const handleSubmit=(e)=>{
         e.preventDefault()
         setValues({
             ...values
         })
+        console.log(values)
         signupuser({name,dob,contact_no,email,password})
-        .then(data=>console.log("response",data))
-//more conditions to be applied here 
-
-
+        .then(result=>{if(result.success){
+            alert(result.msg)
+        }
+        else{
+            alert(result.msg)
+        }  
+    })
     }
 
+    
     useEffect(()=>{
-        let date = document.querySelector(".datepicker")
-        M.Datepicker.init(date,{
-            format:"dd-mm-yyyy"
-        });
+        var start = document.querySelectorAll('.datepicker');
+            M.Datepicker.init(start, {
+                format: "mm/dd/yyyy",
+                autoClose: true,
+                onClose: handleDate
+            });
     },[])
+
+
+
 
     return (
         <div className="container p-t-100">
@@ -114,17 +136,16 @@ export default function Signup() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s12 l6 offset-l3">
-                                <input
-                                id="dob"
-                                type="text"
-                                name="dob"
-                                onChange={handleChange("dob")}
-                                value={dob}
-                                required
-                                ></input>
-                                <label htmlFor="dob">Your Date of Birth (in form of 27/07/199)</label>
-                            </div>
+                        <div className="input-field col s12 offset-l3 l6">
+                        <label htmlFor="date">Date of Birth</label>
+                        <input
+                            type="text"
+                            className="datepicker"
+                            id="dob"
+                            onChange={handleChange}
+                            value={dob}
+                            ref={dobref} />
+                        </div>
                         </div>
                         <div className="row center">
                             <button className="button large green accent-4 white-text hoverable" type="submit">Submit</button>
