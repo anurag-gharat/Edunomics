@@ -6,7 +6,7 @@ export default function NewBlog() {
     const [values,setValues]=useState({
         title:"",
         subtitle:"",
-        content:"",
+        blog_content:"",
         slide_url:"",
         categoryId:"",
         videos:[],
@@ -15,7 +15,7 @@ export default function NewBlog() {
 
     })
     const [categories,setCategories]=useState([])
-    const {title,subtitle,content,slide_url,categoryId,videos,video_url1,video_url2} =values
+    const {title,subtitle,blog_content,slide_url,categoryId,videos,video_url1,video_url2} =values
     
     const handleSubmit=e=>{
         e.preventDefault();
@@ -24,7 +24,7 @@ export default function NewBlog() {
             ...values,
             videos:[video_url1,video_url2]
         })
-        createABlog({title,subtitle,slide_url,categoryId,videos})
+        createABlog({title,subtitle,blog_content,slide_url,categoryId,videos})
         .then(data=>console.log("response",data))
 
     }
@@ -79,8 +79,8 @@ export default function NewBlog() {
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <textarea id="content" className="materialize-textarea"  onChange={handleChange("content")}></textarea>
-                <label htmlFor="content">Content</label>
+                    <textarea id="blog_content" className="materialize-textarea"  onChange={handleChange("blog_content")}></textarea>
+                <label htmlFor="blog_content">Content</label>
             </div>
             </div>
             

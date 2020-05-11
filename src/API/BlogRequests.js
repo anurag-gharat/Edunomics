@@ -6,7 +6,7 @@ export const getAllBlogs=()=>{
         return response.json()
     })
     .catch(err=>{
-        console.log(err);
+        console.log("erris",err);
         
     })
 }
@@ -27,7 +27,7 @@ export const getAllCategories=()=>{
 }
 
 
-//post request to create a blog
+//post request to create
 export const createABlog=(blog)=>{
 
     var requestOptions = {
