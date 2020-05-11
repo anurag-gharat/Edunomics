@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import M from  'materialize-css/dist/js/materialize.min.js';
 import {signupuser} from '../API/UserRoutes'
-
+//todo is to redirect the user to some page
 
 export default function Signup() {
     

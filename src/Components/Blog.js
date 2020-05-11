@@ -4,11 +4,11 @@ export default function Blog(props) {
     
     console.log(props)
     const {title,subtitle,blog_content,slide_url,categoryId,uploadDate,_id,videos}=props.blog
-
+    const d = new Date(uploadDate)
     return (
         <div className="container">
             <h3>{title}</h3>
-            <p>{uploadDate}</p>
+            <p>Posted on {d.toDateString()}</p>
             <div className="container">
                 <img src="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/03/1_orWFEkEBGIK4xFXwF7BCMA.jpeg?w=1600&ssl=1" width="100%"></img>
                 {/* <iframe
