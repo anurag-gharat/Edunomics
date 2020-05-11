@@ -37,3 +37,34 @@ export const getAllCategories=()=>{
         console.log(err)
     })
 }
+
+export const createABlog=(blog)=>{
+
+    var requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(blog),
+        headers:{
+            Accept:"application/json",
+            "Content-Type":"application/json"
+        },
+        redirect: 'follow'
+    };
+
+return fetch("http://wenestor.rachitpahwa.codes/api/blog", requestOptions)
+  .then(response => response.text())
+  .then(result => {return result})
+  .catch(error => console.log('error', error));
+}
+
+
+export const getAllCategorizedBlogs=(id)=>{
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      return fetch(`http://wenestor.rachitpahwa.codes/api/blog/${id}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}

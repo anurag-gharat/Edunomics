@@ -17,6 +17,7 @@ export default function Login() {
         event.preventDefault()
         setValues({...values})
         login({email,password})
+        .then(result=>console.log(result))
         //more conditions to be applied here
     }
     

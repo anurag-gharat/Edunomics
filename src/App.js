@@ -17,7 +17,8 @@ import Signup from './Pages/Signup'
 import AllBlogs from './Pages/AllBlogs'
 import AllCategories from './Pages/AllCategories';
 import NewBlog from './Pages/NewBlog';
-
+import Category from './Pages/Category';
+import CategorizedBlogs from './Pages/CategorizedBlogs';
 
 
 
@@ -44,6 +45,8 @@ useEffect(()=>{
               <Route path="/allblogs" component={AllBlogs} />
               <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
+              <Route path="/category/:categoryId" component={Category} />
+              <Route path="/blogs/:categoryId" component={CategorizedBlogs} />
 
 
 
