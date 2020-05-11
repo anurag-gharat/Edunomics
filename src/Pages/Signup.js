@@ -39,10 +39,10 @@ export default function Signup() {
         <div className="container p-t-100">
                 <div className="row ">
                     <div className="col s12 m12 l12">
-                        <form onSubmit={(e)=>handleSubmit(e)}>
-                        <div className="row">
-                            
-                            <div className="input-field col s12">
+                        <form onSubmit={(e)=>handleSubmit(e)} className="card p-20">
+                        <div className="row center">
+                            <h2>Signup</h2>
+                            <div className="input-field col s12 l6 offset-l3">
                             
                                 <input 
                                 id="fullname" 
@@ -61,7 +61,7 @@ export default function Signup() {
                         </div>
                         
                         <div className="row">
-                            <div className="input-field col s12">
+                            <div className="input-field col s12 l6 offset-l3">
                             
                                 <input 
                                 id="email" 
@@ -78,7 +78,7 @@ export default function Signup() {
                         </div>
                         
                         <div className="row">
-                            <div className="input-field col s12">
+                            <div className="input-field col s12 l6 offset-l3">
                             
                                 <input 
                                 id="contact_no" 
@@ -95,7 +95,7 @@ export default function Signup() {
                         </div>
                         
                         <div className="row">
-                            <div className="input-field col s12">
+                            <div className="input-field col s12 l6 offset-l3">
                             
                                 <input 
                                 id="password" 
@@ -111,7 +111,7 @@ export default function Signup() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s12">
+                            <div className="input-field col s12 l6 offset-l3">
                                 <input
                                 id="dob"
                                 type="text"
@@ -119,10 +119,11 @@ export default function Signup() {
                                 onChange={handleChange("dob")}
                                 value={dob}
                                 ></input>
+                                <label htmlFor="dob">Your Date of Birth (in form of 27/07/199)</label>
                             </div>
                         </div>
                         <div className="row center">
-                            <button className="button large" type="submit">Submit</button>
+                            <button className="button large green accent-4 white-text hoverable" type="submit">Submit</button>
                         </div>
                         
                         
