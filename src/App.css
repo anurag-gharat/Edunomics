@@ -79,6 +79,9 @@ z-index: -10 !important;
 .p-10{
   padding: 10px;
 }
+.m-b-50{
+  margin-bottom: 50px !important;
+}
 .p-50{
   padding:50px 0px;
 }
@@ -94,7 +97,9 @@ z-index: -10 !important;
 .no-mar{
   margin: 0px;
 }
-
+blockquote{
+  border-color: #64dd17 !important;
+}
 .d-flex{
   display: flex;
   flex-direction: row;

@@ -49,13 +49,17 @@ export default function AllBlogs() {
 
 
     return (
-            <div className="row p-t-100 ">
+            <div className="row p-t-100 " >
                 <Heading title="All Blogs " />
                 <div className="row">
                     <div className="col s12 l9">
+                    <div className="row">
+                    <div className="col s12">
                     {blogs.map((item)=>{
-                    return <Blog blog={item} />
-                    })}                    
+                    return <Blog blog={item}  />
+                    })} 
+                        </div>    
+                    </div>                   
                     </div>   
                     <div className="col s12 l3">
                     <ul className="collection with-header">
