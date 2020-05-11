@@ -6,11 +6,11 @@ import {signupuser} from '../API/UserRoutes'
 export default function Signup() {
     
     const [values,setValues]=useState({
-        name:"Tester",
-        dob:"26/03/1997",
-        contact_no:"+919876543211",
-        email:"test1@test.com",
-        password:"12345"
+        name:"",
+        dob:"",
+        contact_no:"",
+        email:"",
+        password:""
     })
     const {name,email,contact_no,dob,password}=values
     const handleChange=name=>event=>{

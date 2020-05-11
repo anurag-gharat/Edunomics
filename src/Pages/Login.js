@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import {login} from '../API/UserRoutes'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
 
     const [values,setValues]=useState({
-        email:"test@test.com",
-        password:"12345"
+        email:"",
+        password:""
     })
     const {email,password}= values
 
@@ -27,10 +28,12 @@ export default function Login() {
             <div className="container">
                 
                 <div className="row center">
-                    <form onSubmit={(event)=>handleSubmit(event)}>
-                    <div className="col l6 s12">
+                    <form onSubmit={(event)=>handleSubmit(event)} className="card center-align p-20" >
+                        <h2>Login</h2>
+                    <div className="row center-align p-t-10" >
                             
-                                <input 
+                              <div className="input-field col s12 l6 offset-l3">
+                              <input 
                                 id="email" 
                                 type="email" 
                                 className="validate" 
@@ -40,11 +43,12 @@ export default function Login() {
                                 />
                                 
                                 <label htmlFor="email">Your Email Address</label>
+                              </div>
                             
                     </div>
                 
                 <div className="row">
-                            <div className="input-field col s12">
+                            <div className="input-field col s12 l6 offset-l3">
                             
                                 <input 
                                 id="password" 
@@ -59,7 +63,10 @@ export default function Login() {
                             </div>
                             </div>
                             <div className="row">
-                                <button className="button" type="submit">Submit</button>
+                                <button className="button green white-text  hoverable" type="submit">Submit</button>
+                            </div>
+                            <div className="row">
+                                <Link to="/signup"> Sign up now!</Link>
                             </div>
                             </form>
                             </div>

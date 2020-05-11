@@ -73,6 +73,9 @@ z-index: -10 !important;
 .gradient1{
   background: linear-gradient(to right,#56ab2f,#24FE41);
 }
+.p-20{
+  padding:20px ;
+}
 .p-10{
   padding: 10px;
 }
