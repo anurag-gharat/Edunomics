@@ -1,16 +1,4 @@
-// export const getAllBlogs=()=>{
-//     var requestOptions = {
-//         method: 'GET',
-//         redirect: 'follow'
-//       };
-      
-//       return fetch("http://wenestor.rachitpahwa.codes/api/blog", requestOptions)
-//         .then(response => response.json())
-//         .then(result => {return result})
-//         .catch(error => console.log('error', error));
-// }
-
-
+//fetch call to get all the blogs
 export const getAllBlogs=()=>{
     return fetch("http://wenestor.rachitpahwa.codes/api/blog",{
         method:"GET"
@@ -23,7 +11,7 @@ export const getAllBlogs=()=>{
     })
 }
 
-
+//get request to get all categories
 export const getAllCategories=()=>{
     var requestOptions = {
         method: 'GET',
@@ -38,6 +26,8 @@ export const getAllCategories=()=>{
     })
 }
 
+
+//post request to create a blog
 export const createABlog=(blog)=>{
 
     var requestOptions = {

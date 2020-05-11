@@ -1,29 +1,25 @@
 import React, { useEffect } from 'react'
 import { getAllCategorizedBlogs } from '../API/BlogRequests'
 
-export default function CategorizedBlogs(props) {
+export default function CategorizedBlogs({match}) {
     
-    const category={
-        name:"",
-        _id:"5eb7570d2f9977c9382a4b9c"
-    }
     
-    const fetchAllBlogs=()=>{
-        getAllCategorizedBlogs(category._id)
+    
+    const fetchAllBlogs=(id)=>{
+        getAllCategorizedBlogs(id)
         .then()
     }
     
-    
     useEffect(()=>{
 
-    fetchAllBlogs()
+    fetchAllBlogs(match.params.categoryId)
 
     },[])
     
     
     return (
         <div className="container blogs">
-            
+            Here will be blogs according to the categories
         </div>
     )
 }

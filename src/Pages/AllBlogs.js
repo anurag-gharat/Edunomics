@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getAllBlogs } from '../API/BlogRequests'
 import Blog from '../Components/Blog'
+import { Link } from 'react-router-dom'
 export default function AllBlogs() {
     
     const [blogs,setBlogs]=useState([])
@@ -34,7 +35,11 @@ export default function AllBlogs() {
                 {blogs.map((item)=>{
                     return <h1>{item.title}</h1>
 })}
+            <div className="row">
+                <Link to="/blogs/5eb7570d2f9977c9382a4b9c" >go to category</Link>
             </div>
+            </div>
+
         )
     }
     
