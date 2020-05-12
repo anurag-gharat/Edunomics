@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 export default function Login() {
 
     const [values,setValues]=useState({
-        email:"test12@test.com",
-        password:"12345"
+        email:"",
+        password:""
     })
     const {email,password}= values
 
