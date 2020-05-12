@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import M from  'materialize-css/dist/js/materialize.min.js';
 import {getAllCategories, createABlog} from '../API/BlogRequests'
+import Heading from '../Components/Heading'
+
+
 export default function NewBlog() {
 
     const [values,setValues]=useState({
@@ -25,7 +28,14 @@ export default function NewBlog() {
             videos:[video_url1,video_url2]
         })
         createABlog({title,subtitle,blog_content,slide_url,categoryId,videos})
-        .then(data=>console.log("response",data))
+        .then(data=>{
+            if(data.success){
+                alert(data.msg)
+            }
+            else{
+                alert(data.msg)
+            }
+        })
 
     }
     
@@ -63,24 +73,25 @@ export default function NewBlog() {
     },[fetchCategories])
 
     return (
-        <div className="container p-t-100">
+        <div className="container p-t-100 ">
+            <Heading title="New Blog" />
             <form  onSubmit={(e)=>handleSubmit(e)}>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="title" type="text" className="validate" onChange={handleChange("title")} value={title}/>
+                    <input id="title" type="text" className="validate" onChange={handleChange("title")} value={title} required/>
                     <label htmlFor="title">Blog Title</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="subtitle" type="text" className="validate" onChange={handleChange("subtitle")}/>
+                    <input id="subtitle" type="text" className="validate" onChange={handleChange("subtitle")} required/>
                     <label htmlFor="subtitle">Blog subtitle</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <textarea id="blog_content" className="materialize-textarea"  onChange={handleChange("blog_content")}></textarea>
-                <label htmlFor="blog_content">Content</label>
+                    <textarea id="blog_content" className="materialize-textarea"  onChange={handleChange("blog_content")} required></textarea>
+                <label htmlFor="blog_content">Blog Content</label>
             </div>
             </div>
             
@@ -89,36 +100,36 @@ export default function NewBlog() {
                 <select 
                  onChange={handleChange("categoryId")}
                  value={categoryId}>
-                <option value="" disabled selected>Choose your option</option>
+                <option value="" disabled selected>Choose your Category</option>
                 {categories.map((category)=>{
                     return <option key={category._id} value={category._id
                     }>{category.name}</option>
                    
                 })}
             </select>
-            <label>Materialize Select</label>
+            <label>Select The Blog Category</label>
             </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="slide_url" type="text" className="validate" onChange={handleChange("slide_url")}/>
+                    <input id="slide_url" type="text" className="validate" onChange={handleChange("slide_url")} required/>
                     <label htmlFor="slide_url">Enter Slide Url</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                <input id="video_url1" type="text" className="validate" onChange={handleChange("video_url1")}/>
+                <input id="video_url1" type="text" className="validate" onChange={handleChange("video_url1")} required/>
                     <label htmlFor="video_url1">Enter Url for Video</label>
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                <input id="video_url2" type="text" className="validate" onChange={handleChange("video_url2")}/>
+                <input id="video_url2" type="text" className="validate" onChange={handleChange("video_url2")} required/>
                     <label htmlFor="video_url2">Enter Url for Video</label>
                 </div>
             </div>
-            <div className="row">
-                <button className="btn large"  type="submit">Submit</button>
+            <div className="row center">
+                <button className="button large green  white-text"  type="submit">Submit</button>
             </div>
             </form>
         </div>

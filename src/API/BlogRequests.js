@@ -41,7 +41,7 @@ export const createABlog=(blog)=>{
     };
 
 return fetch("http://wenestor.rachitpahwa.codes/api/blog", requestOptions)
-  .then(response => response.text())
+  .then(response => response.json())
   .then(result => {return result})
   .catch(error => console.log('error', error));
 }
