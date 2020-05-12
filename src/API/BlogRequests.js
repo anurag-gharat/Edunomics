@@ -54,7 +54,7 @@ export const getAllCategorizedBlogs=(id)=>{
       };
       
       return fetch(`http://wenestor.rachitpahwa.codes/api/blog/${id}`, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then(result => {return result})
         .catch(error => console.log('error', error));
 }
