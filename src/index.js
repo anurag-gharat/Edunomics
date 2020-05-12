@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './App.css';
-
 import App from './App';
-
-
-
+import TagManager from 'react-gtm-module'
 import * as serviceWorker from './serviceWorker';
+
+const tagManagerArgs = {
+  gtmId: 'UA-162843442-1'
+}
+TagManager.initialize(tagManagerArgs)
+
+
 
 ReactDOM.render(
   <React.StrictMode>
