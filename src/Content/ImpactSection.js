@@ -8,7 +8,7 @@ import ImpactCard from '../Components/ImpactCard'
 
 export default function ImpactSection() {
     return (
-        <section className="impactsecion section grey lighten-4" id="impact">
+        <section className="impactsecion section " id="impact">
         <Heading title="IMPACT OF EDUNOMICS ON ECONOMY" />
         <div className="container">
         <div className="row ">

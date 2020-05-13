@@ -9,8 +9,8 @@ export default function SemiBlock(props) {
                     {props.children}
                 </div>
                 <div className="col s12 l6 m6 p-t-100"  data-aos="fade-left">
-                    <h4>{props.title}</h4>
-                    <p className="grey-text">
+                    <h3>{props.title}</h3>
+                    <p className="">
                         {props.text}
                     </p>
                     <div className="row">

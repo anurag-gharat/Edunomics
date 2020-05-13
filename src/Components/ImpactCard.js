@@ -9,9 +9,9 @@ export default function ImpactCard(props) {
                     <div className="card-image center">
                     <h1>{props.children}</h1>
                     </div>
-                    <h6 className="card-title">{props.title}</h6>
+                    <h6 className="card-title"><b>{props.title}</b></h6>
                     <div className="card-content">
-                    <p className="grey-text lighten-1">
+                    <p className="mygrey-text  ">
                         {props.text}                                  
                     </p>    
                     </div> 

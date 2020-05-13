@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="container">
                     <img src={Logo} className="logo" />
                 </div>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center ">
                     <a target="_blank" href="https://www.facebook.com/edunomics2020/">
                     <FaFacebook className="socialicon   hoverable" />
                     </a>

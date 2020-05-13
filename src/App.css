@@ -2,10 +2,13 @@ body {
   margin: 0px;
   box-sizing: border-box;
   padding: 0px;
-  background:linear-gradient(to bottom,#fafafa,#FFFFFF);
+  background:linear-gradient(to bottom,#f7f7f7,#FFFFFF);
   font-family: 'Montserrat', sans-serif !important;
   scroll-behavior: smooth !important;
 }
+.mygrey-text{
+  color: #494949;
+} 
 .logo{
   height: 50px;
   margin:5px 10px ;
@@ -23,7 +26,6 @@ nav{
   padding: 0px 20px !important; 
   border: 2px solid black !important;
   margin-top: 0px !important;
- 
 }
 .button{
   border-radius: 25px;
@@ -71,7 +73,7 @@ footer>div>a{
 z-index: -10 !important;
 }
 .gradient1{
-  background: linear-gradient(to right,#56ab2f,#24FE41);
+  background: linear-gradient(to right,#8ae460,#24FE41);
 }
 .p-20{
   padding:20px ;
@@ -139,6 +141,9 @@ blockquote{
   padding: 0px 0px !important;
 }
 .socialicon{
+  margin: 0px;
+}
+footer>div>a{
   margin: 0px;
 }
 .button{
