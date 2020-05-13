@@ -8,7 +8,7 @@ export default function TechEdunomicsSection() {
     <section className="section">
         <div className="container">
             <Heading title="More from Edunomics!" />
-            <a href="http://tech.edunomics.in/"><img src={Tech} className="img-responsive" width="100%"  data-aos="fade-in"/></a>
+            <a target="_blank" href="http://tech.edunomics.in/"><img src={Tech} className="img-responsive" width="100%"  data-aos="fade-in"/></a>
           
             <div className="container center">
                 <h4>Edunomics Tech Solutions.</h4>

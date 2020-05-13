@@ -13,18 +13,18 @@ export default function Footer() {
                     <img src={Logo} className="logo" />
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Link to="https://www.facebook.com/edunomics2020/">
+                    <a target="_blank" href="https://www.facebook.com/edunomics2020/">
                     <FaFacebook className="socialicon   hoverable" />
-                    </Link>
-                    <Link to="https://www.instagram.com/edunomics2020/">
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/edunomics2020/">
                         <AiOutlineInstagram className="socialicon  hoverable"/>
-                    </Link>
-                    <Link to="https://twitter.com/Edunomics2">
+                    </a>
+                    <a target="_blank" href="https://twitter.com/Edunomics2">
                         <AiFillTwitterCircle className="socialicon  hoverable" />
-                    </Link>
-                    <Link to="https://www.linkedin.com/company/edunomics/">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/company/edunomics/">
                     <AiFillLinkedin className="socialicon  hoverable"/>
-                    </Link>
+                    </a>
                 </div>
                 <div className="d-flex justify-content-center reverse">
                     <Link className="border-left" to="#">TERMS OF USE</Link>
