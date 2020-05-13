@@ -107,7 +107,7 @@ blockquote{
   margin: 0px;
 }
 .justify-content-center{
-  justify-content: center;
+  justify-content: center !important;
 }
 .flex-col{
   flex-direction: column;
@@ -134,6 +134,12 @@ blockquote{
  .landingpagediv{
   padding:100px 20px !important;
   text-align: center;
+}
+.d-flex{
+  padding: 0px 0px !important;
+}
+.socialicon{
+  margin: 0px;
 }
 .button{
   border-radius: 25px;
