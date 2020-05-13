@@ -10,7 +10,7 @@ export default function InitiativesSection() {
 <section className="section" id="initiatives">
     <Heading title="CURRENT INITIATIVES" />
     <SemiBlock
-        text="Scouting 50 the aspiring minds, willing to achieve excellence.An initiative to provide world-class training to 50 talented students with serious aspirations to achieve their goal of success to work in challenging environment and grow fast"
+        text="Scouting 50 of the aspiring minds, willing to achieve excellence.An initiative to provide world-class training to 50 talented students with serious aspirations to achieve their goal of success to work in challenging environment and grow fast"
         isbutton1={true}
         isbutton2={true}
         button1text="Know More?"
@@ -25,7 +25,7 @@ export default function InitiativesSection() {
         />
     </SemiBlock>
     <SemiBlockReverse
-    text="Get help on improving your business scenario right from purchase to market in"
+    text="Get help on improving your business scenario right from purchase to Marketing."
     isbutton1={true}
     isbutton2={false}
     button1text="Wenestor"
@@ -41,7 +41,7 @@ export default function InitiativesSection() {
 
     <SemiBlock
         title="Lets Aspire You to Create A New World"
-        text="With Edunomics connect, you will be going to connected with people who aspire you to be best of yourself."
+        text="With Edunomics connect, you will be going to connected with people who aspire you to be the best of yourself."
  
     >
         

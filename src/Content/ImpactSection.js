@@ -27,7 +27,7 @@ export default function ImpactSection() {
 
             <ImpactCard 
                 title="Better Talent" 
-                text="Once the availability of Smart and sincere talent is ample, increase competitiveness in favour of industry too."    
+                text="Once the availability of Smart and sincere talent is ample, the increase in competition will be in favour of industry too ."    
             >
             <GiSupersonicArrow  className="light-green-text accent-3" />
             </ImpactCard>
@@ -57,7 +57,7 @@ export default function ImpactSection() {
             <ImpactCard 
 
             title="More Profits" 
-            text="When productivity is more and rejections are less, lead to more sales and profits."    
+            text="When productivity is more and rejections are less,it will lead to more sales and profits."    
             >
             <BsGraphUp className="light-green-text accent-3"  />
             </ImpactCard>

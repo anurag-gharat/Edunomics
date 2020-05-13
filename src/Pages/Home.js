@@ -29,7 +29,7 @@ export default function Home() {
                 <Heading title="ABOUT EDUNOMICS" />
                 <SemiBlock 
                 
-                text="We are a bootstrap startup with a vision to impact education and economics solving a complex problems with simple solutions.
+                text="We are a bootstrap startup with a vision to impact education and economics solving complex problems with simple solutions.
                 Edunomics combines tech expertise and business intelligence to catalyze change and deliver results. We are employing top talent to provide a uniquely matching solution for your unique problem." 
                 isbutton1={true}
                 button1text="Know More?"
