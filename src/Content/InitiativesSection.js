@@ -44,13 +44,15 @@ export default function InitiativesSection() {
         text="With Edunomics connect, you will be going to connected with people who aspire you to be the best of yourself."
  
     >
-        
-      <div className="video-container lower" style={{marginTop:"100px"}} >
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" className="m-t-10" allowFullScreen></iframe>
-      </div>
+        <div className="lower" style={{marginTop:120}} >
+        <div className="video-container ">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
+
     </SemiBlock>
 
-
+  
 
 </section>
     )
