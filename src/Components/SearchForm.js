@@ -10,8 +10,8 @@ export default function SearchForm() {
     const [redirect, setRedirect] = useState(false)
     const [search,setSearch]=useState("career")
     
-    const activeSearch="btn light-green accent-4 activebtn"
-    const inactiveSearch="btn light-green accent-4 " 
+    const activeSearch="btn blue  darken-4 "
+    const inactiveSearch="btn blue ligthten-2 " 
 
 
     const handleSubmit=(e)=>{
