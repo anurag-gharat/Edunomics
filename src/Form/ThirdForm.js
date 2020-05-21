@@ -12,6 +12,12 @@ export default function ThirdForm(props) {
             e.preventDefault();
             props.nextStep();
     };
+    const back = e => {
+        e.preventDefault();
+        props.prevStep();
+};
+
+   
 
     return (
         <div className="container lower">
@@ -83,7 +89,9 @@ export default function ThirdForm(props) {
 
 
                 <div className="col s12 center">
-                    <button type="submit" className="btn large light-green accent-4" onClick={conti}>Submit<i class="material-icons right">arrow_forward</i></button>
+                   <button type="button" className="btn large light-blue accent-4 left" onClick={back}>Back<i className="material-icons left">arrow_back</i></button>
+
+                    <button type="submit" className="btn large light-green accent-4 right" onClick={conti}>Submit<i class="material-icons right">arrow_forward</i></button>
                 </div>
 
 

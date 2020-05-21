@@ -35,6 +35,7 @@ export default class Userform extends Component {
                 return (
                     <FirstForm
                         nextStep={this.nextStep}
+                        prevStep={this.prevStep}
                         handleChange={this.handleChange}
                     />
 
@@ -43,6 +44,7 @@ export default class Userform extends Component {
                 return (
                     <SecondForm
                         nextStep={this.nextStep}
+                        prevStep={this.prevStep}
                         handleChange={this.handleChange}
                     />
     
@@ -51,6 +53,8 @@ export default class Userform extends Component {
                 return (
                     <ThirdForm
                         nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+
                         handleChange={this.handleChange}
                     />
     

@@ -29,7 +29,7 @@ export default function InitiativesSection() {
     isbutton1={true}
     isbutton2={false}
     button1text="Wenestor"
-    button1path="http://wenestor.herokuapp.com/"
+    button1path="https://wenestor.edunomics.in/"
     >
     <img 
         src={Wenester} 
