@@ -41,8 +41,8 @@ useEffect(()=>{
               <Route path="/knowmore" exact component={Knowmore}    />
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
+              {/* <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} /> */}
               <Route path="/allblogs" component={AllBlogs} />
               <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
