@@ -8,8 +8,37 @@ import Success from './Success'
 export default class Userform extends Component {
 
     state={
-        step:1
+        step:1,
+        full_name: "",
+        contact_no: "",
+        email: "",
+        university_name: "",
+        questions:{}
+        ,see_yourself_as: [],
+        Tech_you_know: [],
+        github_repo: ""
     }
+    
+//changes the values
+    handleChange=input=>e=>{
+        this.setState({
+            [input]:e.target.value
+        })
+        console.log(this.state)
+
+    }
+    handleArrays=async(name,array)=>{
+        this.setState({
+            [name]:array
+        })
+    }
+
+//handles the submit
+    handleSubmit=event=>{
+    event.preventDefault()
+    console.log(this.state)
+    }
+
 
 // Proceed to next step
   nextStep = () => {
@@ -19,7 +48,8 @@ export default class Userform extends Component {
     });
   };
 
-  // Go back to prev step
+
+// Go back to prev step
   prevStep = () => {
     const { step } = this.state;
     this.setState({
@@ -28,7 +58,11 @@ export default class Userform extends Component {
   };
 
     render() {
-        const { step } = this.state;
+
+         const {full_name,contact_no,email,university_name,step,github_repo,see_yourself_as,Tech_you_know}=this.state
+        // const {successful_on_a_team,learn_quickly,made_mistakes,disagree_with_someone,most_challenging_project,edunomics_mean,edunomics_vision}=this.state
+        
+        const values={full_name,contact_no,email,university_name,github_repo,Tech_you_know,see_yourself_as}
 
         switch(step){
             case 1:
@@ -37,6 +71,8 @@ export default class Userform extends Component {
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
+                        handleArrays={this.handleArrays}
+                        values={values}
                     />
 
                 )
@@ -46,6 +82,8 @@ export default class Userform extends Component {
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
+                        values={values}
+
                     />
     
             )
@@ -54,7 +92,8 @@ export default class Userform extends Component {
                     <ThirdForm
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
-
+                        values={values}
+                        handleSubmit={this.handleSubmit}
                         handleChange={this.handleChange}
                     />
     

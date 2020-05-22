@@ -91,7 +91,7 @@ export default function ThirdForm(props) {
                 <div className="col s12 center">
                    <button type="button" className="btn large light-blue accent-4 left" onClick={back}>Back<i className="material-icons left">arrow_back</i></button>
 
-                    <button type="submit" className="btn large light-green accent-4 right" onClick={conti}>Submit<i class="material-icons right">arrow_forward</i></button>
+                    <button type="submit" className="btn large light-green accent-4 right" onClick={(event)=>props.handleSubmit(event)}>Submit<i class="material-icons right">arrow_forward</i></button>
                 </div>
 
 

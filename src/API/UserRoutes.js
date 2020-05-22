@@ -31,3 +31,21 @@ var requestOptions = {
   .then(result => {return result})
   .catch(error => console.log('error', error));
 }
+
+
+
+export const applyNow=userDetails=>{
+  
+  var myHeaders = new Headers();
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: JSON.stringify(userDetails),
+    redirect: 'follow'
+  }
+  fetch("localhost:3000/api/core/careerApplicant", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
