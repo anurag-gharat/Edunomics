@@ -17,7 +17,7 @@ export default function OurAim() {
                     <ImpactCard
                     text="Job Opportunities at Edunomics or Network Companies"
                     >
-                    <img src={office} width="100%" height="200px" />
+                    <img src={office} width="100%" height="200px" alt="aim"/>
                     </ImpactCard>
                 
                     </div>
@@ -25,7 +25,7 @@ export default function OurAim() {
                     <ImpactCard
                     text="Real World Experience By working on live projects"
                     >
-                    <img src={projects} width="100%" height="200px"  />
+                    <img src={projects} width="100%" height="200px"  alt="aim"/>
                     </ImpactCard>
                 
                     </div>
@@ -33,7 +33,7 @@ export default function OurAim() {
                     <ImpactCard
                     text="Interaction with experts to get the basics done clear"
                     >
-                    <img src={experts} width="100%" height="200px" />
+                    <img src={experts} width="100%" height="200px" alt="aim"/>
 
                     </ImpactCard>
                 

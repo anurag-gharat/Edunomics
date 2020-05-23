@@ -1,6 +1,5 @@
-import useJquery from 'react-use-jquery'
 import React, { useState, useEffect } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import M from  'materialize-css/dist/js/materialize.min.js';
 
 

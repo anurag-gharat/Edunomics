@@ -7,7 +7,7 @@ import ImpactSection from '../Content/ImpactSection'
 import OpportunitySection from '../Content/OpportunitySection'
 import InitiativesSection from '../Content/InitiativesSection'
 import TechEdunomicsSection from '../Content/TechEdunomicsSection'
-import FaqsSection from '../Content/FaqsSection'
+// import FaqsSection from '../Content/FaqsSection'
 import SearchForm from '../Components/SearchForm'
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
 
                     </div>
                     <div className=" col l6 m12 s12 ">
-                        <img src={Heroimage} alt="Home page image" style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
+                        <img src={Heroimage} alt="Home page " style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
                     </div>
                 </div>
             </section>
@@ -35,7 +35,7 @@ export default function Home() {
                 button1text="Know More?"
                 button1path="/knowmore"
                 >
-                    <img src={About} className="heroimage" />
+                    <img src={About} className="heroimage"  alt="hero"/>
                 </SemiBlock>
                 
             </section>

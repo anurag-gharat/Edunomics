@@ -7,7 +7,7 @@ export default class Error extends Component {
             <div className="section m-t-100">
                 <section className="section center">
                     <div className="container">
-                        <img src={error} width="100%" className="img-responsive"></img>
+                        <img src={error} width="100%" className="img-responsive" alt="404 Page not found"></img>
                         <h3>Sorry the requested page does not exist!</h3>
                         <Link to="/"><button className="btn light-green accent-4 pulse">Go back</button></Link>
                     </div>

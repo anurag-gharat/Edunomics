@@ -10,21 +10,21 @@ export default class Userform extends Component {
 
     state={
         step:1,
-        full_name: "Anurag Gharat",
-        contact_no: "7745050822",
-        email: "anuraggharat55",
-        university_name: "raiasnjdnas",
-        questions:{successful_on_a_team: "There was this time when i was successful in a team",
-        learn_quickly: "Lorem spsum",
-        made_mistakes: "Lorem spsum",
-        disagree_with_someone: "Lorem spsum",
-        most_challenging_project: "Lorem spsum",
-        edunomics_mean: "Lorem spsum",
-        edunomics_vision: "Lorem spsum"}
-        ,see_yourself_as: [{name:"successful person"}],
+        full_name: "",
+        contact_no: "",
+        email: "",
+        university_name: "",
+        questions:{successful_on_a_team: "",
+        learn_quickly: "",
+        made_mistakes: "",
+        disagree_with_someone: "",
+        most_challenging_project: "",
+        edunomics_mean: "",
+        edunomics_vision: " "}
+        ,see_yourself_as: [{name:" "}],
         Tech_you_know: [ {
-            name: "react",
-            "proficiency": 5
+            name: "",
+            proficiency:5 
         }],
         github_repo: "https://sdjhdksjfhjfdh.com"
     }

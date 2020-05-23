@@ -21,6 +21,7 @@ export default function InitiativesSection() {
         <img 
         src={Education} 
         className="heroimage" 
+        alt="Intiatives"
 
         />
     </SemiBlock>
@@ -34,7 +35,7 @@ export default function InitiativesSection() {
     <img 
         src={Wenester} 
         className="heroimage" 
-
+alt="Initiatives 2"
         />
 
     </SemiBlockReverse>
@@ -46,7 +47,7 @@ export default function InitiativesSection() {
     >
         <div className="lower" style={{marginTop:120}} >
         <div className="video-container ">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
         </div>
 

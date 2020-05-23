@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react'
-import M from  'materialize-css/dist/js/materialize.min.js';
+import React from 'react'
+
 
 
 export default function Collapsible(props) {

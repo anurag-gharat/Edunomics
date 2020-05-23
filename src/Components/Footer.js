@@ -10,19 +10,19 @@ export default function Footer() {
         <div>
             <footer className="d-flex flex-col center grey lighten-3 white-text">
                 <div className="container">
-                    <img src={Logo} className="logo" />
+                    <img src={Logo} className="logo"  alt="footerlogo"/>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <a target="_blank" href="https://www.facebook.com/edunomics2020/">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.facebook.com/edunomics2020/">
                     <FaFacebook className="socialicon   hoverable" />
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/edunomics2020/">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.instagram.com/edunomics2020/">
                         <AiOutlineInstagram className="socialicon  hoverable"/>
                     </a>
-                    <a target="_blank" href="https://twitter.com/Edunomics2">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://twitter.com/Edunomics2">
                         <AiFillTwitterCircle className="socialicon  hoverable" />
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/company/edunomics/">
+                    <a target="_blank" rel="noopener noreferrer"  href="https://www.linkedin.com/company/edunomics/">
                     <AiFillLinkedin className="socialicon  hoverable"/>
                     </a>
                 </div>
