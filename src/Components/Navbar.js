@@ -26,7 +26,7 @@ export default function Navbar() {
                 <li><a  className="black-text darken-4" href="#impact">Impact</a></li>
                 <li><a  className="black-text darken-4" href="#opportunities">Opportunites</a></li>
                 <li><a  className="black-text darken-4" href="#initiatives">Initiatives</a></li>
-                <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li>
+                {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
                 {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
                 <li><Link to="/login" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Try our Alpha</Link></li>
             </ul>
@@ -38,7 +38,7 @@ export default function Navbar() {
         <li><a  className="black-text darken-4" href="#impact">Impact</a></li>
                 <li><a  className="black-text darken-4" href="#opportunities">Opportunites</a></li>
                 <li><a  className="black-text darken-4" href="#initiatives">Initiatives</a></li>
-                <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li>
+                {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
                 {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
                 <li><Link to="/login" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Try our Alpha</Link></li>
 

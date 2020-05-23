@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="container">
                     <img src={Logo} className="logo" />
                 </div>
-                <div className="d-flex justify-content-center ">
+                <div className="d-flex justify-content-center">
                     <a target="_blank" href="https://www.facebook.com/edunomics2020/">
                     <FaFacebook className="socialicon   hoverable" />
                     </a>
@@ -29,10 +29,9 @@ export default function Footer() {
                 <div className="d-flex justify-content-center reverse">
                     <Link className="border-left" to="#">TERMS OF USE</Link>
                     <Link  className="border-left" to="#">COOKIE POLICY</Link>
-                    <Link className="border-left" to="#">JOIN US</Link>
-                    <Link className="border-left" to="#">TECH</Link>
-                    <Link className="border-left-0" to="#">PRIVACY POLICY</Link>
-
+                    <Link className="border-left" to="http://tech.edunomics.in/" target="_blank">TECH</Link>
+                    <Link className="border-left" to="#">PRIVACY POLICY</Link>
+                    <Link className="border-left-0" to="#">FAQ's</Link>
                 </div>
                 <div className="footer-copyright green darken-4 white-text p-10 m-t-10" >
                     <div className="container">Copyright 2020 &copy; | All rights reserved. </div>

@@ -5,7 +5,7 @@ import { GiBookshelf } from 'react-icons/gi'
 
 export default function ImpactCard(props) {
     return (
-                <div className="center " data-aos="fade-in">
+                <div className="left " data-aos="fade-in">
                     <div className="card-image center">
                     <h1>{props.children}</h1>
                     </div>

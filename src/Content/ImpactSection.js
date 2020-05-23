@@ -10,7 +10,7 @@ export default function ImpactSection() {
     return (
         <section className="impactsecion section " id="impact">
         <Heading title="IMPACT OF EDUNOMICS ON ECONOMY" />
-        <div className="container">
+        <div className="container center">
         <div className="row ">
             <div className="col s6 l3 ">
 
@@ -52,8 +52,8 @@ export default function ImpactSection() {
             </ImpactCard>
             </div>
             </div>
-            <div className="row ">
-            <div className=" col s6 l4 ">
+            <div className="row " style={{paddingLeft:"9%",paddingRight:"9%"}}>
+            <div className=" col s6 l4">
             <ImpactCard 
 
             title="More Profits" 
@@ -62,7 +62,7 @@ export default function ImpactSection() {
             <BsGraphUp className="light-green-text accent-3"  />
             </ImpactCard>
             </div>
-            <div className="col s6 l4 center">
+            <div className="col s6 l4">
             <ImpactCard 
             title="Need Capacity Enhancement" 
             text="Invite opportunity for Existing & New industry to come up with new facilities."    

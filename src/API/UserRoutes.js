@@ -38,14 +38,16 @@ export const applyNow=userDetails=>{
   
   var myHeaders = new Headers();
 
+  console.log(userDetails)
   var requestOptions = {
     method: 'POST',
     headers: myHeaders,
     body: JSON.stringify(userDetails),
     redirect: 'follow'
-  }
-  fetch("localhost:3000/api/core/careerApplicant", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  };
+  
+  fetch("https://edunomics.herokuapp.com/api/core/careerApplicant", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log(error))
 }

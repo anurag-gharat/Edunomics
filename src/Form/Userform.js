@@ -3,20 +3,30 @@ import FirstForm from './FirstForm'
 import SecondForm from './SecondForm'
 import ThirdForm from './ThirdForm'
 import Success from './Success'
+import {applyNow} from '../API/UserRoutes'
 
 
 export default class Userform extends Component {
 
     state={
         step:1,
-        full_name: "",
-        contact_no: "",
-        email: "",
-        university_name: "",
-        questions:{}
-        ,see_yourself_as: [],
-        Tech_you_know: [],
-        github_repo: ""
+        full_name: "Anurag Gharat",
+        contact_no: "7745050822",
+        email: "anuraggharat55",
+        university_name: "raiasnjdnas",
+        questions:{successful_on_a_team: "There was this time when i was successful in a team",
+        learn_quickly: "Lorem spsum",
+        made_mistakes: "Lorem spsum",
+        disagree_with_someone: "Lorem spsum",
+        most_challenging_project: "Lorem spsum",
+        edunomics_mean: "Lorem spsum",
+        edunomics_vision: "Lorem spsum"}
+        ,see_yourself_as: [{name:"successful person"}],
+        Tech_you_know: [ {
+            name: "react",
+            "proficiency": 5
+        }],
+        github_repo: "https://sdjhdksjfhjfdh.com"
     }
     
 //changes the values
@@ -37,6 +47,9 @@ export default class Userform extends Component {
     handleSubmit=event=>{
     event.preventDefault()
     console.log(this.state)
+    applyNow(this.state.full_name,this.state.email,this.state.contact_no,this.state.university_name,this.state.questions,this.state.see_yourself_as,this.state.Tech_you_know,this.state.github_repo)
+        .then(response=>console.log(response))
+        .catch(error=>console.log(error))
     }
 
 
