@@ -1,25 +1,71 @@
 import React, { useEffect, useState } from 'react'
 
-export default function FirstForm({handleChange,values,nextStep,handleArrays}) {
+export default function FirstForm({values,nextStep,handleArrays}) {
 
     const conti =async(e)  => {
         e.preventDefault();
-        await resolveCheckInput()
-        await resolveSliderInput()
-        await resolveQuestions()
-
-        nextStep()
+        await setform({...form,questions:[question1,question2,question3,question4,question5,question6,question7]})
+        console.log(form)
+        // nextStep()
+        
     };
-    const [questions,setQuestions]=useState({
-        successful_on_a_team: "",
-        learn_quickly: "",
-        made_mistakes: "",
-        disagree_with_someone: "",
-        most_challenging_project: "",
-        edunomics_mean: "",
-        edunomics_vision: ""
+   
+    const [form,setform]=useState({
+            full_name: "",
+            contact_no: "",
+            email: "",
+            university_name: "",
+            questions:[],
+            see_yourself_as: [],
+            Tech_you_know: [],
+            github_repo: ""
     })
-    
+    const {full_name,email,contact_no,university_name,github_repo}=form
+    const[question1,setQuestion1]=useState({
+        question: "successful_on_a_team",
+        answer: ""
+    },)
+    const[question2,setQuestion2]=useState({
+        question: "Tell us about a time when you had to learn something quickly",
+        answer: ""
+    })
+    const[question3,setQuestion3]=useState(
+        {
+            question: "Tell us about a time when you failed or made mistake ? Learnings post that",
+            answer: ""
+        })
+    const[question4,setQuestion4]=useState({
+        question: "Tell us about a time you need to disagree with someone",
+        answer: ""
+    })
+    const[question5,setQuestion5]=useState({
+        question: "Describe your one of the most challenging project",
+        answer: ""
+    })
+    const[question6,setQuestion6]=useState({
+        question: "What do you mean by the word edunomics ? How this startup can transform India",
+        answer: ""
+    })
+    const[question7,setQuestion7]=useState({
+        question: "Sum Your experience, how this will take the vision of edunomics ahead",
+        answer: ""
+    })
+
+
+
+    //all functions
+
+
+    const handleChange=input=>e=>{
+         setform({...form,
+            [input]:e.target.value
+        })
+        
+
+    }
+
+
+
     const resolveCheckInput=async()=>{
         await setArr([...arr,check])
         handleArrays("see_yourself_as",arr)
@@ -29,12 +75,12 @@ export default function FirstForm({handleChange,values,nextStep,handleArrays}) {
         await setSArr([...sarr,slider])
         handleArrays("Tech_you_know",sarr)
     }
-    const resolveQuestions=async()=>{
-        // setQuestions({...questions,
-        //     [name]:event.target.value
-        // })
-        handleArrays("questions",questions)
-    }
+    // const resolveQuestions=async()=>{
+    //     // setQuestions({...questions,
+    //     //     [name]:event.target.value
+    //     // })
+    //     handleArrays("questions",questions)
+    // }
 
 
     const [check,setCheck]=useState({
@@ -74,13 +120,13 @@ export default function FirstForm({handleChange,values,nextStep,handleArrays}) {
             })
         }    
     }
+    
+    // const handleQuestions=(name)=>(event)=>{
+    //     setQuestions({...questions,
+    //         [name]:event.target.value
+    //     })
 
-    const handleQuestions=(name)=>(event)=>{
-        setQuestions({...questions,
-            [name]:event.target.value
-        })
-
-    }
+    // }
     return (
         <div className="container lower">
                 <form>
@@ -90,64 +136,64 @@ export default function FirstForm({handleChange,values,nextStep,handleArrays}) {
                 
                 <div className="input-field col s6">
                 <i className="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" className="validate" value={values.full_name} onChange={handleChange("full_name")} />
+                <input id="icon_prefix" type="text" className="validate" value={full_name} onChange={handleChange("full_name")} />
                 <label htmlFor="icon_prefix">Full Name</label>
                 </div>
                 
                 <div className="input-field col s6">
                 <i className="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" className="validate" value={values.contact_no}  onChange={handleChange("contact_no")}/>
+                <input id="icon_telephone" type="tel" className="validate" value={contact_no}  onChange={handleChange("contact_no")}/>
                 <label htmlFor="icon_telephone">Telephone</label>
                 </div>
 
                 <div className="input-field col s6">
                 <i className="material-icons prefix">mail</i>
-                <input id="icon_prefix" type="email" className="validate" value={values.email} onChange={handleChange("email")} />
+                <input id="icon_prefix" type="email" className="validate" value={email} onChange={handleChange("email")} />
                 <label htmlFor="icon_prefix">Email</label>
                 </div>
                 
                 <div className="input-field col s6">
                 <i className="material-icons prefix">school</i>
-                <input id="icon_telephone" type="tel" className="validate"  value={values.university_name}  onChange={handleChange('university_name')}/>
+                <input id="icon_telephone" type="tel" className="validate"    onChange={handleChange('university_name')}/>
                 <label htmlFor="icon_telephone" >University Name</label>
                 </div>
      
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea" value={questions.successful_on_a_team} onChange={handleQuestions("successful_on_a_team")}></textarea>
+                <textarea id="textarea1" className="materialize-textarea" value={question1.answer} onChange={(e)=>setQuestion1({...question1,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Tell us about a time when you were successful on a team ?</label>
                 </div>
 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea"  value={questions.learn_quickly} onChange={handleQuestions("learn_quickly")}></textarea>
+                <textarea id="textarea1" className="materialize-textarea"  value={question2.answer} onChange={(e)=>setQuestion2({...question2,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Tell us about a time when you had to learn something quickly ?</label>
                 </div>
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea" value={questions.made_mistakes} onChange={handleQuestions("made_mistakes")}></textarea>
+                <textarea id="textarea1" className="materialize-textarea" value={question3.answer} onChange={(e)=>setQuestion3({...question3,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Tell us about a time when you failed or made mistake ? Learnings post that</label>
                 </div>
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea"  value={questions.disagree_with_someone} onChange={handleQuestions("disagree_with_someone")}></textarea>
+                <textarea id="textarea1" className="materialize-textarea"  value={question4.answer} onChange={(e)=>setQuestion4({...question4,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Tell us about a time you need to disagree with someone ?</label>
                 </div>
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea"  value={questions.most_challenging_project} onChange={handleQuestions("most_challenging_project")}></textarea>
+                <textarea id="textarea1" className="materialize-textarea"  value={question5.answer} onChange={(e)=>setQuestion5({...question5,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Describe your one of the most challenging project ?</label>
                 </div>
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea"   value={questions.edunomics_mean} onChange={handleQuestions("edunomics_mean")} ></textarea>
+                <textarea id="textarea1" className="materialize-textarea"   value={question6.answer} onChange={(e)=>setQuestion6({...question6,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">What do you mean by the word edunomics ? How this startup can transform India ?</label>
                 </div>
                 
                 <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea"  value={questions.edunomics_vision} onChange={handleQuestions("edunomics_vision")} ></textarea>
+                <textarea id="textarea1" className="materialize-textarea"  value={question7.answer} onChange={(e)=>setQuestion7({...question7,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Sum Your experience, how this will take the vision of edunomics ahead ?</label>
                 </div>
-                
+  {/*               
                 <div className="input-field col s12">
                     <h6>How you see yourself as ?</h6>
                     <p>
@@ -262,12 +308,12 @@ export default function FirstForm({handleChange,values,nextStep,handleArrays}) {
                 <i className="material-icons prefix">code</i>
                 <input id="icon_prefix" type="email" className="validate" value={values.github_repo} onChange={handleChange("github_repo")} />
                 <label htmlFor="icon_prefix">Your github profile link</label>
-                </div>
+                </div>*/}
      
                 <div className="col s12 center">
                     <button type="submit" className="btn large light-green accent-4" onClick={conti}>Next<i className="material-icons right">arrow_forward</i></button>
                 </div>
-
+ 
                 </div>
 
 

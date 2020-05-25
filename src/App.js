@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home'
-// import Application from './Pages/Application'
+import Application from './Pages/Application'
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import Knowmore from './Pages/Knowmore';
@@ -39,7 +39,7 @@ useEffect(()=>{
           <Switch>
               <Route path="/" exact component={Home}    />
               <Route path="/knowmore" exact component={Knowmore}    />
-              {/* <Route path="/applynow" component={Application}    /> */}
+              <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
               {/* <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} /> */}
