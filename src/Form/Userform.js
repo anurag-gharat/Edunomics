@@ -14,30 +14,7 @@ export default function Userform() {
     
     const [data,setData]=useState({
         form1:{},
-        form2: {
-            questions: [
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: ""
-                },
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: ""
-                },
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: ""
-                },
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: ""
-                },
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: " "
-                }
-            ]
-        },
+        form2: {},
         form3: {
             motivationToFullTime: [
                 {
@@ -100,12 +77,9 @@ export default function Userform() {
 
 
 // Proceed to next step
-  const nextStep = () => {
-    
-    setStep({
-      step: step + 1
-    });
-  };
+  const nextStep = (step) => {
+   setStep(step+1) 
+  }
 
 
 // Go back to prev step
@@ -126,7 +100,7 @@ export default function Userform() {
                         nextStep={nextStep}
                         prevStep={prevStep}
                         handleNext={handleNext}
-                    
+                        step={step}
                         handleArrays={handleArrays}
                         values={form1}
                     />
@@ -140,6 +114,7 @@ export default function Userform() {
                         handleArrays={handleArrays}
                         handleNext={handleNext}                     
                         values={form2}
+                        step={step}
 
                     />
     

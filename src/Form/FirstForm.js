@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-export default function FirstForm({values,nextStep,handleArrays}) {
+export default function FirstForm({values,nextStep,step}) {
 
     const conti =async(e)  => {
         e.preventDefault();
-        await setform({...form,questions:[question1,question2,question3,question4,question5,question6,question7]})
-        console.log(form)
-        console.log(person)
-        // nextStep()
+        await setform({...form,questions:[question1,question2,question3,question4,question5,question6,question7],see_yourself_as:person,Tech_you_know:skills})
+        nextStep(step)
         
     };
    
@@ -55,6 +53,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
     })
 
     const [person,setPerson]=useState([])
+    const [skills,setSkills]=useState([])
 
 
 
@@ -76,54 +75,18 @@ export default function FirstForm({values,nextStep,handleArrays}) {
             console.log(person)
                       
         }
-        else{
-            setCheck({
-                name:""
-            })
-        }    
+            
     }
 
 
 
 
-    const resolveCheckInput=async()=>{
-        await setArr([...arr,check])
-        handleArrays("see_yourself_as",arr)
-       
-    }
-    const resolveSliderInput=async()=>{
-        await setSArr([...sarr,slider])
-        handleArrays("Tech_you_know",sarr)
-    }
-    // const resolveQuestions=async()=>{
-    //     // setQuestions({...questions,
-    //     //     [name]:event.target.value
-    //     // })
-    //     handleArrays("questions",questions)
-    // }
-
-
-    const [check,setCheck]=useState({
-        name:""
-    })
-    const [slider,setSlider]=useState({
-        name:"",
-        proficiency:1
-    })
-    const [arr,setArr]=useState([])
-    const [sarr,setSArr]=useState([])
-
-    const setTheArray=()=>{
-        setArr([...arr,check])
-    }
-
-    const sliderChanged=(name)=>(e)=>{
-        setSlider({
-            name:name,
-            proficiency:e.target.value
-        })
-        setSArr([...sarr,slider])
-        console.log(slider)
+   
+ 
+    const sliderChanged=(input)=>async(e)=>{
+        const val={name:input,proficiency:e.target.value}
+        await setSkills([...skills,val])
+        console.log(val)
     }
 
   
@@ -257,7 +220,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
                 
                 </div>
 
- {/*  
+  
                 <div className="col s12">
                 <h4>Technologies you know:</h4>
                 </div>
@@ -265,57 +228,57 @@ export default function FirstForm({values,nextStep,handleArrays}) {
                 <div className="col s12">
                 <h6>React JS</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("React JS")} />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="1" max="5" name="React JS" onChange={sliderChanged("React JS")} />
                 </p>
  
                 </div>
                 <div className="col s12">
                 <h6>Angular JS</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("Angular JS")} />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="0" max="5" onChange={sliderChanged("Angular JS")} />
                 </p>
  
                 </div>
                 <div className="col s12">
                 <h6>Python</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("Python")}  />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="0" max="5" onChange={sliderChanged("Python")}  />
                 </p>
  
                 </div>
                 <div className="col s12">
                 <h6>Java</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("Java")}  />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="0" max="5" onChange={sliderChanged("Java")}  />
                 </p>
  
                 </div>
                 <div className="col s12">
                 <h6>Node JS</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("Node JS")}  />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="0" max="5" onChange={sliderChanged("Node JS")}  />
                 </p>
  
                 </div>
                 <div className="col s12">
                 <h6>Swift</h6>
                 <p className="range-field">
-                    <span className="left">1</span><span className="right">5</span>
-                    <input type="range" id="test5" min="1" max="5" onChange={sliderChanged("Swift")}  />
+                    <span className="left">0</span><span className="right">5</span>
+                    <input type="range" id="test5" min="0" max="5"  onChange={sliderChanged("Swift")}  />
                 </p>
  
                 </div>
 
                 <div className="input-field col s12">
                 <i className="material-icons prefix">code</i>
-                <input id="icon_prefix" type="email" className="validate" value={values.github_repo} onChange={handleChange("github_repo")} />
+                <input id="icon_prefix" type="email" className="validate" value={github_repo} onChange={handleChange("github_repo")} />
                 <label htmlFor="icon_prefix">Your github profile link</label>
-                </div>*/}
+                </div>
      
                 <div className="col s12 center">
                     <button type="submit" className="btn large light-green accent-4" onClick={conti}>Next<i className="material-icons right">arrow_forward</i></button>
