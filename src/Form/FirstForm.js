@@ -6,6 +6,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
         e.preventDefault();
         await setform({...form,questions:[question1,question2,question3,question4,question5,question6,question7]})
         console.log(form)
+        console.log(person)
         // nextStep()
         
     };
@@ -20,7 +21,9 @@ export default function FirstForm({values,nextStep,handleArrays}) {
             Tech_you_know: [],
             github_repo: ""
     })
+
     const {full_name,email,contact_no,university_name,github_repo}=form
+    
     const[question1,setQuestion1]=useState({
         question: "successful_on_a_team",
         answer: ""
@@ -51,18 +54,35 @@ export default function FirstForm({values,nextStep,handleArrays}) {
         answer: ""
     })
 
+    const [person,setPerson]=useState([])
+
 
 
     //all functions
 
-
+    //to change text fields
     const handleChange=input=>e=>{
          setform({...form,
             [input]:e.target.value
         })
-        
-
     }
+
+    //to change checkbox
+    const checkboxChanged=(e)=>{
+        if(e.target.checked){
+            const val=e.target.value
+            const holder ={name:val}
+            setPerson([...person,holder])
+            console.log(person)
+                      
+        }
+        else{
+            setCheck({
+                name:""
+            })
+        }    
+    }
+
 
 
 
@@ -106,20 +126,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
         console.log(slider)
     }
 
-    const checkboxChanged=(e)=>{
-        // console.log(e.target.checked)
-        if(e.target.checked){
-            setCheck({
-                name:e.target.value
-            })
-            setTheArray()           
-        }
-        else{
-            setCheck({
-                name:""
-            })
-        }    
-    }
+  
     
     // const handleQuestions=(name)=>(event)=>{
     //     setQuestions({...questions,
@@ -193,7 +200,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
                 <textarea id="textarea1" className="materialize-textarea"  value={question7.answer} onChange={(e)=>setQuestion7({...question7,answer:e.target.value})}></textarea>
                 <label htmlFor="textarea1">Sum Your experience, how this will take the vision of edunomics ahead ?</label>
                 </div>
-  {/*               
+              
                 <div className="input-field col s12">
                     <h6>How you see yourself as ?</h6>
                     <p>
@@ -250,7 +257,7 @@ export default function FirstForm({values,nextStep,handleArrays}) {
                 
                 </div>
 
-
+ {/*  
                 <div className="col s12">
                 <h4>Technologies you know:</h4>
                 </div>
