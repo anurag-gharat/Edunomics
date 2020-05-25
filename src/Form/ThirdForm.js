@@ -40,7 +40,9 @@ export default function ThirdForm(props) {
    const ontestSubmit=async(e)=>{
        e.preventDefault()
        setForm({...form,questions:[question1,question2]})
-        console.log(form)
+       props.handleForm3(form)
+       props.handleSubmit()
+
    }
 
     return (

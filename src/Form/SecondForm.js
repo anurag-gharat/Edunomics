@@ -5,7 +5,11 @@ import M from  'materialize-css/dist/js/materialize.min.js';
 
 export default function SecondForm(props) {
     
-
+    const conti =async e => {
+        e.preventDefault();
+        await setForm({question1,question2,question3,question4,question5})
+        await props.handleForm2(form)  
+};
 
     const [form,setForm]=useState({
         questions:[],
@@ -37,12 +41,7 @@ export default function SecondForm(props) {
           M.FormSelect.init(select, {});
         },[])
     
-    const conti =async e => {
-            e.preventDefault();
-            await setForm({question1,question2,question3,question4,question5})
-            await console.log(form)  
-            await props.nextStep(props.step)          
-    };
+    
     const back = e => {
         e.preventDefault();
         props.prevStep(props.step);

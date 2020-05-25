@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import FirstForm from './FirstForm'
 import SecondForm from './SecondForm'
 import ThirdForm from './ThirdForm'
@@ -15,40 +15,34 @@ export default function Userform() {
     const [data,setData]=useState({
         form1:{},
         form2: {},
-        form3: {
-            motivationToFullTime: [
-                {
-                    reasons: "Take a high growth"
-                }
-            ],
-            questions: [
-                {
-                    question: "Sum Your experience, how this will take the vision of edunomics ahead",
-                    answer: ""
-                }
-            ]
-        }
+        form3: {}
     })
     const {form1,form2,form3}=data
 
-
-    const handleForm1=(item)=>{
+    
+    const handleForm1=async(item)=>{
+        console.log(item)
+        const test={ha:"hall"}
         setData({
-            form1:item,
-            ...data
+            form1: test, ...data
         })
+        console.log(data)
     }
-    const handleForm2=(item)=>{
-        setData({
+    const handleForm2=async(item)=>{
+        await setData({
+            ...data,
             form2:item,
-            ...data
+            
         })
+        nextStep(step)
     }
-    const handleForm3=(item)=>{
-        setData({
-            form3:item,
-            ...data
+    const handleForm3=async(item)=>{
+        await setData({
+            ...data,
+            form3:item
+            
         })
+
     }
     const handleNext=input=>recievedData=>{
         setData({
@@ -56,28 +50,15 @@ export default function Userform() {
         })
     }
     
-//changes the values
-    const handleChange=input=>e=>{
-        setData({
-            [input]:e.target.value
-        })
-        
-
-    }
-    const handleArrays=async(name,array)=>{
-        setData({
-            [name]:array
-        })
-    }
-
 //handles the submit
-    const handleSubmit=event=>{
-    event.preventDefault()
-    }
+    const handleSubmit=()=>{
+    console.log(data)    
+}
 
 
 // Proceed to next step
   const nextStep = (step) => {
+    console.log(data)
    setStep(step+1) 
   }
 
@@ -89,8 +70,10 @@ export default function Userform() {
       step: step - 1
     });
   };
-
-    
+useEffect(() => {
+    console.log(data)
+}, [data])
+  
 
        
         switch(step){
@@ -101,7 +84,7 @@ export default function Userform() {
                         prevStep={prevStep}
                         handleNext={handleNext}
                         step={step}
-                        handleArrays={handleArrays}
+                        handleForm1={handleForm1}
                         values={form1}
                     />
 
@@ -111,7 +94,7 @@ export default function Userform() {
                     <SecondForm
                         nextStep={nextStep}
                         prevStep={prevStep}
-                        handleArrays={handleArrays}
+                        handleForm2={handleForm2}
                         handleNext={handleNext}                     
                         values={form2}
                         step={step}
@@ -127,6 +110,7 @@ export default function Userform() {
                         handleNext={handleNext}
                         handleSubmit={handleSubmit}
                         values={form3}
+                        handleForm3={handleForm3}
                     />
     
             )

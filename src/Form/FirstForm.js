@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-export default function FirstForm({values,nextStep,step}) {
+export default function FirstForm({values,nextStep,step,handleForm1}) {
 
     const conti =async(e)  => {
         e.preventDefault();
         await setform({...form,questions:[question1,question2,question3,question4,question5,question6,question7],see_yourself_as:person,Tech_you_know:skills})
-        nextStep(step)
-        
+        await  handleForm1(form)    
     };
    
     const [form,setform]=useState({
@@ -70,10 +69,8 @@ export default function FirstForm({values,nextStep,step}) {
     const checkboxChanged=(e)=>{
         if(e.target.checked){
             const val=e.target.value
-            const holder ={name:val}
-            setPerson([...person,holder])
-            console.log(person)
-                      
+            setPerson([...person,val])
+            console.log(person)                
         }
             
     }
@@ -124,7 +121,7 @@ export default function FirstForm({values,nextStep,step}) {
                 
                 <div className="input-field col s6">
                 <i className="material-icons prefix">school</i>
-                <input id="icon_telephone" type="tel" className="validate"    onChange={handleChange('university_name')}/>
+                <input id="icon_telephone" type="tel" className="validate" value={university_name}   onChange={handleChange('university_name')}/>
                 <label htmlFor="icon_telephone" >University Name</label>
                 </div>
      
