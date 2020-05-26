@@ -1,117 +1,87 @@
 import React,{useEffect, useState} from 'react'
-import M from  'materialize-css/dist/js/materialize.min.js';
 
-export default function ThirdForm(props) {
+export default function ThirdForm({form3,nextStep,step,prevStep,handleForm3}) {
+    const ontestSubmit=async(e)=>{
+        e.preventDefault()
+        const newForm =await  { ...form,motivationToFullTime:person};
+        setform(newForm);
+        handleForm3(newForm)  
+    }
 
+    const[form,setform]=useState(form3)
 
-    const[form,setForm]=useState({
-        motivationToFullTime:[],
-        questions:[]
-    })
-    const [question1,setQuestion1]=useState({
-        name:"Have you ever made plans with your friends for starting up something ? What is it ? Why you haven't pursued it ?",
-        answer:""
-    })
-    const [question2,setQuestion2]=useState({
-        name:'Add a youtube video link of your introduction (max. 90 seconds ) ',
-        answer:""
-    })
+    const motivation = [
+        "Take a high growth",
+        "Looking for challenges",
+        'Passionate',
+        "Wish to work in dynamic environment",
+        "Learning",
+        "To be a part of decision making"
+      ];
 
-    const {questions,motivationToFullTime}=form
-    useEffect(()=>{
-        let date = document.querySelector('.datepicker');
-          M.Datepicker.init(date, {});
-        },[])
-    const conti = e => {
-            e.preventDefault();
-            props.nextStep();
-    };
     const back = e => {
         e.preventDefault();
-        props.prevStep();
+        prevStep(step);
 };
-    const handleCheckChange=(e)=>{
-        if(e.target.checked){
-            const answer=e.target.value
-            setForm({...form,motivationToFullTime:[...motivationToFullTime,answer]})
-        }
-        console.log(form)
-    }
-   const ontestSubmit=async(e)=>{
-       e.preventDefault()
-       setForm({...form,questions:[question1,question2]})
-       props.handleForm3(form)
-       props.handleSubmit()
 
-   }
+    const handleQuestionChange = (question, answer) => {
+        setform({
+        ...form,
+        questions: form.questions.map((questionObj) =>
+        questionObj.question === question ? { question, answer } : questionObj
+      ),
+    });
+  };
+
+
+
+  const checkboxChanged = (e) => {
+    if (e.target.checked) {
+      const val = e.target.value;
+      setPerson([...person, val]);
+    }
+  };
+    const [person, setPerson] = useState([]);
+   
+    
 
     return (
         <div className="container lower">
             <form>
 
-                <div className="row">
-                <div className="input-field col s12">
-                    <h6>What will be yours prime motivator to join edunomics full time post this internship as well ?</h6>
-                    <p>
-                        <label>
-                        <input type="checkbox" value="Take a high growth" onChange={(e)=>handleCheckChange(e)} />
-                        <span>Take a high growth</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        <input type="checkbox"  value="Looking For Challenges" onChange={(e)=>handleCheckChange(e)} />
-                        <span>Looking for challenges
-                        </span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        <input type="checkbox"  value="Passionate" onChange={(e)=>handleCheckChange(e)} />
-                        <span>Passionate</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        <input type="checkbox"  value="Wish to work in dynamic environment" onChange={(e)=>handleCheckChange(e)} />
-                        <span>Wish to work in dynamic environment</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        <input type="checkbox"  value="Learning" onChange={(e)=>handleCheckChange(e)} />
-                        <span>Learning</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        <input type="checkbox"  value="To be a part of decision making" onChange={(e)=>handleCheckChange(e)} />
-                        <span>To be a part of decision making</span>
-                        </label>
-                    </p>
-                
-                </div>
-
+            <div className="input-field col s12">
+            <h6>How you see yourself as ?</h6>
+            {motivation.map((labelObj, ind) => (
+              <p key={ind}>
+                <label>
+                  <input
+                    type="checkbox"
+                    name={labelObj}
+                    onChange={(e) => checkboxChanged(e)}
+                    value={labelObj}
+                  />
+                  <span>{labelObj}</span>
+                </label>
+              </p>
+            ))}
+          </div>
+         
                  
-                <div className="input-field col s12">
-                <textarea id="textarea1" className="materialize-textarea" value={question1.answer} onChange={(e)=>setQuestion1({...question1,answer:e.target.value})}></textarea>
-                <label htmlFor="textarea1">Have you ever made plans with your friends for starting up something ? What is it ? Why you haven't pursued it ?</label>
-                </div>
-                {/* <div className="input-field col s12">
-                <input type="text" className="datepicker" placeholder="How soon you can join edunomics ?"/> 
-                </div> */}
-                {/* <div className="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label htmlFor="textarea1">What all possible ways you will add value to the organisation growth ?</label>
-                </div>
-                <div className="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label htmlFor="textarea1">Why you want to join edunomics ?</label>
-                </div> */}
-                <div className="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" value={question2.answer} onChange={(e)=>setQuestion2({...question2,answer:e.target.value})}></textarea>
-                <label htmlFor="textarea1">Add a youtube video link of your introduction (max. 90 seconds )</label>
-                </div>
+                {form.questions.map((questionObj, ind) => {
+                return (
+              <div key={ind} className="input-field col s12">
+                <textarea
+                  id={"textarea" + ind}
+                  className="materialize-textarea"
+                  value={questionObj.answer}
+                  onChange={({ target }) =>
+                    handleQuestionChange(questionObj.question, target.value)
+                  }
+                ></textarea>
+                <label htmlFor={"textarea" + ind}>{questionObj.question}</label>
+              </div>
+            );
+          })}
 
 
                 <div className="col s12 center">
@@ -121,7 +91,7 @@ export default function ThirdForm(props) {
                 </div>
 
 
-                </div>
+                
 
             </form>
            
