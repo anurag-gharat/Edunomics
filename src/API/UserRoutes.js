@@ -35,19 +35,19 @@ var requestOptions = {
 
 
 export const applyNow=userDetails=>{
-  
-  var myHeaders = new Headers();
-
   console.log(userDetails)
   var requestOptions = {
     method: 'POST',
-    headers: myHeaders,
+    headers:{
+      Accept:"application/json",
+      "Content-Type":"application/json"
+  },
     body: JSON.stringify(userDetails),
     redirect: 'follow'
   };
   
-  fetch("https://edunomics.herokuapp.com/api/core/careerApplicant", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log(error))
+  return fetch("https://edunomics.herokuapp.com/api/core/careerApplicant", requestOptions)
+    .then(response => response.json())
+    .then(result => {return result})
+    .catch(error => {return error})
 }

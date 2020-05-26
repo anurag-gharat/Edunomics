@@ -111,7 +111,7 @@ export default function FirstForm({ handleForm1, form1 }) {
 
           {form.questions.map((questionObj, ind) => {
             return (
-              <div key={ind} className="input-field col s12">
+              <div key={ind} className="input-field col s12 m-t-10">
                 <textarea
                   id={"textarea" + ind}
                   className="materialize-textarea"
@@ -168,7 +168,7 @@ export default function FirstForm({ handleForm1, form1 }) {
             <i className="material-icons prefix">code</i>
             <input
               id="icon_prefix"
-              type="email"
+              type="text"
               className="validate"
               value={github_repo}
               onChange={handleChange("github_repo")}

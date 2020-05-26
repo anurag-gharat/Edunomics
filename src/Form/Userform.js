@@ -7,6 +7,10 @@ import Success from "./Success";
 import { applyNow } from "../API/UserRoutes";
 
 export default function Userform() {
+
+
+  const [loading,setLoading]=useState(false)
+  const [message,setMessage]=useState("")
   const [step, setStep] = useState(1);
   const form1Questions = [
     "Tell us about a time when you were successful on a team ?",
@@ -59,6 +63,7 @@ export default function Userform() {
     });
     nextStep(step);
   };
+
   const handleForm2 = (item) => {
     setData({
       ...data,
@@ -66,12 +71,15 @@ export default function Userform() {
     });
     nextStep(step);
   };
+
   const handleForm3 = (item) => {
     setData({
       ...data,
       form3: item,
     });
+    nextStep(step)
   };
+
   const handleNext = (input) => (recievedData) => {
     setData({
       [input]: recievedData,
@@ -79,7 +87,21 @@ export default function Userform() {
   };
 
   const handleSubmit = () => {
-    console.log("This will be the final data",data);
+    setLoading(true)
+    console.log("submit wala data",data)
+    applyNow(data)
+      .then(response=>{
+        console.log("response is ",response)
+        if(response.success){
+          setLoading(false)
+          setMessage("Application Successfully Submitted.")
+        }
+        else{
+          setLoading(false)
+          setMessage("Application Cannot be Submitted.")
+        }
+      })
+      .catch(error=>console.log(error))
   };
 
   const nextStep = (step) => {
@@ -126,7 +148,12 @@ export default function Userform() {
         />
       );
     case 4:
-      return <Success />;
+      return <Success  
+      handleSubmit={handleSubmit}
+      prevStep={prevStep}
+      loading={loading}
+      message={message}
+      />;
     default:
       return <Success />;
   }
