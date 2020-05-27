@@ -12,6 +12,7 @@ import Footer from "./Components/Footer"
 import Knowmore from './Pages/Knowmore';
 import Error from './Pages/Error';
 import Search from './Pages/Search';
+import ScrollToTop from './Components/ScrollToTop';
 // import Login from './Pages/Login'
 // // import Signup from './Pages/Signup'
 // import AllBlogs from './Pages/AllBlogs'
@@ -34,6 +35,7 @@ useEffect(()=>{
   return (
     <div>
         <Router >
+          <ScrollToTop >
           <Navbar />
           
           <Switch>
@@ -61,9 +63,11 @@ useEffect(()=>{
           </Switch>
           
           <Footer />
+          </ScrollToTop>
         </Router>
     </div>
   );
 }
 
 export default App;
+
