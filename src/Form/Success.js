@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from '../Components/Loading'
-export default function Success({handleSubmit,prevStep,loading,message}) {
+import { Redirect,Link } from 'react-router-dom'
+export default function Success({handleSubmit,prevStep,loading,message,success}) {
     return (
         <div className="row m-b-50">
             <div className="col l12 s12 m12">
@@ -10,7 +11,7 @@ export default function Success({handleSubmit,prevStep,loading,message}) {
                     (<div>
                         {message?
                         (<div className="container center"><h2>{message}</h2>
-                            {message===''}
+                            {success ? (<div className="container"><button className="btn green-accent"><Link to="/">Return Back</Link></button></div>):(<div className="container"><button className="btn green-accent">Fill Again</button></div>)}
                         </div>)
                         :
                         (<div className="container">

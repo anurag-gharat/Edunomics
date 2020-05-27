@@ -10,6 +10,7 @@ export default function Userform() {
 
 
   const [loading,setLoading]=useState(false)
+  const [success,setSuccess]=useState(true)
   const [message,setMessage]=useState("")
   const [step, setStep] = useState(1);
   const form1Questions = [
@@ -91,14 +92,16 @@ export default function Userform() {
     console.log("submit wala data",data)
     applyNow(data)
       .then(response=>{
-        console.log("response is ",response)
+        console.log(response)
         if(response.success){
+          setSuccess(true)
           setLoading(false)
           setMessage("Application Successfully Submitted.")
         }
         else{
           setLoading(false)
           setMessage("Application Cannot be Submitted.")
+          setSuccess(true)
         }
       })
       .catch(error=>console.log(error))
@@ -153,6 +156,7 @@ export default function Userform() {
       prevStep={prevStep}
       loading={loading}
       message={message}
+      success={success}
       />;
     default:
       return <Success />;
