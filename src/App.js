@@ -13,6 +13,7 @@ import Knowmore from './Pages/Knowmore';
 import Error from './Pages/Error';
 import Search from './Pages/Search';
 import ScrollToTop from './Components/ScrollToTop';
+import UserDashboard from './Pages/UserDashboard';
 // import Login from './Pages/Login'
 // // import Signup from './Pages/Signup'
 // import AllBlogs from './Pages/AllBlogs'
@@ -43,6 +44,8 @@ useEffect(()=>{
               <Route path="/knowmore" exact component={Knowmore}    />
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
+              <Route path="/user/dashboard" component={UserDashboard}    />
+
               {/* <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} /> */}
               {/* <Route path="/allblogs" component={AllBlogs} />
