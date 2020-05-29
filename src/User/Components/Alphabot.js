@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Bot from '../../images/bot.png'
+import {sendMessage} from '../../API/AlphaBot'
 
 export default function Alphabot() {
+
+    const [step,setStep]=useState(0)
+    const [userInputText,setUserInputText]=useState('')
+    const [botreply,setBotReply]=useState('')
+
+
+    const handleChange=(e)=>{
+        setUserInputText(e.target.value)
+    }
+    
+    useEffect(()=>{
+        sendMessage()
+        .then(response=>console.log(response))
+        .catch(error=>console.log(error))
+    },[])
+
     return (
         <div className=" container z-depth-3 m-b-50">
             <div className="row green" >
@@ -27,7 +44,8 @@ export default function Alphabot() {
             <div className="row">
                 <div className="col input-field  l10">
                     
-                    <input className="input" placeholder="Type your response"></input>
+                    <input className="input" placeholder="Type your response" value={userInputText} onChange={handleChange
+                    }></input>
                     
                 </div>
                 <div className="col l2 input-field">
