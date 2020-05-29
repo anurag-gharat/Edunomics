@@ -139,44 +139,13 @@ blockquote{
   flex-direction: row !important;
   justify-content:start !important;
 }
-@media only screen and (max-width: 600px) {
- .reverse{
-  display: flex;
-  flex-direction: column;
- }
- .landingpagediv{
-  padding:100px 20px !important;
-  text-align: center;
-}
-.d-flex{
-  padding: 0px 0px !important;
-}
-.socialicon{
-  margin: 0px;
-}
-footer>div>a{
-  margin: 0px;
-}
-.button{
-  border-radius: 25px;
-  height: 50px;
-  width: 150px;
-  border: none;
-  z-index: -2 !important;
-  cursor: pointer !important;
-}
- .reverse>a{
-  border: 0px;
- }
-}
-
 
 /* Css for users */
 .ml2{
   margin-left: 10px;
 }
 .chat-container{
-  min-height:50vh !important ;
+  min-height:40vh !important ;
   padding: 10px;
 }
 .alphabot-text{
@@ -185,3 +154,45 @@ footer>div>a{
 .round-edges{
   border-radius: 20px !important;
 }
+.alphabot-send-button{
+  padding-top: 10px !important;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .reverse{
+   display: flex;
+   flex-direction: column;
+  }
+  .landingpagediv{
+   padding:100px 20px !important;
+   text-align: center;
+ }
+ .d-flex{
+   padding: 0px 0px !important;
+ }
+ .socialicon{
+   margin: 0px;
+ }
+ footer>div>a{
+   margin: 0px;
+ }
+ .button{
+   border-radius: 25px;
+   height: 50px;
+   width: 150px;
+   border: none;
+   z-index: -2 !important;
+   cursor: pointer !important;
+ }
+  .reverse>a{
+   border: 0px;
+  }
+ }
+ 
+ 

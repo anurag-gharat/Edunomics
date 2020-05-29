@@ -24,9 +24,13 @@ export default function Alphabot() {
     </div>
     </div>)
     setAllChats([...allChats,...displayData])
+    setUserInputText('')
+        // console.log(step)
+}
+
+    const setScrollBar=()=>{
+        document.querySelector('.input').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
     }
-
-
 // chat bot chats
     const appendReply=(response)=>{  
         console.log('appendReply')
@@ -35,11 +39,13 @@ export default function Alphabot() {
             <div className="alphabot-avatar col l1">
         <img className="responsive-img" src={Bot}></img>
     </div>
-    <div className="alphabot-text col l6 ">
+    <div className="alphabot-text col l6">
     <p className="botText">{response}</p>
     </div>
 </div>)
    setAllChats([...allChats,...displayData])
+   setUserInputText('')
+   //console.log(step)
 
     }
 
@@ -57,7 +63,14 @@ export default function Alphabot() {
                 console.log("server response is ",response)
                 setBotReplyText(response)
                 appendReply(response)
+                setScrollBar()
             })
+        }
+    }
+
+    const EnterKeyPress=(e)=>{
+        if(e.which===13){
+            handleSubmit(e)
         }
     }
 
@@ -80,11 +93,11 @@ export default function Alphabot() {
             <div className="row">
                 <div className="col input-field s9 l10">
                     
-                    <input className="input" placeholder="Type your response" value={userInputText} onChange={handleChange
+                    <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
                     }></input>
                     
                 </div>
-                <div className="col l2 s3 input-field center">
+                <div className="col l2 s3 input-field center alphabot-send-button">
                     <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
                     <i className="material-icons">send</i>
                     </button>
