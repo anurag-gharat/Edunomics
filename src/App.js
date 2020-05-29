@@ -21,7 +21,7 @@ import UserDashboard from './Pages/UserDashboard';
 // import NewBlog from './Pages/NewBlog';
 // import Category from './Pages/Category';
 // import CategorizedBlogs from './Pages/CategorizedBlogs';
-// import Test from './Components/Test';
+import Test from './Components/Test';
 
 
 
@@ -52,8 +52,8 @@ useEffect(()=>{
               <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
               <Route path="/category/:categoryId" component={Category} />
-              <Route path="/blogs/:categoryId" component={CategorizedBlogs} />
-              <Route path="/Test" component={Test} /> */}
+              <Route path="/blogs/:categoryId" component={CategorizedBlogs} />*/}
+              <Route path="/Test" component={Test} /> 
 
 
 
