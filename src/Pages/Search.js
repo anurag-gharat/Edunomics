@@ -6,7 +6,7 @@ export default function Search(props) {
     useEffect(()=>{
 setName(props.location.state.data)
     },[])
-
+    console.log(props)
     return (
         <div>
                 <section className="section p-t-20">

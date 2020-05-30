@@ -58,3 +58,18 @@ export const getAllCategorizedBlogs=(id)=>{
         .then(result => {return result})
         .catch(error => console.log('error', error));
 }
+
+
+
+export const getArticle=(query,search)=>{
+    console.log(query,search)
+    var requestOptions={
+        method: 'GET',
+        redirect: 'follow'
+    }
+    return fetch(`https://jsonplaceholder.typicode.com/posts/1`, requestOptions)
+    .then(response => response.json())
+    .then(result => {return result})
+    .catch(error => console.log('error', error));
+
+}
