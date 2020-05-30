@@ -25,7 +25,7 @@ export default function Alphabot() {
     </div>)
     setAllChats([...allChats,...displayData])
     setUserInputText('')
-        // console.log(step)
+       
 }
 
     const setScrollBar=()=>{
@@ -33,8 +33,7 @@ export default function Alphabot() {
     }
 // chat bot chats
     const appendReply=(response)=>{  
-        console.log('appendReply')
-        console.log(displayData)  
+        
         displayData.push(<div className="alphabot-dialog row" key={step}>
             <div className="alphabot-avatar col l1">
         <img className="responsive-img" src={Bot}></img>
@@ -60,7 +59,7 @@ export default function Alphabot() {
             appendMessage()
             sendMessage(userInputText,step)
             .then(response=>{
-                console.log("server response is ",response)
+                
                 setBotReplyText(response)
                 appendReply(response)
                 setScrollBar()
