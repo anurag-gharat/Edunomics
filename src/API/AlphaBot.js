@@ -3,7 +3,8 @@ export const sendMessage=(msg,j)=>{
         method: 'GET',
       };
     return fetch(`https://alphabot.pythonanywhere.com/get?msg=${msg}&j=${j}`,requestOptions)
-    .then(response=>{ return response.text()})
+    .then(response=>{ 
+      return response.json()})
     .catch(error=>{return error})
 
 }

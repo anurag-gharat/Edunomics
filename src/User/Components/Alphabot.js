@@ -7,7 +7,7 @@ export default function Alphabot() {
     const [step,setStep]=useState(0)
     const [userInputText,setUserInputText]=useState('')
     const [botReplyText,setBotReplyText]=useState('')
-
+    const [button,setButton]=useState(false)
     const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
 
@@ -39,7 +39,7 @@ export default function Alphabot() {
         <img className="responsive-img" src={Bot}></img>
     </div>
     <div className="alphabot-text col l6">
-    <p className="botText">{response}</p>
+    <p className="botText">{response.question}</p>
     </div>
 </div>)
    setAllChats([...allChats,...displayData])
@@ -59,8 +59,14 @@ export default function Alphabot() {
             appendMessage()
             sendMessage(userInputText,step)
             .then(response=>{
-                
-                setBotReplyText(response)
+                console.log(response)
+                if(response.button===1){
+                    setButton(true)
+                }
+                else{
+                    setButton(false)
+                }
+                setBotReplyText(response.question)
                 appendReply(response)
                 setScrollBar()
             })
@@ -89,19 +95,40 @@ export default function Alphabot() {
             {allChats}               
 
             </div>
-            <div className="row">
-                <div className="col input-field s9 l10">
-                    
-                    <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
-                    }></input>
-                    
+            {button ? 
+            (<div className="row">
+                <div className="col input-field s2">
+                <button className="btn red round-edges" >
+                <i className="material-icons">no</i>
+                </button>
                 </div>
-                <div className="col l2 s3 input-field center alphabot-send-button">
-                    <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
-                    <i className="material-icons">send</i>
-                    </button>
-                </div>
+            <div className="col input-field s7 l8">
+                
+                <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
+                }></input>
+                
             </div>
+            <div className="col l2 s3 input-field center alphabot-send-button">
+                <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
+                <i className="material-icons">send</i>
+                </button>
+            </div>
+        </div>)
+            :(<div className="row">
+            <div className="col input-field s9 l10">
+                
+                <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
+                }></input>
+                
+            </div>
+            <div className="col l2 s3 input-field center alphabot-send-button">
+                <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
+                <i className="material-icons">send</i>
+                </button>
+            </div>
+        </div>)
+            }
+            
         </div>
     )
 }
