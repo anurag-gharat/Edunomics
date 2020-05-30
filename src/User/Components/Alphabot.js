@@ -72,6 +72,11 @@ export default function Alphabot() {
             })
         }
     }
+    const handleNo=(e)=>{
+        e.preventDefault()
+        setUserInputText('no')
+        handleSubmit(e)
+    }
 
     const EnterKeyPress=(e)=>{
         if(e.which===13){
@@ -97,9 +102,9 @@ export default function Alphabot() {
             </div>
             {button ? 
             (<div className="row">
-                <div className="col input-field s2 l2" style={{paddingTop:"10px"}}>
-                <button className="btn red round-edges" >
-                <i className="material-icons">delete</i>
+                <div className="col input-field s2 l2 .alphabot-send-button">
+                <button className="btn red round-edges" onClick={handleNo}>
+                <i className="material-icons white-text">clear</i>
                 </button>
                 </div>
             <div className="col input-field s7 l8">
