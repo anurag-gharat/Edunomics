@@ -67,9 +67,9 @@ export const getArticle=(query,search)=>{
         method: 'GET',
         redirect: 'follow'
     }
-    return fetch(`https://jsonplaceholder.typicode.com/posts/1`, requestOptions)
-    .then(response => response.json())
-    .then(result => {return result})
+    return fetch(`https://edunomics.in/api/core/categoryBlog/${query}/${search}`, requestOptions)
+    .then(response =>response.json())
+    .then(response =>console.log(response))
     .catch(error => console.log('error', error));
 
 }

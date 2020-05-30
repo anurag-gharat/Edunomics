@@ -16,7 +16,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import UserDashboard from './Pages/UserDashboard';
 // import Login from './Pages/Login'
 // // import Signup from './Pages/Signup'
-// import AllBlogs from './Pages/AllBlogs'
+import AllBlogs from './Pages/AllBlogs'
 // import AllCategories from './Pages/AllCategories';
 // import NewBlog from './Pages/NewBlog';
 // import Category from './Pages/Category';
@@ -48,8 +48,8 @@ useEffect(()=>{
 
               {/* <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} /> */}
-              {/* <Route path="/allblogs" component={AllBlogs} />
-              <Route path="/allcategories" component={AllCategories} />
+              <Route path="/allblogs" component={AllBlogs} />
+              {/* <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
               <Route path="/category/:categoryId" component={Category} />
               <Route path="/blogs/:categoryId" component={CategorizedBlogs} />*/}

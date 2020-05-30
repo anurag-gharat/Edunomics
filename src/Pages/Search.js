@@ -1,33 +1,46 @@
 import React, { useEffect,useState } from 'react'
-
+import Video from '../Components/Video'
 export default function Search(props) {
     
-    const [name, setName] = useState("")
-    useEffect(()=>{
-setName(props.location.state.data)
-    },[])
-    console.log(props)
+//const [blog, setBlog] = useState(props.location.state.data)
+    
     return (
-        <div>
+        <div className="p-t-100">
                 <section className="section p-t-20">
-                    <div className="container center">
+                    <div className="container">
                         <h1>
-                        How can you learn externally
+                            React title
                         </h1>
-                        <span className="green-text no-mar"><nobr><h2>"{name}"</h2></nobr></span>
-                        <h1>
-                        meanwhile we are coming with distinct approach?
-                        </h1>
-                        <div className="row m-t-10 p-10">
-                        <h5><b>The unique platform of Edunomics</b></h5>
-                        <p className="grey-text">This one of a kind platform is currently in construction, being devised with the most effectual and productive learning ecosystem for especially those students who have the urge to firstly find their deep hidden talents which they can excel with. And secondly for those curious souls who don't quite believe in the concept of learning merely by THEORETICAL ways. Who feel that a learning process should be stressed upon the PRACTICAL and real life scenarios because the things you grasp by such a realistic study, gets embedded into your memory with a profound clarity that no other teaching method can give you. Agreed? You surely must have felt this in your school and college days.
-                        That is exactly what we are trying to offer students here at Edunomics, building a bridge between industry and academics. Since we are aware of the fact that a recorded descriptive video lecture or a written PDF'd notes or PPT can surely give you knowledge on the subject, but it's human psychology to start fast forwarding and glancing through it once you clasp the basic idea of what the topic is about. And yeah sometimes it can be a bit of a bore, right?
-                        So how about an interactive and interesting (with a little bit of fun sprinkled) live video sessions by industry experts who will focus 30% on academics to lay your basic foundations strong and remaining 70% to practically train you with the latest up to date industry trends. Sounds compelling enough?</p>
-                        <h5 ><b>How can you prep up, till we are set to launch!</b></h5> 
-                        <p className="grey-text">Now, for those of you who wanna be a little ahead of the curve and utilise this short period of time prior to our kick off, this is what we suggest for you so that you can have a clear picture on what your target field will be at Edunomics.
-Let's say this is a part of the 30% you can have to start with a lead when you enroll with our co active programs. One platform that we recommend you can access and browse through different areas and specializations to really understand what you want to pursue is Udemy. It won't be long before we arise with a fully distinguished and gratified product that we have initiated, but in the meantime we suggest you check out the following by clicking here. This programmed module will give you a list of courses that you can go through and find what particularly interests you. Because we are not a market selfish entity but instead aim to assist and nurture you right from the basics to a full fledged professional with your own uniqueness! Nevertheless, you can check this out too, for a more deeper research on what course will benefit you the best.
-Hope that will be beneficial and any remaining doubts you can contact us, our professional team aspires to help those in need!</p>
-                    
+                        <h4 className="grey-text">
+                        React Subtutle some intreaasdastasgnkmf
+                        </h4>
+                        <p className="grey-text">12 December 2019</p>
+                        <div className="row">
+                            <img src="" className="responsive-img" src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
+                        </div>
+                        <div className="row m-t-10">
+                            <p className="blog-text">The Fetch API is a simple interface for fetching resources. Fetch allows us to make network request and handle responses easier than our old friend XMLHttpRequest(XHR). One of the main differences is that Fetch API uses Promises, which provides a way to avoid callbacks hell and boilerplate heavy code that XMLHttpRequest(XHR) provides.
+                            The fetch function takes one mandatory argument, which is the path to the resource you want to fetch and returns a Promise that resolves to the Response of that request.The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+                            Promises provides us a simpler alternative to executing, composing and managing asynchronous operation compared to the traditional callback-bases approach.
+                            When working with Promises, we must be aware of what it’s current state. There are three states, Pending, Fulfilled and Rejected.
+                            When a Promise is Pending, it can transitioned to either Fulfilled or Rejected. Once a Promise transitions to either Fulfilled or Rejected, it cannot transition to any other state and it’s value will not change as well.
+                            When a Promise is Fulfilled, this means the asynchronous operation has completed and the Promise has a value. When a Promise is Rejected, this means the asynchronous operation has failed, and the Promise will never be fulfilled.</p>
+                        </div>
+                        <div className="divider"></div>
+                        <div className='row m-t-10'>
+                            <h4>Take a look at these slides!</h4>
+                            <iframe
+    src="https://books.google.co.in/books?id=Ci-9BgAAQBAJ&lpg=PA252&ots=7dnwGTHfi-&dq=a%20dummy%20link%20of%20a%20person%20powerpoint%20presentation&pg=PA252&output=embed"
+    width="100%"
+    height="300px"
+    frameBorder="0"
+>
+</iframe>
+                        </div>
+                        <div className='row m-t-10'>
+                            <h4>Also watch these videos for more understanding!</h4>
+                            <div className="col l6 s6 m-t-10"><Video /></div>
+                            <div className="col l6 s6 m-t-10"><Video /></div>
                         </div>
                         </div>
                 </section>

@@ -29,12 +29,12 @@ export default function SearchForm() {
         }
         else{
             getArticle(query,search)
-            .then(response=>{
-                console.log(response)
-                setBlog(response)
-            })
-            .catch(error=>console.log(error))
-            .finally(()=>setRedirect(true))
+            // .then(response=>{
+            //     console.log(response)
+            //     setBlog(response.blogs)
+            // })
+            // .catch(error=>console.log(error))
+            // .finally(()=>setRedirect(true))
             
         }
     }
@@ -44,12 +44,9 @@ export default function SearchForm() {
         let elems = document.querySelectorAll('.autocomplete');
         var instances = M.Autocomplete.init(elems, {
             data:{
-                "Apple": null,
-                "Microsoft": null,
-                "Google": null,
-                "React":null,
-                "Node":null,
-                "Php":null
+                'vue':null,
+                'react':null,
+                'angular':null
               },
         });
         myFun(myarr)
@@ -59,7 +56,7 @@ export default function SearchForm() {
 
     function myFun(myarr){
         myobj=myarr.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
-        console.log(myobj)
+        // console.log(myobj)
 
     }
 
@@ -79,7 +76,7 @@ export default function SearchForm() {
     if (redirect) {
         return <Redirect to={{
           pathname: '/search',
-          state: { data:query,blog}
+          state: { data:blog}
         }} />
       } else {         
     return (
@@ -91,7 +88,7 @@ export default function SearchForm() {
             <div className="col s12 l10">
                 
                     <div className="input-field">
-                        <input type="text" id="autocomplete-input" className="autocomplete" onChange={handleChange} />
+                        <input type="text" id="autocomplete-input" className="autocomplete" onChange={handleChange} autoComplete='off'/>
                         <label htmlFor="autocomplete-input">Enter Your Query</label>
                 </div>
             </div>
