@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import Video from '../Components/Video'
+import ReactGoogleSlides from "react-google-slides";
 export default function Search(props) {
     
 //const [blog, setBlog] = useState(props.location.state.data)
@@ -29,13 +30,15 @@ export default function Search(props) {
                         <div className="divider"></div>
                         <div className='row m-t-10'>
                             <h4>Take a look at these slides!</h4>
-                            <iframe
-    src="https://books.google.co.in/books?id=Ci-9BgAAQBAJ&lpg=PA252&ots=7dnwGTHfi-&dq=a%20dummy%20link%20of%20a%20person%20powerpoint%20presentation&pg=PA252&output=embed"
-    width="100%"
-    height="300px"
-    frameBorder="0"
->
-</iframe>
+                            <ReactGoogleSlides
+      width={640}
+      height={480}
+      slidesLink="https://docs.google.com/presentation/d/1S2L-420Gf13_w4xQ-EBUkC4eL2kAH956YOWSB272Exg/edit#slide=id.p"
+      slideDuration={5}
+      showControls
+      loop
+    />
+                            
                         </div>
                         <div className='row m-t-10'>
                             <h4>Also watch these videos for more understanding!</h4>
