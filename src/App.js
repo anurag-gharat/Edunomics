@@ -22,6 +22,7 @@ import AllBlogs from './Pages/AllBlogs'
 // import Category from './Pages/Category';
 // import CategorizedBlogs from './Pages/CategorizedBlogs';
 import Test from './Components/Test';
+import UserResume from './Pages/UserResume';
 
 
 
@@ -45,6 +46,7 @@ useEffect(()=>{
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
               <Route path="/user/dashboard" component={UserDashboard}    />
+              <Route path="/user/resume/:userId" exact component={UserResume}    />
 
               {/* <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} /> */}

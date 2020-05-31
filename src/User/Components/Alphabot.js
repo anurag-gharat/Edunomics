@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import Bot from '../../images/bot.png'
 import {sendMessage} from '../../API/AlphaBot'
 
@@ -10,7 +11,8 @@ export default function Alphabot() {
     const [button,setButton]=useState(false)
     const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
-
+    const [end,setEnd]=useState(true)
+    const userId=121321414
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
@@ -66,6 +68,9 @@ export default function Alphabot() {
                 else{
                     setButton(false)
                 }
+                if(response.End){
+                    setEnd(true)
+                }
                 setBotReplyText(response.question)
                 appendReply(response)
                 setScrollBar()
@@ -85,6 +90,7 @@ export default function Alphabot() {
     }
 
     return (
+        <>
         <div className=" container z-depth-3 m-b-50">
             <div className="row green" >
                 <h4 className="left ml2 white-text">Alpha Bot</h4>
@@ -134,7 +140,18 @@ export default function Alphabot() {
         </div>)
             }
             
+            
         </div>
+    {end
+        ?
+        (
+            <div className="container center" >
+                <h4>Thank you for answering all our questions</h4>
+                <Link to={`/user/resume/${userId}`}><button className="btn btn-large">Check Resume</button></Link>
+            </div>
+        ):
+        (<div className="divider" ></div>)}
+        </>
     )
 }
 
