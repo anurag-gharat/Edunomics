@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Profile } from "../../MockData";
+import React, { useState, useEffect } from "react";
+import Loading from '../../../Components/Loading'
 import PageLayout from "../../Layout";
 import { Container, Divider } from "@material-ui/core";
 import PersonalInfo from "../Content/PersonalInfo";
@@ -8,6 +8,11 @@ import Education from "../Content/Education";
 import Skills from "../Content/Skills";
 import WorkExperience from "../Content/WorkExperience";
 import Project from "../Content/Project";
+import {getResume} from '../../../API/UserRoutes'
+
+
+
+
 export default function Home() {
   const [isEdit, setIsEdit] = useState({
     personal_info: false,
@@ -17,14 +22,40 @@ export default function Home() {
     objective: false,
     education: false,
   });
-  const [profile, setProfile] = useState(Profile);
+  const [profile, setProfile] = useState();
   const onSave = (name, val) => {
     setIsEdit({ ...isEdit, [name]: false });
     setProfile({ ...profile, [name]: val });
   };
+  const [loading,setLoading]=useState(true)
+  
+  
+  const fetchTheResume=()=>{
+    setLoading(true)
+    getResume()
+    .then(response=>
+    {
+      setProfile(response.profile)
+      console.log(response.profile)
+    })  
+    .catch(error=>console.log(error))
+    .finally(()=>setLoading(false))
+    
+    }
+    //console.log(profile)
+  const userId='5ed369bd296a7f283050dc1e'
+
+      useEffect(()=>{
+        fetchTheResume()
+      },[]
+      )
+  
   return (
+    
     <PageLayout>
-      <Container
+      {loading ? 
+      (<Loading></Loading>):  
+      (<Container
         style={{
           backgroundColor: "#eff4f5",
           minHeight: "100vh",
@@ -124,6 +155,7 @@ export default function Home() {
           ""
         )}
       </Container>
-    </PageLayout>
+)}
+          </PageLayout>
   );
 }

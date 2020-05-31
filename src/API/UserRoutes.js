@@ -51,3 +51,16 @@ export const applyNow=userDetails=>{
     .then(result => {return result})
     .catch(error => {return error})
 }
+
+
+export const getResume=()=>{
+  const userId='5ed369bd296a7f283050dc1e'
+  var requestOptions = {
+    method: 'GET',
+  };
+  
+  return fetch(`https://edunomics.in/api/resume/${userId}`, requestOptions)
+    .then(response => response.json())
+    .then(result =>{return result})
+    .catch(error =>{return error});
+}
