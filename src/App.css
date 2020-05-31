@@ -157,7 +157,9 @@ blockquote{
 .alphabot-send-button{
   padding-top: 10px !important;
 }
-
+.resume-screen input{
+  border: none !important;
+}
 
 
 
