@@ -1,0 +1,24 @@
+body {
+  background: rgb(206, 217, 219);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(206, 217, 219, 1) 4%,
+    rgba(183, 195, 203, 1) 69%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(206, 217, 219, 1) 4%,
+    rgba(183, 195, 203, 1) 69%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(206, 217, 219, 1) 4%,
+    rgba(183, 195, 203, 1) 69%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ced9db",endColorstr="#b7c3cb",GradientType=1);
+  color: "#ddd";
+}
+
+h1 {
+  font-family: helvetica;
+}
