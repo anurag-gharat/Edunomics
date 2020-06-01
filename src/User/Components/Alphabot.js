@@ -13,6 +13,12 @@ export default function Alphabot() {
     const [allChats,setAllChats]=useState([])
     const [end,setEnd]=useState(true)
     const userId=121321414
+
+
+
+
+
+
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
@@ -31,7 +37,7 @@ export default function Alphabot() {
 }
 
     const setScrollBar=()=>{
-        document.querySelector('.input').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
+        document.querySelector('.alphabot-text').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
     }
 // chat bot chats
     const appendReply=(response)=>{  
@@ -46,18 +52,13 @@ export default function Alphabot() {
 </div>)
    setAllChats([...allChats,...displayData])
    setUserInputText('')
-   //console.log(step)
+   console.log(step)
 
     }
 
 
-    const handleSubmit=(e)=>{
-        e.preventDefault()
-        if(userInputText===''){
-            alert('Your Message cannot be empty')
-        }
-        else{
-            setStep(step+1)
+    const getResponseBack=()=>{
+        setStep(step+1)
             appendMessage()
             sendMessage(userInputText,step)
             .then(response=>{
@@ -75,12 +76,22 @@ export default function Alphabot() {
                 appendReply(response)
                 setScrollBar()
             })
+        
+    }
+
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        if(userInputText===''){
+            alert('Your Message cannot be empty')
+        }
+        else{
+            getResponseBack()
         }
     }
     const handleNo=(e)=>{
         e.preventDefault()
         setUserInputText('no')
-        handleSubmit(e)
     }
 
     const EnterKeyPress=(e)=>{
@@ -89,6 +100,9 @@ export default function Alphabot() {
         }
     }
 
+
+ 
+  
     return (
         <>
         <div className=" container z-depth-3 m-b-50">
@@ -113,9 +127,9 @@ export default function Alphabot() {
                 <i className="material-icons white-text">clear</i>
                 </button>
                 </div>
-            <div className="col input-field s7 l8">
+            <div className="col input-field s7 l8 ">
                 
-                <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
+                <input className="input" onKeyPress={EnterKeyPress} placeholder="Answer 'no' for No or give your response " value={userInputText} onChange={handleChange
                 }></input>
                 
             </div>
@@ -125,19 +139,20 @@ export default function Alphabot() {
                 </button>
             </div>
         </div>)
-            :(<div className="row">
-            <div className="col input-field s9 l10">
+            :(
                 
-                <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange
-                }></input>
-                
-            </div>
-            <div className="col l2 s3 input-field center alphabot-send-button">
-                <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
-                <i className="material-icons">send</i>
-                </button>
-            </div>
-        </div>)
+                    <div className="row">
+                    <div className="col input-field s9 l10">
+                        <input className="input" onKeyPress={EnterKeyPress} placeholder="Type your response" value={userInputText} onChange={handleChange}></input>
+                        
+                    </div>
+                    <div className="col l2 s3 input-field center alphabot-send-button">
+                        <button className="btn green round-edges" onClick={(e)=>handleSubmit(e)}>
+                        <i className="material-icons">send</i>
+                        </button>
+                    </div>
+                </div>
+           )
             }
             
             
