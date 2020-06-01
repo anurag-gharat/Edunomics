@@ -11,7 +11,7 @@ export default function Alphabot() {
     const [button,setButton]=useState(false)
     const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
-    const [end,setEnd]=useState(true)
+    const [end,setEnd]=useState(false)
     const userId=121321414
 
 
@@ -37,7 +37,7 @@ export default function Alphabot() {
 }
 
     const setScrollBar=()=>{
-        document.querySelector('.alphabot-text').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
+        document.querySelector('.input').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
     }
 // chat bot chats
     const appendReply=(response)=>{  
