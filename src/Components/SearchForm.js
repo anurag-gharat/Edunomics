@@ -29,9 +29,22 @@ export default function SearchForm() {
         }
         else{
             getArticle(query,search)
+            .then(response=>{
+                if(response.success){
+                    setBlog(response.data)
+                    setRedirect(true)
+                }
+                else{
+                    alert("Requested blog is not present")
+                    setRedirect(false)
+                }
+            })
+            .catch(error=>(console.log(error)))
+            
+            
             // .then(response=>{
             //     console.log(response)
-            //     setBlog(response.blogs)
+            //     setBlog(response.data)
             // })
             // .catch(error=>console.log(error))
             // .finally(()=>setRedirect(true))

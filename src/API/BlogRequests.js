@@ -64,12 +64,11 @@ export const getAllCategorizedBlogs=(id)=>{
 export const getArticle=(query,search)=>{
     console.log(query,search)
     var requestOptions={
-        method: 'GET',
-        redirect: 'follow'
+        method: 'GET'
     }
     return fetch(`https://edunomics.in/api/core/categoryBlog/${query}/${search}`, requestOptions)
     .then(response =>response.json())
-    .then(response =>console.log(response))
-    .catch(error => console.log('error', error));
+    .then(response =>{return response})
+    .catch(error => {return error});
 
 }

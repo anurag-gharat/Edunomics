@@ -3,29 +3,37 @@ import Video from '../Components/Video'
 import ReactGoogleSlides from "react-google-slides";
 export default function Search(props) {
     
-//const [blog, setBlog] = useState(props.location.state.data)
-    
+    const [blog, setBlog] = useState({})
+    console.log(props)
+
+    if(true){
+        return (
+            <div className="p-t-100">
+                <div className="container">
+                    <h1>No Blogs Found</h1>
+                </div>
+            </div>
+        )
+    }
+else{
+    setBlog(props.location.state.data)
+    const d = new Date(blog.uploadDate)
     return (
         <div className="p-t-100">
                 <section className="section p-t-20">
                     <div className="container">
                         <h1>
-                            React title
+                            {blog.title}
                         </h1>
                         <h4 className="grey-text">
-                        React Subtutle some intreaasdastasgnkmf
+                        {blog.subtitle}
                         </h4>
-                        <p className="grey-text">12 December 2019</p>
+                        <p className="grey-text">Posted on {d.toDateString()}</p>
                         <div className="row">
-                            <img src="" className="responsive-img" src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></img>
+                            <img src="" className="responsive-img" src={blog.image_url}></img>
                         </div>
                         <div className="row m-t-10">
-                            <p className="blog-text">The Fetch API is a simple interface for fetching resources. Fetch allows us to make network request and handle responses easier than our old friend XMLHttpRequest(XHR). One of the main differences is that Fetch API uses Promises, which provides a way to avoid callbacks hell and boilerplate heavy code that XMLHttpRequest(XHR) provides.
-                            The fetch function takes one mandatory argument, which is the path to the resource you want to fetch and returns a Promise that resolves to the Response of that request.The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
-                            Promises provides us a simpler alternative to executing, composing and managing asynchronous operation compared to the traditional callback-bases approach.
-                            When working with Promises, we must be aware of what it’s current state. There are three states, Pending, Fulfilled and Rejected.
-                            When a Promise is Pending, it can transitioned to either Fulfilled or Rejected. Once a Promise transitions to either Fulfilled or Rejected, it cannot transition to any other state and it’s value will not change as well.
-                            When a Promise is Fulfilled, this means the asynchronous operation has completed and the Promise has a value. When a Promise is Rejected, this means the asynchronous operation has failed, and the Promise will never be fulfilled.</p>
+    <p className="blog-text">{blog.blog_content}</p>
                         </div>
                         <div className="divider"></div>
                         <div className='row m-t-10'>
@@ -42,6 +50,14 @@ export default function Search(props) {
                         </div>
                         <div className='row m-t-10'>
                             <h4>Also watch these videos for more understanding!</h4>
+                            {/* {blog.videos.map((item,index)=>(
+                                <div  className="col l6 s6 m-t-10">
+                                <Video
+                                key={index}
+                                source={item}
+                                />
+                                </div>
+                            ))} */}
                             <div className="col l6 s6 m-t-10"><Video /></div>
                             <div className="col l6 s6 m-t-10"><Video /></div>
                         </div>
@@ -49,4 +65,5 @@ export default function Search(props) {
                 </section>
         </div>
     )
+                        }
 }
