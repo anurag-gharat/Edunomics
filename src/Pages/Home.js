@@ -9,7 +9,6 @@ import InitiativesSection from '../Content/InitiativesSection'
 import TechEdunomicsSection from '../Content/TechEdunomicsSection'
 // import FaqsSection from '../Content/FaqsSection'
 import SearchForm from '../Components/SearchForm'
-import {getSuggestions} from '../API/BlogRequests'
 
 
 
@@ -21,37 +20,21 @@ export default function Home() {
     
 
 
-    const [skillArray,setskillArray]=useState([])
-    const [careerArray,setcareerArray]=useState([])
+    // const [skillArray,setskillArray]=useState([])
+    // const [careerArray,setcareerArray]=useState([])
 
     
-    const getTheAutocomplete=()=>{
-        getSuggestions()
-        .then(response=>{
-            if(response.success){
-                setcareerArray(response.names.career)
-                setskillArray(response.names.skill)
-            }
-            else{
-                console.log("error")
-            }
-        })
-        .catch(error=>{console.log(error)}) 
-        .finally(()=>resolveArray())   
-    }
-    var skillsObj
-    var careerObj
-    const resolveArray=()=>{
-        skillsObj=skillArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
-        careerObj=careerArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
-        console.log(skillsObj)
-        console.log(careerObj)
-    }
+
+    // var skillsObj
+    // var careerObj
+    // const resolveArray=()=>{
+    //     skillsObj=skillArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
+    //     careerObj=careerArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
+    //     console.log(skillsObj)
+    //     console.log(careerObj)
+    // }
 
 
-    useEffect(()=>{
-        getTheAutocomplete()
-    },[])
     
     
     return (
@@ -61,9 +44,6 @@ export default function Home() {
                     <div className="col l6 m12 s12 section landingpagediv">
                         <h3 className="left-align valign-wrapper"><b>WELCOME TO THE WORLD OF EDUNOMICS</b></h3>
                         <SearchForm
-                        data1={careerArray}
-                        data2={skillArray}
-
                         />
 
                     </div>

@@ -2,19 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import {getArticle} from '../API/BlogRequests'
 import M from  'materialize-css/dist/js/materialize.min.js';
+import {getSuggestions} from '../API/BlogRequests'
 
 
-export default function SearchForm(props) {
+export default function SearchForm() {
 
     //query is the text that you search
     //search is the category filter that you wish to search
-    console.log(props)
     const [query,setQuery] = useState('')
     const [redirect, setRedirect] = useState(false)
     const [search,setSearch]=useState("career")
     const [blog,setBlog]=useState()
     const activeSearch="btn blue   "
     const inactiveSearch="btn blue lighten-3 " 
+    const [careers,setCareers]=useState()
+    const [skills,setSkills]=useState()
 
 
     const handleSubmit=(e)=>{
@@ -43,23 +45,35 @@ export default function SearchForm(props) {
         'react':null,
         'angular':null
       }
-
+    
+      const getTheAutocomplete=()=>{
+        getSuggestions()
+        .then(response=>{
+            if(response.success){
+                const careerObj= response.names.career.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
+                const skillObj= response.names.skill.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
+                setCareers(careerObj)
+                setSkills(skillObj)
+            }
+            else{
+                console.log("error")
+            }
+        })
+        .catch(error=>{console.log(error)}) 
+           
+    }
+    let elems1 = document.querySelectorAll('.autocomplete2');
+    var instances1 = M.Autocomplete.init(elems1, {
+        data:skills
+    }); 
+    let elems2 = document.querySelectorAll('.autocomplete1');
+        var instances2 = M.Autocomplete.init(elems2, {
+            data:careers
+        });  
 
     useEffect(()=>{
-        let elems = document.querySelectorAll('.autocomplete1');
-        var instances = M.Autocomplete.init(elems, {
-            data:autoData
-        });          
+        getTheAutocomplete()
     },[])
-    
-    useEffect(()=>{
-        let elems = document.querySelectorAll('.autocomplete2');
-        var instances = M.Autocomplete.init(elems, {
-            data:autoData
-        });          
-    },[])
-    
-
 
     const handleRole=(e)=>{
         e.preventDefault()
@@ -69,8 +83,6 @@ export default function SearchForm(props) {
     const handleChange=(e)=>{
         setQuery(e.target.value)
     }
-
-
 
     if (redirect) {
         return <Redirect to={{

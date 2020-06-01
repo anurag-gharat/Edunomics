@@ -68,7 +68,9 @@ export const getArticle=(query,search)=>{
     }
     return fetch(`https://edunomics.in/api/core/categoryBlog/${query}/${search}`, requestOptions)
     .then(response =>response.json())
-    .then(response =>{return response})
+    .then(response =>{
+        console.log(response)
+        return response})
     .catch(error => {return error});
 
 }

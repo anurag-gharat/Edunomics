@@ -14,11 +14,6 @@ export default function Alphabot() {
     const [end,setEnd]=useState(false)
     const userId=121321414
 
-
-
-
-
-
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
