@@ -60,7 +60,7 @@ export const getAllCategorizedBlogs=(id)=>{
 }
 
 
-
+//api for getting a preferred blog
 export const getArticle=(query,search)=>{
     console.log(query,search)
     var requestOptions={
@@ -71,4 +71,16 @@ export const getArticle=(query,search)=>{
     .then(response =>{return response})
     .catch(error => {return error});
 
+}
+//api for suggestion of blogs
+export const getSuggestions=()=>{
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      return fetch("https://edunomics.in/api/core/suggestions", requestOptions)
+        .then(response => response.json())
+        .then(result => {return result})
+        .catch(error => {return error});
 }

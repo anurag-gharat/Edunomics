@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import Video from '../Components/Video'
 import ReactGoogleSlides from "react-google-slides";
+import { Link } from 'react-router-dom';
 export default function Search(props) {
  
     
@@ -8,9 +9,12 @@ const [blog, setBlog] = useState(props.location.state.data)
     
     const d = new Date(blog.uploadDate)
     return (
+
         <div className="p-t-100">
                 <section className="section p-t-20">
+                    
                     <div className="container">
+                    <Link to="/">Back</Link>
                         <h1>
                             {blog.title}
                         </h1>
