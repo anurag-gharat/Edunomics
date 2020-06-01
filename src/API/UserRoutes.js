@@ -52,6 +52,7 @@ export const applyNow=userDetails=>{
     .catch(error => {return error})
 }
 
+//all the routes for resume
 
 export const getResume=()=>{
   const userId='5ed369bd296a7f283050dc1e'
@@ -63,4 +64,23 @@ export const getResume=()=>{
     .then(response => response.json())
     .then(result =>{return result})
     .catch(error =>{return error});
+}
+
+export const updateResume=(profile)=>{
+  console.log(profile)
+  const userId='5ed369bd296a7f283050dc1e'
+
+  var requestOptions = {
+    method: 'PUT',
+    headers:{
+      Accept:"application/json",
+      "Content-Type":"application/json"
+  },
+    body:JSON.stringify(profile),
+  };
+
+  return fetch(`https://edunomics.in/api/resume/${userId}`, requestOptions)
+  .then(response => response.json())
+  .then(result => {return result})
+  .catch(error => {return error});
 }

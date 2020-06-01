@@ -11,7 +11,7 @@ export default function Alphabot() {
     const [button,setButton]=useState(false)
     const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
-    const [end,setEnd]=useState(false)
+    const [end,setEnd]=useState(true)
     const userId=121321414
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
