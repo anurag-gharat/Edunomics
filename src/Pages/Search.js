@@ -2,21 +2,10 @@ import React, { useEffect,useState } from 'react'
 import Video from '../Components/Video'
 import ReactGoogleSlides from "react-google-slides";
 export default function Search(props) {
+ 
     
-    const [blog, setBlog] = useState({})
-    console.log(props)
-
-    if(true){
-        return (
-            <div className="p-t-100">
-                <div className="container">
-                    <h1>No Blogs Found</h1>
-                </div>
-            </div>
-        )
-    }
-else{
-    setBlog(props.location.state.data)
+const [blog, setBlog] = useState(props.location.state.data)
+    
     const d = new Date(blog.uploadDate)
     return (
         <div className="p-t-100">
@@ -50,20 +39,17 @@ else{
                         </div>
                         <div className='row m-t-10'>
                             <h4>Also watch these videos for more understanding!</h4>
-                            {/* {blog.videos.map((item,index)=>(
+                            {blog.videos.map((item,index)=>(
                                 <div  className="col l6 s6 m-t-10">
                                 <Video
                                 key={index}
                                 source={item}
                                 />
                                 </div>
-                            ))} */}
-                            <div className="col l6 s6 m-t-10"><Video /></div>
-                            <div className="col l6 s6 m-t-10"><Video /></div>
+                            ))}
                         </div>
                         </div>
                 </section>
         </div>
     )
-                        }
 }
