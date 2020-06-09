@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Bot from '../../images/bot.png'
 import {sendMessage} from '../../API/AlphaBot'
+import {connect} from 'react-redux'
 
-export default function Alphabot() {
+const Alphabot=({auth})=> {
 
     const [step,setStep]=useState(0)
     const [userInputText,setUserInputText]=useState('')
@@ -13,7 +14,7 @@ export default function Alphabot() {
     const [allChats,setAllChats]=useState([])
     const [end,setEnd]=useState(false)
     const userId=121321414
-
+    console.log(auth)
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
@@ -165,5 +166,8 @@ export default function Alphabot() {
     )
 }
 
-
+const mapStateToProps=(state)=>({
+    auth:state.auth
+})
+export default connect(mapStateToProps)(Alphabot)
 

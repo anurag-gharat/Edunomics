@@ -12,7 +12,7 @@ export const registerUser=(user)=>async(dispatch)=>{
         "Content-Type":"application/json"
     }
     try {
-        const res=await axios.post('http://wenestor.rachitpahwa.codes/api/user/signup',body,{headers:headers})
+        const res=await axios.post('https://edunomics.in/api/core/user/signup',body,{headers:headers})
         console.log(res)
         
         // dispatch({
@@ -40,9 +40,9 @@ export const loginUser=(user)=>async(dispatch)=>{
     }
 
     try {
-        const res=await axios.post('http://wenestor.rachitpahwa.codes/api/user/login',body,{headers:headers})
-        console.log(res)
-        localStorage.setItem('token',res.token)
+        const res=await axios.post('https://edunomics.in/api/core/user/login',body,{headers:headers})
+        console.log(res.data)
+        localStorage.setItem('token',res.data.token)
         dispatch({
             type:LOGIN_SUCCESS,
             payload:res.data

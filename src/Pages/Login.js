@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import {login} from '../API/UserRoutes'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+import {loginUser} from '../Redux/Actions/auth'
+import {connect} from 'react-redux'
 
-export default function Login() {
+const Login=({isAuthenticated,loginUser,isloggedin})=> {
 
     const [values,setValues]=useState({
         email:"",
@@ -17,17 +19,13 @@ export default function Login() {
     const handleSubmit=event=>{
         event.preventDefault()
         setValues({...values})
-        login({email,password})
-        .then(result=>{if(result.success){
-            alert(result.msg)
-        }
-        else{
-            alert(result.msg)
-        }
+        loginUser({email,password})
         
-    })
-        
-        
+         
+    }
+
+    if(isloggedin){
+        return <Redirect to="/user/dashboard" />
     }
     
     
@@ -83,3 +81,9 @@ export default function Login() {
         </div>
     )
 }
+
+const mapStateToProps=(state)=>({
+    isAuthenticated:state.auth.isAuthenticated,
+    isloggedin:state.auth.isloggedin
+})
+export default connect(mapStateToProps,{loginUser})(Login)
