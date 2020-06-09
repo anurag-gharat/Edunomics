@@ -1,4 +1,4 @@
-import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS} from '../Constants'
+import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT} from '../Constants'
 import axios from 'axios'
 
 
@@ -14,14 +14,15 @@ export const registerUser=(user)=>async dispatch=>{
     try {
         const res=await axios.post('http://wenestor.rachitpahwa.codes/api/user/signup',body,{headers:headers})
         console.log(res)
+        localStorage.setItem('token',res.token)
         // dispatch({
         //     type:REGISTER_SUCCESS,
         //     payload:res
         // })   
-        // dispatch(loadUser())
     } 
     catch (error) {
         console.log(error)
+        localStorage.removeItem('token')
         // dispatch({
         //     type:REGISTER_FAILURE
         // })
@@ -30,18 +31,12 @@ export const registerUser=(user)=>async dispatch=>{
 }
 
 
-
-
-
-
-
-
 //user login
 export const loginUser=(email,password)=>async(dispatch)=>{
    
     const body=JSON.stringify({email,password})
     try {
-        const res=await api.post('user/login')
+        const res=await axios.post('user/login')
 
         dispatch({
             type:LOGIN_SUCCESS,
@@ -56,4 +51,14 @@ export const loginUser=(email,password)=>async(dispatch)=>{
             type:LOGIN_FAILURE
         })    
     }    
+}
+
+
+
+//to logout the user
+export const logoutUser=()=>{
+    localStorage.removeItem('token')
+    dispatch({
+        type:LOGOUT
+    })
 }

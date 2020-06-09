@@ -1,10 +1,11 @@
-import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS} from '../Constants'
+import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT} from '../Constants'
  
 
-
+//isAuthenticated statnds for is registered
+//islogged in stands for is already logged in
 const initialState={
     token:localStorage.getItem('token'),
-    isAuthenticated:null,
+    isAuthenticated:false,
     loading:true,
     user:null,
     isloggedin:false,
@@ -17,14 +18,6 @@ export default function(state=initialState,action){
     const {type,payload}=action
 
     switch(type){
-        // case USER_LOADED:
-        //     return {
-        //         ...state,
-        //         isAuthenticated:true,
-        //         loading:false,
-        //         user:payload,
-        //         isloggedin:true
-        //     }
         case LOGIN_SUCCESS:
             return{
                 ...state,
@@ -36,6 +29,7 @@ export default function(state=initialState,action){
         case LOGIN_FAILURE:
             return{
                 ...state,
+                isloggedin:false,
                 isAuthenticated:false,
                 loading:false,
                 user:null,
@@ -43,12 +37,22 @@ export default function(state=initialState,action){
         case REGISTER_SUCCESS:
             return{
                 ...state,
+                isAuthenticated:true,
                 loading:false
             }
         case REGISTER_FAILURE:
             return{
                 ...state,
+                isAuthenticated:false,
                 loading:false
+            }
+        case LOGOUT:
+            return {
+                token:null,
+                isAuthenticated:false,
+                loading:false,
+                user:null,
+                isloggedin:false,
             }
         default :
         return{

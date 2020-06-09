@@ -25,6 +25,7 @@ import Category from './Pages/Category';
 import CategorizedBlogs from './Pages/CategorizedBlogs';
 import Test from './Components/Test';
 import UserResume from './Pages/UserResume';
+import PrivateRoutes from './PrivateRoutes';
 
 
 
@@ -48,8 +49,8 @@ useEffect(()=>{
               <Route path="/knowmore" exact component={Knowmore}    />
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
-              <Route path="/user/dashboard" component={UserDashboard}    />
-              <Route path="/user/resume/:userId" exact component={UserResume}    />
+              <PrivateRoutes path="/user/dashboard" component={UserDashboard}    />
+              <PrivateRoutes path="/user/resume/:userId" exact component={UserResume}    />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/allblogs" component={AllBlogs} />

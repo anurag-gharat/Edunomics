@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import M from  'materialize-css/dist/js/materialize.min.js';
 import {signupuser} from '../API/UserRoutes'
 //todo is to redirect the user to some page
+import {connect} from 'react-redux'
+import {registerUser} from '../Redux/Actions/auth'
+import { Redirect } from 'react-router-dom';
 
-
-
-export default function Signup() {
+const Signup=({registerUser,isAuthenticated})=> {
     
     const dobref = React.useRef()
     
@@ -36,14 +37,7 @@ export default function Signup() {
             ...values
         })
         console.log(values)
-        signupuser({name,dob,contact_no,email,password})
-        .then(result=>{if(result.success){
-            alert(result.msg)
-        }
-        else{
-            alert(result.msg)
-        }  
-    })
+        registerUser({name,dob,contact_no,email,password})
     }
 
     
@@ -57,6 +51,10 @@ export default function Signup() {
     },[])
 
 
+    //to make the register redirect to login 
+    if(isAuthenticated){
+        <Redirect to="/login" />
+    }
 
 
     return (
@@ -160,3 +158,10 @@ export default function Signup() {
             </div>
     )
 }
+
+
+const mapStateToProps=(state)=>({
+    isAuthenticated:state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps,{registerUser})(Signup)
