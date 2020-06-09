@@ -1,4 +1,4 @@
-import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT} from '../Constants'
+import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT,SET_LOADING} from '../Constants'
 import axios from 'axios'
 
 
@@ -11,20 +11,22 @@ export const registerUser=(user)=>async(dispatch)=>{
         Accept:"application/json",
         "Content-Type":"application/json"
     }
+    dispatch({
+        type:SET_LOADING
+    })
     try {
         const res=await axios.post('https://edunomics.in/api/core/user/signup',body,{headers:headers})
-        console.log(res)
+        console.log(res)  
+        dispatch({
+            type:REGISTER_SUCCESS,
+        }) 
         
-        // dispatch({
-        //     type:REGISTER_SUCCESS,
-        //     payload:res
-        // })   
     } 
     catch (error) {
-        console.log(error)
-        // dispatch({
-        //     type:REGISTER_FAILURE
-        // })
+        dispatch({
+            type:REGISTER_FAILURE
+        })
+
         
     }
 }
@@ -38,20 +40,32 @@ export const loginUser=(user)=>async(dispatch)=>{
         Accept:"application/json",
         "Content-Type":"application/json"
     }
-
+    dispatch({
+        type:SET_LOADING
+    })
     try {
         const res=await axios.post('https://edunomics.in/api/core/user/login',body,{headers:headers})
         console.log(res.data)
-        localStorage.setItem('token',res.data.token)
-        dispatch({
-            type:LOGIN_SUCCESS,
-            payload:res.data
-        })
+        if(res.data.success){
+            localStorage.setItem('token',res.data.token)
+            dispatch({
+                type:LOGIN_SUCCESS,
+                payload:res.data
+            })
+        }
+        else{
+            dispatch({
+                type:LOGIN_FAILURE,
+                payload:res.data
+
+            })
+        }
+
     } 
     catch (error) {
-        console.log(error)
         dispatch({
-            type:LOGIN_FAILURE
+                payload:error,
+                type:LOGIN_FAILURE,
         })    
     }    
 }

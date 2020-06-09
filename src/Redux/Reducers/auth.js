@@ -1,4 +1,4 @@
-import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT} from '../Constants'
+import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT, SET_LOADING} from '../Constants'
  
 
 //isAuthenticated statnds for is registered
@@ -9,7 +9,7 @@ const initialState={
     loading:false,
     user:null,
     isloggedin:false,
-
+    alertMessage:null
 }
 
 
@@ -18,13 +18,19 @@ export default function(state=initialState,action){
     const {type,payload}=action
 
     switch(type){
+        case SET_LOADING:
+            return{
+                ...state,
+                loading:true
+            }
         case LOGIN_SUCCESS:
             return{
                 ...state,
                 isAuthenticated:true,
                 loading:false,
                 token:payload.token,
-                isloggedin:true
+                isloggedin:true,
+                alertMessage:payload.msg
             }
         case LOGIN_FAILURE:
             return{
@@ -33,18 +39,21 @@ export default function(state=initialState,action){
                 isAuthenticated:false,
                 loading:false,
                 user:null,
+                alertMessage:payload.msg
             }
         case REGISTER_SUCCESS:
             return{
                 ...state,
                 isAuthenticated:true,
-                loading:false
+                loading:false,
+                alertMessage:payload.msg
             }
         case REGISTER_FAILURE:
             return{
                 ...state,
                 isAuthenticated:false,
-                loading:false
+                loading:false,
+                alertMessage:payload.msg
             }
         case LOGOUT:
             return {
@@ -53,6 +62,8 @@ export default function(state=initialState,action){
                 loading:false,
                 user:null,
                 isloggedin:false,
+                alertMessage:null
+
             }
         default :
         return{

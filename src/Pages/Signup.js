@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import M from  'materialize-css/dist/js/materialize.min.js';
-import {signupuser} from '../API/UserRoutes'
-//todo is to redirect the user to some page
+import Loading from '../Components/Loading'
 import {connect} from 'react-redux'
 import {registerUser} from '../Redux/Actions/auth'
 import { Redirect } from 'react-router-dom';
 
-const Signup=({registerUser,isAuthenticated})=> {
+
+const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
     
     const dobref = React.useRef()
     
@@ -36,7 +36,6 @@ const Signup=({registerUser,isAuthenticated})=> {
         setValues({
             ...values
         })
-        console.log(values)
         registerUser({name,dob,contact_no,email,password})
     }
 
@@ -150,10 +149,14 @@ const Signup=({registerUser,isAuthenticated})=> {
                         <div className="row center">
                             <button className="button large green accent-4 white-text hoverable" type="submit">Submit</button>
                         </div>
-                        
+                        {loading? <Loading />:''}             
                         
                         </form>
                     </div>
+                    {alertMessage?(<div className="col l12 s12 red accent-4">
+
+</div>):('')}
+
                 </div>   
             </div>
     )
@@ -161,7 +164,9 @@ const Signup=({registerUser,isAuthenticated})=> {
 
 
 const mapStateToProps=(state)=>({
-    isAuthenticated:state.auth.isAuthenticated
+    isAuthenticated:state.auth.isAuthenticated,
+    loading:state.auth.loading,
+    alertMessage:state.auth.alertMessage
 })
 
 export default connect(mapStateToProps,{registerUser})(Signup)

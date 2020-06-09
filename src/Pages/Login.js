@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom'
 import {loginUser} from '../Redux/Actions/auth'
 import {connect} from 'react-redux'
 
-const Login=({isAuthenticated,loginUser,isloggedin})=> {
+const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
 
     const [values,setValues]=useState({
         email:"",
@@ -25,6 +25,7 @@ const Login=({isAuthenticated,loginUser,isloggedin})=> {
     }
 
     if(isloggedin){
+        alert("Logging In...")
         return <Redirect to="/user/dashboard" />
     }
     
@@ -74,9 +75,13 @@ const Login=({isAuthenticated,loginUser,isloggedin})=> {
                             <div className="row">
                                 <Link to="/signup"> Sign up now!</Link>
                             </div>
+                            {alertMessage?(<div className="row red-text">
+                                <h4>{alertMessage}</h4>
+
+</div>):('')}
                             </form>
                             </div>
-                        
+                            
             </div>
         </div>
     )
@@ -84,6 +89,7 @@ const Login=({isAuthenticated,loginUser,isloggedin})=> {
 
 const mapStateToProps=(state)=>({
     isAuthenticated:state.auth.isAuthenticated,
-    isloggedin:state.auth.isloggedin
+    isloggedin:state.auth.isloggedin,
+    alertMessage:state.auth.alertMessage
 })
 export default connect(mapStateToProps,{loginUser})(Login)
