@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 //user register
-export const registerUser=(user)=>async dispatch=>{
+export const registerUser=(user)=>async(dispatch)=>{
 
     const body = JSON.stringify(user)
     const headers ={
@@ -14,7 +14,7 @@ export const registerUser=(user)=>async dispatch=>{
     try {
         const res=await axios.post('http://wenestor.rachitpahwa.codes/api/user/signup',body,{headers:headers})
         console.log(res)
-        localStorage.setItem('token',res.token)
+        
         // dispatch({
         //     type:REGISTER_SUCCESS,
         //     payload:res
@@ -22,7 +22,6 @@ export const registerUser=(user)=>async dispatch=>{
     } 
     catch (error) {
         console.log(error)
-        localStorage.removeItem('token')
         // dispatch({
         //     type:REGISTER_FAILURE
         // })
@@ -32,18 +31,22 @@ export const registerUser=(user)=>async dispatch=>{
 
 
 //user login
-export const loginUser=(email,password)=>async(dispatch)=>{
+export const loginUser=(user)=>async(dispatch)=>{
    
-    const body=JSON.stringify({email,password})
-    try {
-        const res=await axios.post('user/login')
+    const body=JSON.stringify(user)
+    const headers={
+        Accept:"application/json",
+        "Content-Type":"application/json"
+    }
 
+    try {
+        const res=await axios.post('http://wenestor.rachitpahwa.codes/api/user/login',body,{headers:headers})
+        console.log(res)
+        localStorage.setItem('token',res.token)
         dispatch({
             type:LOGIN_SUCCESS,
             payload:res.data
         })
-//load the user then
-        //dispatch(loadUser())
     } 
     catch (error) {
         console.log(error)
@@ -56,7 +59,7 @@ export const loginUser=(email,password)=>async(dispatch)=>{
 
 
 //to logout the user
-export const logoutUser=()=>{
+export const logoutUser=()=>dispatch=>{
     localStorage.removeItem('token')
     dispatch({
         type:LOGOUT

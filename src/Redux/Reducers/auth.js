@@ -6,7 +6,7 @@ import {LOGIN_FAILURE,LOGIN_SUCCESS,REGISTER_FAILURE,REGISTER_SUCCESS, LOGOUT} f
 const initialState={
     token:localStorage.getItem('token'),
     isAuthenticated:false,
-    loading:true,
+    loading:false,
     user:null,
     isloggedin:false,
 

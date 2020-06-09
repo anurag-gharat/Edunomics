@@ -53,7 +53,7 @@ const Signup=({registerUser,isAuthenticated})=> {
 
     //to make the register redirect to login 
     if(isAuthenticated){
-        <Redirect to="/login" />
+       return <Redirect to="/login" />
     }
 
 
