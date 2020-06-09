@@ -63,7 +63,6 @@ export default function(state=initialState,action){
                 user:null,
                 isloggedin:false,
                 alertMessage:null
-
             }
         default :
         return{

@@ -16,19 +16,20 @@ export const registerUser=(user)=>async(dispatch)=>{
     })
     try {
         const res=await axios.post('https://edunomics.in/api/core/user/signup',body,{headers:headers})
-        console.log(res)  
         dispatch({
             type:REGISTER_SUCCESS,
-        }) 
-        
+            payload:res.data
+        })        
     } 
     catch (error) {
+        const errorMessage={
+            msg:"Unable to fetch Api"
+        }
         dispatch({
-            type:REGISTER_FAILURE
-        })
-
-        
-    }
+            type:REGISTER_FAILURE,
+            payload:errorMessage
+      })
+   }
 }
 
 
@@ -45,7 +46,6 @@ export const loginUser=(user)=>async(dispatch)=>{
     })
     try {
         const res=await axios.post('https://edunomics.in/api/core/user/login',body,{headers:headers})
-        console.log(res.data)
         if(res.data.success){
             localStorage.setItem('token',res.data.token)
             dispatch({
@@ -57,20 +57,16 @@ export const loginUser=(user)=>async(dispatch)=>{
             dispatch({
                 type:LOGIN_FAILURE,
                 payload:res.data
-
             })
         }
-
     } 
     catch (error) {
         dispatch({
-                payload:error,
                 type:LOGIN_FAILURE,
+                payload:error,
         })    
     }    
 }
-
-
 
 //to logout the user
 export const logoutUser=()=>dispatch=>{

@@ -9,23 +9,18 @@ import { Redirect } from 'react-router-dom';
 const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
     
     const dobref = React.useRef()
-    
     const [values,setValues]=useState({
         name:"",
-        dob:"",
         contact_no:"",
         email:"",
         password:""
     })
-
+    const [dob,setDob]=useState('')
+    
     const handleDate = () => {
-        setValues({
-            ...values,
-            dob: dobref.current.value,
-        })
-
+        setDob(dobref.current.value)
     }
-    const {name,email,dob,contact_no,password}=values
+    const {name,email,contact_no,password}=values
 
     const handleChange=name=>event=>{
         setValues({...values,[name]:event.target.value})
@@ -36,9 +31,10 @@ const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
         setValues({
             ...values
         })
+        console.log({name,dob,contact_no,email,password})
         registerUser({name,dob,contact_no,email,password})
     }
-
+    console.log({...values,dob})
     
     useEffect(()=>{
         var start = document.querySelectorAll('.datepicker');
@@ -52,6 +48,7 @@ const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
 
     //to make the register redirect to login 
     if(isAuthenticated){
+        alert('Successfully Profile Created! Login using the same account.')
        return <Redirect to="/login" />
     }
 
@@ -141,8 +138,8 @@ const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
                             type="text"
                             className="datepicker"
                             id="dob"
-                            onChange={handleChange}
-                            value={dob}
+                            onChange={handleDate}
+                            //value={dob}
                             ref={dobref} />
                         </div>
                         </div>
