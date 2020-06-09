@@ -3,7 +3,9 @@ import 'materialize-css/dist/css/materialize.min.css'
 import "materialize-css/dist/js/materialize.min.js";
 import './App.css';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+import {Provider} from 'react-redux' 
+import store from './Redux/Store'
+import'aos/dist/aos.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home'
 import Application from './Pages/Application'
@@ -14,13 +16,13 @@ import Error from './Pages/Error';
 import Search from './Pages/Search';
 import ScrollToTop from './Components/ScrollToTop';
 import UserDashboard from './Pages/UserDashboard';
-// import Login from './Pages/Login'
-// // import Signup from './Pages/Signup'
+import Login from './Pages/Login'
+import Signup from './Pages/Signup'
 import AllBlogs from './Pages/AllBlogs'
-// import AllCategories from './Pages/AllCategories';
-// import NewBlog from './Pages/NewBlog';
-// import Category from './Pages/Category';
-// import CategorizedBlogs from './Pages/CategorizedBlogs';
+import AllCategories from './Pages/AllCategories';
+import NewBlog from './Pages/NewBlog';
+import Category from './Pages/Category';
+import CategorizedBlogs from './Pages/CategorizedBlogs';
 import Test from './Components/Test';
 import UserResume from './Pages/UserResume';
 
@@ -36,6 +38,7 @@ useEffect(()=>{
 
   return (
     <div>
+      <Provider store={store}>
         <Router >
           <ScrollToTop >
           <Navbar />
@@ -47,14 +50,13 @@ useEffect(()=>{
               <Route path="/search" component={Search}    />
               <Route path="/user/dashboard" component={UserDashboard}    />
               <Route path="/user/resume/:userId" exact component={UserResume}    />
-
-              {/* <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} /> */}
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
               <Route path="/allblogs" component={AllBlogs} />
-              {/* <Route path="/allcategories" component={AllCategories} />
+              <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
               <Route path="/category/:categoryId" component={Category} />
-              <Route path="/blogs/:categoryId" component={CategorizedBlogs} />*/}
+              <Route path="/blogs/:categoryId" component={CategorizedBlogs} />
               <Route path="/Test" component={Test} /> 
 
 
@@ -70,6 +72,7 @@ useEffect(()=>{
           <Footer />
           </ScrollToTop>
         </Router>
+        </Provider>
     </div>
   );
 }
