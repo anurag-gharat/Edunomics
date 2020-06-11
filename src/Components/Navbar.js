@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import M from  'materialize-css/dist/js/materialize.min.js';
 import Logo from '../images/logo.png'
+import {connect} from 'react-redux'
+import {logoutUser} from '../Redux/Actions/auth'
 
-
-export default function Navbar() {
+const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
 
     
     useEffect(()=>{
@@ -28,7 +29,17 @@ export default function Navbar() {
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#initiatives">Initiatives</a></li>
                 {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
                 {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
+                {isAuthenticated && isloggedin? 
+                (
+                    <>
+                <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Dashboard</Link></li>
+                <li><Link className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</Link></li>
+                </>
+                )
+                :
+                (
                 <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Try our Alpha</Link></li>
+                )}
             </ul>
             </div>
             
@@ -40,9 +51,26 @@ export default function Navbar() {
                 <li><a  className="black-text darken-4" href="#initiatives" rel="noopener noreferrer" >Initiatives</a></li>
                 {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
                 {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
+                {isAuthenticated && isloggedin? 
+                (
+                    <>
+                <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Dashboard</Link></li>
+                <li><Link className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</Link></li>
+                </>
+                )
+                :
+                (
                 <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Try our Alpha</Link></li>
+                )}
 
             </ul>
         </div>
     )
 }
+
+const mapStateToProps=(state)=>({
+isAuthenticated:state.auth.isAuthenticated,
+isloggedin:state.auth.isloggedin
+})
+
+export default connect(mapStateToProps,{logoutUser})(Navbar)
