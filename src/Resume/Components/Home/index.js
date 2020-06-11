@@ -11,11 +11,12 @@ import Project from "../Content/Project";
 import {getResume} from '../../../API/UserRoutes'
 import Button from '@material-ui/core/Button';
 import {updateResume} from '../../../API/UserRoutes'
+import { connect } from "react-redux";
 
 
 
 
-export default function Home() {
+const Home=({userProfile})=> {
   const [isEdit, setIsEdit] = useState({
     personal_info: false,
     project: false,
@@ -181,3 +182,9 @@ export default function Home() {
           </PageLayout>
   );
 }
+
+const mapstateToProps=(state)=>({
+  profile:state.profile.userProfile
+})
+
+export default connect(mapstateToProps)(Home)

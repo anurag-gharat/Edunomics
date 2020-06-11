@@ -91,7 +91,7 @@ const Alphabot=({auth})=> {
                 setBotReplyText(response.question)
                 
                 appendReply(response)
-                setScrollBar()
+                
             })     
     }
 
