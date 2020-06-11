@@ -54,10 +54,8 @@ export default function Home() {
             </section>
             <section className="aboutsection section">
                 <Heading title="ABOUT EDUNOMICS" />
-                <SemiBlock 
-                
-                text="We are a bootstrap startup with a vision to impact education and economics solving complex problems with simple solutions.
-                Edunomics combines tech expertise and business intelligence to catalyze change and deliver results. We are employing top talent to provide a uniquely matching solution for your unique problem." 
+                <SemiBlock    
+                text="We are an ed-tech platform with a vision to impact education and economy by offering training through industry experts. We are out on our way to catalyze change and bridge the gap between educational and industrial worlds. We firmly believe in quality education which is why we bring the talent of the industry to give you insights into what’s happening in the outside world. Here, we provide you with an opportunity to learn online from industry experts on a great number of topics and technologies." 
                 isbutton1={true}
                 button1text="Know More?"
                 button1path="/knowmore"

@@ -16,7 +16,7 @@ export default function ImpactSection() {
 
             <ImpactCard 
                 title="Quality Education" 
-                text="Skills with optimum experience will be shared to make a great transition to a professional world."    
+                text="Knowledge through the industry experts will be shared to facilitate a hasslefree transition to the professional world."    
                 >
                     <GiBookshelf className="light-green-text accent-3 " />
             </ImpactCard>
@@ -27,7 +27,7 @@ export default function ImpactSection() {
 
             <ImpactCard 
                 title="Better Talent" 
-                text="Once the availability of Smart and sincere talent is ample, the increase in competition will be in favour of industry too ."    
+                text="World-class talent will be produced in various fields that will be competitive enough to play the odds in its favor."    
             >
             <GiSupersonicArrow  className="light-green-text accent-3" />
             </ImpactCard>
@@ -37,7 +37,7 @@ export default function ImpactSection() {
 
             <ImpactCard 
             title="Productivity at jobs" 
-            text="Talented workforce will enable innovation and productivity led mission for quality output."    
+            text="Talented workforce enabling innovation and productivity will be successful in driving the desired outputs and take the industry to new heights."    
             >
             <FaUserTie  className="light-green-text accent-3" />
             </ImpactCard>
@@ -46,7 +46,7 @@ export default function ImpactSection() {
             <div className="col s6 l3">
             <ImpactCard 
             title="Innovation Drive" 
-            text="Further industry will innovate to claim the value available with more demand & hence more talented people."    
+            text="The industry will undergo innovation with more demand which will ultimately, create more space for the talent produced."    
             >
             <FaRegLightbulb className="light-green-text accent-3"  />
             </ImpactCard>
@@ -57,7 +57,7 @@ export default function ImpactSection() {
             <ImpactCard 
 
             title="More Profits" 
-            text="When productivity is more and rejections are less,it will lead to more sales and profits."    
+            text="Enhanced productivity and ideas will bring in more revenue and ensure increased profits. "    
             >
             <BsGraphUp className="light-green-text accent-3"  />
             </ImpactCard>
@@ -65,7 +65,7 @@ export default function ImpactSection() {
             <div className="col s6 l4">
             <ImpactCard 
             title="Need Capacity Enhancement" 
-            text="Invite opportunity for Existing & New industry to come up with new facilities."    
+            text="A great opportunity for existing and new industries to come up with improved facilities and offerings which will improve the market scenario."    
             >
             <MdVerifiedUser className="light-green-text accent-3"  />
             </ImpactCard>
@@ -73,7 +73,7 @@ export default function ImpactSection() {
             <div className=" col s6 l4">
             <ImpactCard 
             title="More Jobs" 
-            text="As consumption, industry and innovation peaks will also lead to increasing number of jobs and hence create a circle."    
+            text="Increased consumption, productivity, and innovation will lead to an increase in employment and hence create a cycle."    
             >
             <FaHandshake className="light-green-text accent-3"  />
             </ImpactCard>
