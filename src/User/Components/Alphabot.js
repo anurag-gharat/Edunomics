@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 
 const Alphabot=({auth})=> {
 
+
     const [step,setStep]=useState(0)
     const [userInputText,setUserInputText]=useState('')
     const [botReplyText,setBotReplyText]=useState('')
@@ -14,7 +15,6 @@ const Alphabot=({auth})=> {
     const [allChats,setAllChats]=useState([])
     const [end,setEnd]=useState(false)
     const userId=121321414
-    console.log(auth)
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
@@ -22,7 +22,7 @@ const Alphabot=({auth})=> {
     
 //userchats    
     const appendMessage=()=>{
-    displayData.push(<div className="user-dialog row" key={step+100}>
+    displayData.push(<div className="user-dialog row" key={userInputText}>
     <div className="alphabot-text right col l6 green">
     <p className="botText right white-text">{userInputText}</p>
     </div>
@@ -35,10 +35,12 @@ const Alphabot=({auth})=> {
     const setScrollBar=()=>{
         document.querySelector('.input').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
     }
+
+
 // chat bot chats
     const appendReply=(response)=>{  
         
-        displayData.push(<div className="alphabot-dialog row" key={step}>
+        displayData.push(<div className="alphabot-dialog row" key={response.question}>
             <div className="alphabot-avatar col l1">
         <img className="responsive-img" src={Bot}></img>
     </div>
@@ -48,17 +50,15 @@ const Alphabot=({auth})=> {
 </div>)
    setAllChats([...allChats,...displayData])
    setUserInputText('')
-   console.log(step)
-
     }
 
-
+  
     const getResponseBack=()=>{
         setStep(step+1)
             appendMessage()
             sendMessage(userInputText,step)
             .then(response=>{
-                console.log(response)
+
                 if(response.button===1){
                     setButton(true)
                 }
@@ -71,8 +71,28 @@ const Alphabot=({auth})=> {
                 setBotReplyText(response.question)
                 appendReply(response)
                 setScrollBar()
-            })
+            })   
+    }
+
+    const getFirstResponseBack=()=>{
         
+            sendMessage(userInputText,step)
+            .then(response=>{
+                setStep(response.a+1)
+                if(response.button===1){
+                    setButton(true)
+                }
+                else{
+                    setButton(false)
+                }
+                if(response.End){
+                    setEnd(true)
+                }
+                setBotReplyText(response.question)
+                
+                appendReply(response)
+                setScrollBar()
+            })     
     }
 
 
@@ -96,7 +116,9 @@ const Alphabot=({auth})=> {
         }
     }
 
-
+    useEffect(()=>{
+        getFirstResponseBack()
+    },[])
  
   
     return (
@@ -106,13 +128,13 @@ const Alphabot=({auth})=> {
                 <h4 className="left ml2 white-text">Alpha Bot</h4>
             </div>
             <div className="chat-container" id="chatscreen">
-            <div className="row alphabot-dialog">
+            {/* <div className="row alphabot-dialog">
             <div className="alphabot-avatar col l1">
             <img className="responsive-img" src={Bot}></img>
             </div>
             <div className="alphabot-text col l6 ">
             <p className="botText">Hello there! I am AlphaBot</p>
-            </div></div> 
+            </div></div>  */}
             {allChats}               
 
             </div>

@@ -1,11 +1,12 @@
 import {GET_PROFILE} from '../Constants'
 
-export const getProfile=(id)=>{
+export const getProfile=(token)=>{
 
     try {
-        //
+        
+
     } catch (error) {
-        //
+    
     }
 
 }

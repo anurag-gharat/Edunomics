@@ -1,4 +1,4 @@
-import {GET_PROFILE} from '../Constants'
+import {GET_PROFILE,SET_LOADING} from '../Constants'
 
 
 const intialState={
@@ -14,6 +14,11 @@ export default function (state=intialState,action){
     const {type,payload}=action
 
     switch(type){
+        case SET_LOADING :
+            return{
+                ...state,
+                loading:true
+            }
         case GET_PROFILE:
             return{
                 userProfile:payload,
@@ -21,6 +26,7 @@ export default function (state=intialState,action){
                 loading:false,
                 errors:[]
             }
+
         default :
         return{
             ...state

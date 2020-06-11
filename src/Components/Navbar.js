@@ -33,7 +33,7 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
                 (
                     <>
                 <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Dashboard</Link></li>
-                <li><Link className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</Link></li>
+                <li><button  className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</button></li>
                 </>
                 )
                 :
@@ -55,7 +55,7 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
                 (
                     <>
                 <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Dashboard</Link></li>
-                <li><Link className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</Link></li>
+                <li><button className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</button></li>
                 </>
                 )
                 :
