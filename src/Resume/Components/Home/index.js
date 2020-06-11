@@ -31,8 +31,8 @@ const Home=({userProfile})=> {
     setProfile({ ...profile, [name]: val });
   };
   const [loading,setLoading]=useState(true)
-  
-  
+  console.log(userProfile)
+  console.log(userProfile)
   const fetchTheResume=()=>{
     setLoading(true)
     getResume()
@@ -49,6 +49,7 @@ const Home=({userProfile})=> {
   const userId='5ed369bd296a7f283050dc1e'
 
       useEffect(()=>{
+
         fetchTheResume()
       },[]
       )
@@ -184,7 +185,7 @@ const Home=({userProfile})=> {
 }
 
 const mapstateToProps=(state)=>({
-  profile:state.profile.userProfile
+  userProfile:state.profile.userProfile
 })
 
 export default connect(mapstateToProps)(Home)

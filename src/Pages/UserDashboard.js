@@ -10,7 +10,7 @@ const UserDashboard=({getProfile,userProfile,loading})=> {
     useEffect(()=>{
         getProfile()
     },[])
-
+    
     return (
         <div className="container p-t-100 h-100">
             <div className="container">

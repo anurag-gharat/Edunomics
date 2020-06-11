@@ -2,7 +2,7 @@ import {GET_PROFILE,SET_LOADING} from '../Constants'
 
 
 const intialState={
-    userProfile:null,
+    userProfile:{},
     isAdmin:false,
     loading:true,
     errors:[]

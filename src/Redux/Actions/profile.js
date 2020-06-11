@@ -6,14 +6,14 @@ export const getProfile=()=>async(dispatch)=>{
 
     try {
         let token=localStorage.getItem('token')
-        console.log(token)
+ 
         const headers={
             Accept:"application/json",
             "Content-Type":"application/json",
             "x-access-token":token
         }
         const res =await axios.get('https://edunomics.herokuapp.com/api/core/user/getuserdetail',{headers:headers})
-        console.log(res)
+        console.log(res.data)
         dispatch({
             type:GET_PROFILE,
             payload:res.data
