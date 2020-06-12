@@ -1,10 +1,10 @@
-import {GET_PROFILE,SET_LOADING} from '../Constants'
+import {GET_PROFILE,SET_LOADING,PROFILE_ERROR} from '../Constants'
 
 
 const intialState={
     userProfile:{},
     isAdmin:false,
-    loading:true,
+    loading:false,
     errors:[]
 }
 
@@ -26,7 +26,13 @@ export default function (state=intialState,action){
                 loading:false,
                 errors:[]
             }
-
+        case PROFILE_ERROR:
+            return{
+                userProfile:{},
+                isAdmin:false,
+                loading:false,
+                errors:[payload]
+            }
         default :
         return{
             ...state

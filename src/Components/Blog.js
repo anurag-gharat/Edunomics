@@ -20,8 +20,7 @@ export default function Blog(props) {
                 height="600px"
                 frameBorder="0"
                 >
-                </iframe> */}
-            
+                </iframe> */} 
             </div>
         
            <h6>{subtitle}</h6>
@@ -42,8 +41,7 @@ export default function Blog(props) {
               ))}  
       
             </div>
-            <div className="divider"></div>
-        
+            <div className="divider"></div>    
         </div>
     )
 }

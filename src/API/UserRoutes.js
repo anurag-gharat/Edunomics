@@ -54,12 +54,11 @@ export const applyNow=userDetails=>{
 
 //all the routes for resume
 
-export const getResume=()=>{
-  const userId='5ed369bd296a7f283050dc1e'
+export const getResume=(userId)=>{
   var requestOptions = {
     method: 'GET',
   };
-  
+  console.log(userId)
   return fetch(`https://edunomics.in/api/resume/${userId}`, requestOptions)
     .then(response => response.json())
     .then(result =>{return result})

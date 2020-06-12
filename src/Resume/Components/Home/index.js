@@ -16,7 +16,8 @@ import { connect } from "react-redux";
 
 
 
-const Home=({userProfile})=> {
+const Home=({userProfile,loading})=> {
+  
   const [isEdit, setIsEdit] = useState({
     personal_info: false,
     project: false,
@@ -25,34 +26,39 @@ const Home=({userProfile})=> {
     objective: false,
     education: false,
   });
+  
   const [profile, setProfile] = useState();
+  
   const onSave = (name, val) => {
     setIsEdit({ ...isEdit, [name]: false });
     setProfile({ ...profile, [name]: val });
   };
-  const [loading,setLoading]=useState(true)
+
+  const [resumeloading,setResumeLoading]=useState(true)
+  
   console.log(userProfile)
-  console.log(userProfile)
+
+
   const fetchTheResume=()=>{
-    setLoading(true)
-    getResume()
-    .then(response=>
-    {
-      setProfile(response.profile)
-      console.log(response.profile)
-    })  
-    .catch(error=>console.log(error))
-    .finally(()=>setLoading(false))
-    
+    if(!loading){
+
+      const {_id}=userProfile
+
+      getResume(_id)
+      .then(response=>
+      {
+        setProfile(response.profile.resume)
+        console.log(response)
+      })  
+      .catch(error=>console.log(error))
+      .finally(()=>setResumeLoading(false))
     }
-    //console.log(profile)
-  const userId='5ed369bd296a7f283050dc1e'
+  }
+
 
       useEffect(()=>{
-
         fetchTheResume()
-      },[]
-      )
+      },[])
   
     const updateResumeOfUser=()=>{
       updateResume(profile)
@@ -72,7 +78,7 @@ const Home=({userProfile})=> {
   return (
     
     <PageLayout>
-      {loading ? 
+      {resumeloading ? 
       (<Loading></Loading>):  
       (<Container
         style={{
@@ -185,7 +191,8 @@ const Home=({userProfile})=> {
 }
 
 const mapstateToProps=(state)=>({
-  userProfile:state.profile.userProfile
+  userProfile:state.profile.userProfile,
+  loading:state.profile.loading
 })
 
 export default connect(mapstateToProps)(Home)
