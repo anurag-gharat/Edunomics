@@ -8,7 +8,7 @@ import Education from "../Content/Education";
 import Skills from "../Content/Skills";
 import WorkExperience from "../Content/WorkExperience";
 import Project from "../Content/Project";
-import {getResume} from '../../../API/UserRoutes'
+import {getUserResume} from '../../../Redux/Actions/profile'
 import Button from '@material-ui/core/Button';
 import {updateResume} from '../../../API/UserRoutes'
 import { connect } from "react-redux";
@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 
 
 
-const Home=({userProfile,loading})=> {
+const Home=({userProfile,userResume,loading,getUserResume})=> {
   
   const [isEdit, setIsEdit] = useState({
     personal_info: false,
@@ -27,37 +27,19 @@ const Home=({userProfile,loading})=> {
     education: false,
   });
   
-  const [profile, setProfile] = useState();
+
+
+  const [profile, setProfile] = useState(userResume);
   
   const onSave = (name, val) => {
     setIsEdit({ ...isEdit, [name]: false });
     setProfile({ ...profile, [name]: val });
   };
 
-  const [resumeloading,setResumeLoading]=useState(true)
   
-  console.log(userProfile)
-
-
-  const fetchTheResume=()=>{
-    if(!loading){
-
-      const {_id}=userProfile
-
-      getResume(_id)
-      .then(response=>
-      {
-        setProfile(response.profile.resume)
-        console.log(response)
-      })  
-      .catch(error=>console.log(error))
-      .finally(()=>setResumeLoading(false))
-    }
-  }
-
 
       useEffect(()=>{
-        fetchTheResume()
+        getUserResume()
       },[])
   
     const updateResumeOfUser=()=>{
@@ -78,7 +60,7 @@ const Home=({userProfile,loading})=> {
   return (
     
     <PageLayout>
-      {resumeloading ? 
+      {loading ? 
       (<Loading></Loading>):  
       (<Container
         style={{
@@ -192,7 +174,8 @@ const Home=({userProfile,loading})=> {
 
 const mapstateToProps=(state)=>({
   userProfile:state.profile.userProfile,
-  loading:state.profile.loading
+  loading:state.profile.loading,
+  userResume:state.profile.userResume
 })
 
-export default connect(mapstateToProps)(Home)
+export default connect(mapstateToProps,{getUserResume})(Home)

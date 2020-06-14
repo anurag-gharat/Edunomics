@@ -47,7 +47,7 @@ export const applyNow=userDetails=>{
   };
   
   return fetch("https://edunomics.herokuapp.com/api/core/careerApplicant", requestOptions)
-    .then(response => response.json())
+    .then(response =>console.log(response.json()))
     .then(result => {return result})
     .catch(error => {return error})
 }

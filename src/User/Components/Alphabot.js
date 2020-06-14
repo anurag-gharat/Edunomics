@@ -28,8 +28,7 @@ const Alphabot=({auth})=> {
     </div>
     </div>)
     setAllChats([...allChats,...displayData])
-    setUserInputText('')
-       
+    setUserInputText('')    
 }
 
     const setScrollBar=()=>{
