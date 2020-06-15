@@ -34,12 +34,13 @@ const Signup=({registerUser,isAuthenticated,loading,alertMessage})=> {
         console.log({name,dob,contact_no,email,password})
         registerUser({name,dob,contact_no,email,password})
     }
-    console.log({...values,dob})
     
     useEffect(()=>{
         var start = document.querySelectorAll('.datepicker');
             M.Datepicker.init(start, {
+                minDate: new Date('1980-01-1'),
                 format: "mm/dd/yyyy",
+                yearRange:[1980,2010],
                 autoClose: true,
                 onClose: handleDate
             });
