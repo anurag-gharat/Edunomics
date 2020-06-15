@@ -1,39 +1,4 @@
-export const signupuser=user=>{
-
-    var requestOptions = {
-        method: 'POST',
-        headers:{
-          Accept:"application/json",
-          "Content-Type":"application/json"
-      },
-        body:JSON.stringify(user),
-        redirect: 'follow'
-      };
-      return fetch("http://wenestor.rachitpahwa.codes/api/user/signup", requestOptions)
-        .then(response =>response.json())
-        .then(result =>{return result})
-        .catch(error => console.log('error', error));
-}
-
-
-export const login = user =>{
-
-var requestOptions = {
-  method: 'POST',
-  headers:{
-    Accept:"application/json",
-    "Content-Type":"application/json"
-},
-  body: JSON.stringify(user),
-};
-  return fetch("http://wenestor.rachitpahwa.codes/api/user/login", requestOptions)
-  .then(response =>response.json())
-  .then(result => {return result})
-  .catch(error => console.log('error', error));
-}
-
-
-
+//apply now form
 export const applyNow=userDetails=>{
   console.log(userDetails)
   var requestOptions = {
@@ -52,19 +17,9 @@ export const applyNow=userDetails=>{
     .catch(error => {return error})
 }
 
-//all the routes for resume
 
-export const getResume=(userId)=>{
-  var requestOptions = {
-    method: 'GET',
-  };
-  console.log(userId)
-  return fetch(`https://edunomics.in/api/resume/${userId}`, requestOptions)
-    .then(response => response.json())
-    .then(result =>{return result})
-    .catch(error =>{return error});
-}
 
+//update resume 
 export const updateResume=(profile)=>{
   console.log(profile)
   const userId='5ed369bd296a7f283050dc1e'

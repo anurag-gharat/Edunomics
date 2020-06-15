@@ -1,4 +1,4 @@
-import {GET_PROFILE,SET_LOADING,PROFILE_ERROR,GET_USER_RESUME,USER_RESUME_ERROR} from '../Constants'
+import {GET_PROFILE,SET_LOADING,PROFILE_ERROR,GET_USER_RESUME,USER_RESUME_ERROR, UPDATE_RESUME_SUCCESS, UPDATE_RESUME_FAILED} from '../Constants'
 
 
 const intialState={
@@ -51,6 +51,20 @@ export default function (state=intialState,action){
                 isAdmin:false,
                 loading:false,
                 errors:[payload]
+            }
+        case UPDATE_RESUME_SUCCESS:
+            return{
+                ...state,
+                loading:false,
+                errors:[],
+                userProfile:payload,
+                userResume:payload.resume
+            }
+        case UPDATE_RESUME_FAILED:
+            return{
+                ...state,
+                loading:false,
+                errors:[payload],
             }
         default :
         return{
