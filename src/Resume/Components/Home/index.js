@@ -38,11 +38,11 @@ const Home=({userProfile,userResume,loading,getUserResume})=> {
 
     console.log(userResume);
     console.log(userProfile);
-
     
-      useEffect(()=>{
-        getUserResume()
-      },[])
+    
+      // useEffect(()=>{
+      //   getUserResume()
+      // },[])
   
     const updateResumeOfUser=()=>{
       updateResume(profile)

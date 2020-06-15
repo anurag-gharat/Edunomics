@@ -3,8 +3,11 @@ import {Link} from 'react-router-dom'
 import Bot from '../../images/bot.png'
 import {sendMessage} from '../../API/AlphaBot'
 import {connect} from 'react-redux'
+import {getUserResume} from '../../Redux/Actions/profile'
+import Loading from '../../Components/Loading'
 
-const Alphabot=({auth})=> {
+
+const Alphabot=({auth,loading,getUserResume})=> {
 
 
     const [step,setStep]=useState(0)
@@ -14,7 +17,6 @@ const Alphabot=({auth})=> {
     const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
     const [end,setEnd]=useState(true)
-    const userId=121321414
     const handleChange=(e)=>{
         setUserInputText(e.target.value)
     }
@@ -176,9 +178,19 @@ const Alphabot=({auth})=> {
     {end
         ?
         (
-            <div className="container center" >
+            <div className="container center m-t-10" >
                 <h4>Thank you for answering all our questions</h4>
-                <Link to={`/user/resume/${userId}`}><button className="btn btn-large">Check Resume</button></Link>
+                {loading ? 
+                (<Loading />) :  (
+                <div className="container">
+                    <div className="row">
+                    <button className="btn blue" onClick={getUserResume}>Create Your Resume?</button>
+                    </div>
+                    <div className="row">
+                    <Link to={`/user/resume/`}><button className="btn btn-large">Check Resume</button></Link>
+                    </div>    
+                </div>  
+                )}
             </div>
         ):
         (<div className="divider" ></div>)}
@@ -187,7 +199,8 @@ const Alphabot=({auth})=> {
 }
 
 const mapStateToProps=(state)=>({
-    auth:state.auth
+    auth:state.auth,
+    loading:state.profile.loading
 })
-export default connect(mapStateToProps)(Alphabot)
+export default connect(mapStateToProps,{getUserResume})(Alphabot)
 

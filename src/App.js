@@ -50,7 +50,7 @@ useEffect(()=>{
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
               <PrivateRoutes path="/user/dashboard" component={UserDashboard}    />
-              <PrivateRoutes path="/user/resume/:userId" exact component={UserResume}    />
+              <PrivateRoutes path="/user/resume/" exact component={UserResume}    />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/allblogs" component={AllBlogs} />

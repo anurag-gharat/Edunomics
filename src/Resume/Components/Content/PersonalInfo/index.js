@@ -64,7 +64,7 @@ export default function PersonalInfo({
               },
             }}
             className={classes.nameField}
-            value={info.name}
+            value={info.name || ''}
             name="name"
             disabled={isEdit ? false : true}
             placeholder="Add your name"

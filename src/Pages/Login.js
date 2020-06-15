@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import {login} from '../API/UserRoutes'
 import { Link, Redirect } from 'react-router-dom'
 import {loginUser} from '../Redux/Actions/auth'
 import {connect} from 'react-redux'
+import Loading from '../Components/Loading'
 
-const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
+const Login=({isAuthenticated,loginUser,isloggedin,alertMessage,loading})=> {
 
     const [values,setValues]=useState({
         email:"",
@@ -24,8 +24,7 @@ const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
          
     }
 
-    if(isloggedin){
-        alert("Logging In...")
+    if(isloggedin&&isAuthenticated){
         return <Redirect to="/user/dashboard" />
     }
     
@@ -33,7 +32,7 @@ const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
     return (
         <div className="container p-t-100">
             <div className="container">
-                
+                {loading ? (<Loading />):('')}
                 <div className="row center">
                     <form onSubmit={(event)=>handleSubmit(event)} className="card center-align p-20" >
                         <h2>Login</h2>
@@ -70,7 +69,13 @@ const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
                             </div>
                             </div>
                             <div className="row">
-                                <button className="button green white-text hoverable" type="submit">Submit</button>
+                                {loading ? 
+                                (
+                                <button className="button green white-text disabled" type="submit">Login</button>
+                                ):
+                                (
+                                <button className="button green white-text hoverable" type="submit">Login</button>
+                                )}
                             </div>
                             <div className="row">
                                 <Link to="/signup"> Sign up now!</Link>
@@ -90,6 +95,7 @@ const Login=({isAuthenticated,loginUser,isloggedin,alertMessage})=> {
 const mapStateToProps=(state)=>({
     isAuthenticated:state.auth.isAuthenticated,
     isloggedin:state.auth.isloggedin,
-    alertMessage:state.auth.alertMessage
+    alertMessage:state.auth.alertMessage,
+    loading:state.auth.loading
 })
 export default connect(mapStateToProps,{loginUser})(Login)
