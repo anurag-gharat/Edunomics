@@ -42,7 +42,7 @@ export default function Home() {
             <section className="homecontainer section" id="home"> 
                 <div className="row ">
                     <div className="col l6 m12 s12 section landingpagediv">
-                        <h3 className="left-align valign-wrapper"><b>WELCOME TO THE WORLD OF EDUNOMICS</b></h3>
+                        <h1 className="left-align valign-wrapper"><b>WELCOME TO THE WORLD OF EDUNOMICS</b></h1>
                         <SearchForm
                         />
 

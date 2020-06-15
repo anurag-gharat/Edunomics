@@ -45,7 +45,7 @@ alt="Initiatives 2"
         text="With Edunomics connect, you will be going to connected with people who aspire you to be the best of yourself."
  
     >
-        <div className="lower" style={{marginTop:120}} >
+        <div className="lower" style={{marginTop:60}} >
         <div className="video-container ">
         <iframe width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>

@@ -8,7 +8,7 @@ export default function SemiBlock(props) {
                 <div className="col s12 l6 m6 "  data-aos="fade-right">
                     {props.children}
                 </div>
-                <div className="col s12 l6 m6 p-t-100"  data-aos="fade-left">
+                <div className="col s12 l6 m6 p-t-20"  data-aos="fade-left">
                     <h3>{props.title}</h3>
                     <p className="">
                         {props.text}
