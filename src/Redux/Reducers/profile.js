@@ -4,7 +4,7 @@ import {GET_PROFILE,SET_LOADING,PROFILE_ERROR,GET_USER_RESUME,USER_RESUME_ERROR}
 const intialState={
     userProfile:{},
     isAdmin:false,
-    loading:false,
+    loading:true,
     errors:[],
     userResume:null
 }
@@ -24,6 +24,7 @@ export default function (state=intialState,action){
             return{
                 ...state,
                 userProfile:payload,
+                userResume:payload.resume,
                 isAdmin:false,
                 loading:false,
                 errors:[]

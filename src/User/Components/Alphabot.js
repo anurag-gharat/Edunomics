@@ -19,7 +19,6 @@ const Alphabot=({auth})=> {
         setUserInputText(e.target.value)
     }
     const displayData=[]
-    
 //userchats    
     const appendMessage=()=>{
     displayData.push(<div className="user-dialog row" key={userInputText}>

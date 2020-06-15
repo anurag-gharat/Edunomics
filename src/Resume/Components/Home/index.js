@@ -36,8 +36,10 @@ const Home=({userProfile,userResume,loading,getUserResume})=> {
     setProfile({ ...profile, [name]: val });
   };
 
-  
+    console.log(userResume);
+    console.log(userProfile);
 
+    
       useEffect(()=>{
         getUserResume()
       },[])
