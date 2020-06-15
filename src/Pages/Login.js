@@ -24,7 +24,7 @@ const Login=({isAuthenticated,loginUser,isloggedin,alertMessage,loading})=> {
          
     }
 
-    if(isloggedin&&isAuthenticated){
+    if(isloggedin){
         return <Redirect to="/user/dashboard" />
     }
     
