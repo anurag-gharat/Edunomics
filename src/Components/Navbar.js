@@ -32,8 +32,8 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
                 {isAuthenticated && isloggedin? 
                 (
                     <>
-                <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text"><i  className="material-icons white-text right">chevron_right</i>Dashboard</Link></li>
-                <li><button  className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}> Logout</button></li>
+                <li><Link to="/user/dashboard" className="light-green accent-4 btn btn-medium waves-effect outline white-text">Dashboard</Link></li>
+                <li><button  className="light-green accent-4 btn btn-medium waves-effect outline white-text" onClick={logoutUser}>Logout</button></li>
                 </>
                 )
                 :
