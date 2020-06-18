@@ -22,7 +22,7 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
             <nav className="nav-extended white">
             <div className="nav-wrapper">
             <a href="/" className="brand-logo" rel="noopener noreferrer" ><img src={Logo} className="logo"  alt="navbar-logo"/></a>
-            <a href="#" data-target="mobile-demo"  rel="noopener noreferrer" className="sidenav-trigger"><i className="material-icons green-text darken-4">menu</i></a>
+            <a href="/" data-target="mobile-demo"  rel="noopener noreferrer" className="sidenav-trigger"><i className="material-icons green-text darken-4">menu</i></a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#impact">Impact</a></li>
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#opportunities">Opportunites</a></li>

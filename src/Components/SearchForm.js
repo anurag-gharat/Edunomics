@@ -40,11 +40,7 @@ export default function SearchForm() {
         }
     }
 
-    const autoData={
-        'vue':null,
-        'react':null,
-        'angular':null
-      }
+    
     
       const getTheAutocomplete=()=>{
         getSuggestions()
@@ -64,11 +60,11 @@ export default function SearchForm() {
            
     }
     let elems1 = document.querySelectorAll('.autocomplete2');
-    var instances1 = M.Autocomplete.init(elems1, {
+    M.Autocomplete.init(elems1, {
         data:skills
     }); 
     let elems2 = document.querySelectorAll('.autocomplete1');
-        var instances2 = M.Autocomplete.init(elems2, {
+    M.Autocomplete.init(elems2, {
             data:careers
         });  
 

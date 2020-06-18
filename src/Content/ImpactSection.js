@@ -2,7 +2,7 @@ import React from 'react'
 import Heading from '../Components/Heading'
 import {FaRegLightbulb,FaHandshake,FaUserTie} from 'react-icons/fa'
 import {BsGraphUp} from 'react-icons/bs'
-import {MdSecurity,MdVerifiedUser} from 'react-icons/md'
+import {MdVerifiedUser} from 'react-icons/md'
 import { GiBookshelf,GiSupersonicArrow} from 'react-icons/gi'
 import ImpactCard from '../Components/ImpactCard'
 

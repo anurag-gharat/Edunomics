@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Loading from '../../../Components/Loading'
 import PageLayout from "../../Layout";
 import { Container, Divider } from "@material-ui/core";
@@ -9,8 +9,8 @@ import Skills from "../Content/Skills";
 import WorkExperience from "../Content/WorkExperience";
 import Project from "../Content/Project";
 import {getUserResume} from '../../../Redux/Actions/profile'
-import Button from '@material-ui/core/Button';
 import {updateResume} from '../../../API/UserRoutes'
+import Button from '@material-ui/core/Button';
 import { connect } from "react-redux";
 
 
@@ -28,7 +28,7 @@ const Home=({userProfile,userResume,loading,getUserResume})=> {
   });
   
 
-
+  const {_id} =userProfile
   const [profile, setProfile] = useState(userResume);
   
   const onSave = (name, val) => {
@@ -45,11 +45,12 @@ const Home=({userProfile,userResume,loading,getUserResume})=> {
       // },[])
   
     const updateResumeOfUser=()=>{
-      updateResume(profile)
+      updateResume(profile,_id)
       .then(response=>{
         console.log(response)
         if(response.success){
           alert("Profile resume Updated")
+          getUserResume()
         }
         else{
           alert('Failed to update your resume')

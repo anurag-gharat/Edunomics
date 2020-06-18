@@ -20,20 +20,18 @@ export const applyNow=userDetails=>{
 
 
 //update resume 
-export const updateResume=(profile)=>{
-  console.log(profile)
-  const userId='5ed369bd296a7f283050dc1e'
-
+export const updateResume=(resume,_id)=>{
+  console.log(resume,_id)
   var requestOptions = {
     method: 'PUT',
     headers:{
       Accept:"application/json",
       "Content-Type":"application/json"
   },
-    body:JSON.stringify(profile),
+    body:JSON.stringify(resume),
   };
 
-  return fetch(`https://edunomics.in/api/resume/${userId}`, requestOptions)
+  return fetch(`https://edunomics.in/api/resume/${_id}`, requestOptions)
   .then(response => response.json())
   .then(result => {return result})
   .catch(error => {return error});

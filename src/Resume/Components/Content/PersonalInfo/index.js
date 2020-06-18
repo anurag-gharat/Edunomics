@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Typography,
   List,
   ListItem,
   makeStyles,
@@ -71,13 +70,14 @@ export default function PersonalInfo({
             onChange={onChange}
           />
           <TextField
-            InputProps={{ classes: { input: classes.subtitle } }}
+            // InputProps={{ classes: { input: classes.subtitle } }}
             InputProps={{
+              classes: { input: classes.subtitle },
               readOnly: isEdit ? false : true,
               disableUnderline: isEdit ? false : true,
             }}
             className={classes.nameField}
-            value={info.highest_education}
+            value={info.highestEducation}
             name="highest_education"
             placeholder="Add your highest education"
             onChange={onChange}

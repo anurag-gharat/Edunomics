@@ -14,7 +14,7 @@ const Alphabot=({auth,loading,getUserResume})=> {
     const [userInputText,setUserInputText]=useState('')
     const [botReplyText,setBotReplyText]=useState('')
     const [button,setButton]=useState(false)
-    const [botreply,setBotReply]=useState('hii')
+    // const [botreply,setBotReply]=useState('hii')
     const [allChats,setAllChats]=useState([])
     const [end,setEnd]=useState(true)
     const handleChange=(e)=>{
@@ -36,13 +36,14 @@ const Alphabot=({auth,loading,getUserResume})=> {
         document.querySelector('.input').scrollIntoView({block: 'start', behavior: 'smooth',inline:'end'})
     }
 
-
+    console.log(botReplyText);
+    
 // chat bot chats
     const appendReply=(response)=>{  
         
         displayData.push(<div className="alphabot-dialog row" key={response.question}>
             <div className="alphabot-avatar col l1">
-        <img className="responsive-img" src={Bot}></img>
+        <img className="responsive-img" src={Bot} alt="alphabot"></img>
     </div>
     <div className="alphabot-text col l6">
     <p className="botText">{response.question}</p>
@@ -187,6 +188,7 @@ const Alphabot=({auth,loading,getUserResume})=> {
                     <button className="btn blue" onClick={getUserResume}>Create Your Resume?</button>
                     </div>
                     <div className="row">
+                        {}
                     <Link to={`/user/resume/`}><button className="btn btn-large">Check Resume</button></Link>
                     </div>    
                 </div>  

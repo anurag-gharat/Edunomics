@@ -1,11 +1,11 @@
-import React, { useEffect,useState } from 'react'
+import React from 'react'
 import Video from '../Components/Video'
 import ReactGoogleSlides from "react-google-slides";
 import { Link } from 'react-router-dom';
 export default function Search(props) {
  
     
-const [blog, setBlog] = useState(props.location.state.data)
+const blog = props.location.state.data
     
     const d = new Date(blog.uploadDate)
     return (
@@ -23,7 +23,7 @@ const [blog, setBlog] = useState(props.location.state.data)
                         </h4>
                         <p className="grey-text">Posted on {d.toDateString()}</p>
                         <div className="row">
-                            <img src="" className="responsive-img" src={blog.image_url} alt="Learn from blogs"></img>
+                            <img  className="responsive-img" src={blog.image_url} alt="Learn from blogs"></img>
                         </div>
                         <div className="row m-t-10">
     <p className="blog-text">{blog.blog_content}</p>
@@ -44,7 +44,7 @@ const [blog, setBlog] = useState(props.location.state.data)
                         <div className='row m-t-10'>
                             <h4>Also watch these videos for more understanding!</h4>
                             {blog.videos.map((item,index)=>(
-                                <div  className="col l6 s6 m-t-10">
+                                <div  className="col l6 s6 m-t-10" key={index}>
                                 <Video
                                 key={index}
                                 source={item}

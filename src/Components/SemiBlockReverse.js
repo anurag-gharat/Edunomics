@@ -10,7 +10,7 @@ export default function SemiBlockReverse(props) {
                         {props.text}
                     </p>
                     <div className="row m-t-10"  data-aos="fade-right">
-                        <div className="col s6 left">  {props.isbutton1 ? <a target="_blank" href={props.button1path}><button className="button  hoverable pink lighten-1 waves-effect white-text m-t-10">{props.button1text}</button></a>:<></>}</div>
+                        <div className="col s6 left">  {props.isbutton1 ? <a target="_blank" rel="noopener noreferrer" href={props.button1path}><button className="button  hoverable pink lighten-1 waves-effect white-text m-t-10">{props.button1text}</button></a>:<></>}</div>
                         <div className="col s6 right">  {props.isbutton2 ? <a  href={props.button2path}><button className="hoverable button light-green accent-4 waves-effect white-text m-t-10">{props.button2text}</button></a>:<></>}</div>
 
                     

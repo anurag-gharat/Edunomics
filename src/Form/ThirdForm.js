@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{ useState} from 'react'
 
 export default function ThirdForm({form3,nextStep,step,prevStep,handleForm3}) {
     const ontestSubmit=async(e)=>{
@@ -50,7 +50,7 @@ export default function ThirdForm({form3,nextStep,step,prevStep,handleForm3}) {
             <form>
 
             <div className="input-field col s12">
-            <h6></h6>
+          
             {motivation.map((labelObj, ind) => (
               <p key={ind}>
                 <label>

@@ -47,7 +47,7 @@ alt="Build New Skills"
     >
         <div className="lower" style={{marginTop:60}} >
         <div className="video-container ">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        <iframe title="Initiative" width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
         </div>
 

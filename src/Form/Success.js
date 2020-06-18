@@ -1,6 +1,6 @@
 import React from 'react'
 import Loading from '../Components/Loading'
-import { Redirect,Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 export default function Success({handleSubmit,prevStep,loading,message,success}) {
     return (
         <div className="row m-b-50">

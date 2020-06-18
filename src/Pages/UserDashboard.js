@@ -9,7 +9,7 @@ const UserDashboard=({getProfile,userProfile,loading})=> {
 
     useEffect(()=>{
         getProfile()
-    },[])
+    },[getProfile])
     
     return (
         <div className="container p-t-100 h-100">

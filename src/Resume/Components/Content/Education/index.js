@@ -77,7 +77,6 @@ export default function Education({
       year: "",
       school_name: "",
       score: "",
-      school_name: "",
     });
     setExpanded(false);
   };
