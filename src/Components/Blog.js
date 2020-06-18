@@ -13,7 +13,7 @@ export default function Blog(props) {
             </blockquote>
             <p className="grey-text">Posted on {d.toDateString()}</p>
             <div className="container">
-                <img src="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/03/1_orWFEkEBGIK4xFXwF7BCMA.jpeg?w=1600&ssl=1" width="100%"></img>
+                <img src="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/03/1_orWFEkEBGIK4xFXwF7BCMA.jpeg?w=1600&ssl=1" width="100%" alt="Learn From Blogs"></img>
                 {/* <iframe
                 src={`https://view.officeapps.live.com/op/embed.aspx?src={$slide_url}`}
                 width="100%"

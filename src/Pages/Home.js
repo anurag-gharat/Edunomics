@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Heroimage from '../images/heroimage.png'
 import About from '../images/about.png'
 import SemiBlock from '../Components/SemiBlock'
@@ -17,26 +17,6 @@ import SearchForm from '../Components/SearchForm'
 
 
 export default function Home() {
-    
-
-
-    // const [skillArray,setskillArray]=useState([])
-    // const [careerArray,setcareerArray]=useState([])
-
-    
-
-    // var skillsObj
-    // var careerObj
-    // const resolveArray=()=>{
-    //     skillsObj=skillArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
-    //     careerObj=careerArray.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
-    //     console.log(skillsObj)
-    //     console.log(careerObj)
-    // }
-
-
-    
-    
     return (
         <div className="" >
             <section className="homecontainer section" id="home"> 
@@ -48,7 +28,7 @@ export default function Home() {
 
                     </div>
                     <div className=" col l6 m12 s12 ">
-                        <img src={Heroimage} alt="Home page " style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
+                        <img src={Heroimage} alt="Edunomics" style={{marginTop:"100px"}} className="img-responsive heroimage"></img>
                     </div>
                 </div>
             </section>
@@ -60,7 +40,7 @@ export default function Home() {
                 button1text="Know More?"
                 button1path="/knowmore"
                 >
-                    <img src={About} className="heroimage"  alt="hero"/>
+                    <img src={About} className="heroimage"  alt="About Edunomics"/>
                 </SemiBlock>
                 
             </section>

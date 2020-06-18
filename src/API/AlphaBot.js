@@ -9,7 +9,8 @@ export const sendMessage=async(msg,j)=>{
     }
     var store=0
     try{
-      const res=await axios.get(`https://alphabot.pythonanywhere.com/get?msg=${msg}&j=${j}&store=${store}`,{headers:headers})
+      const res=await axios.get(`http://alphabot.edunomics.in/get?msg=${msg}&j=${j}&store=${store}`,{headers:headers})
+      //const res=await axios.get(`https://alphabot.pythonanywhere.com/get?msg=${msg}&j=${j}&store=${store}`,{headers:headers})
       console.log(res.data)
       return res.data
     }catch(error){

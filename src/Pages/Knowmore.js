@@ -18,29 +18,17 @@ export default function Knowmore() {
             button1text="Apply now"
             button1path="/applynow"
     >
-    <img 
+        <img 
         src={knowmore} 
         className="heroimage" 
-
+        alt="Know more About our initiative"
         />
-
-    </SemiBlockReverse>
+        </SemiBlockReverse>
             </section>
-
-
         <HowDoesItWork />
         <Vision />
         <OurAim />
         <AvailableTraining />
-        
-        
-
-
-
-
-
-
-
         </div>
     )
 }

@@ -35,7 +35,7 @@ export default function InitiativesSection() {
     <img 
         src={Wenester} 
         className="heroimage" 
-alt="Initiatives 2"
+alt="Build New Skills"
         />
 
     </SemiBlockReverse>

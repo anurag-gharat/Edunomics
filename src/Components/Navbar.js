@@ -27,8 +27,6 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#impact">Impact</a></li>
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#opportunities">Opportunites</a></li>
                 <li><a  className="black-text darken-4" rel="noopener noreferrer"  href="#initiatives">Initiatives</a></li>
-                {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
-                {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
                 {isAuthenticated && isloggedin? 
                 (
                     <>
@@ -49,8 +47,6 @@ const  Navbar=({isAuthenticated,isloggedin,logoutUser})=> {
         <li><a  className="black-text darken-4" href="#impact" rel="noopener noreferrer">Impact</a></li>
                 <li><a  className="black-text darken-4" href="#opportunities" rel="noopener noreferrer" >Opportunites</a></li>
                 <li><a  className="black-text darken-4" href="#initiatives" rel="noopener noreferrer" >Initiatives</a></li>
-                {/* <li><a  className="black-text darken-4" href="#faqs">FAQs</a></li> */}
-                {/* <li><Link to="/allblogs" className="black-text darken-4">Blog</Link></li> */}
                 {isAuthenticated && isloggedin? 
                 (
                     <>

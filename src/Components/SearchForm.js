@@ -49,6 +49,7 @@ export default function SearchForm() {
       const getTheAutocomplete=()=>{
         getSuggestions()
         .then(response=>{
+            console.log(response)
             if(response.success){
                 const careerObj= response.names.career.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
                 const skillObj= response.names.skill.reduce((o, key) => Object.assign(o, {[key.toString()]: null}), {});
