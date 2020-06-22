@@ -55,9 +55,9 @@ export default function AllBlogs() {
                     <div className="col s12 l9">
                     <div className="row">
                     <div className="col s12">
-                    {blogs.map((item)=>{
+                    {/* {blogs.map((item)=>{
                     return <Blog blog={item}  />
-                    })} 
+                    })}  */}
                         </div>    
                     </div>                   
                     </div>   

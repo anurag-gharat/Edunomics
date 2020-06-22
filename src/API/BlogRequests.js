@@ -1,6 +1,8 @@
+import axios from 'axios'
+
 //fetch call to get all the blogs
 export const getAllBlogs=()=>{
-    return fetch("http://wenestor.rachitpahwa.codes/api/blog",{
+    return fetch("https://edunomics.in/api/blog",{
         method:"GET"
     }).then(response=>{
         return response.json()
@@ -17,7 +19,7 @@ export const getAllCategories=()=>{
         method: 'GET',
         redirect: 'follow'
       };    
-    return fetch("http://wenestor.rachitpahwa.codes/api/category", requestOptions)
+    return fetch("https://edunomics.in/api/category", requestOptions)
     .then(response=>{
         return response.json()
     })
@@ -53,7 +55,7 @@ export const getAllCategorizedBlogs=(id)=>{
         redirect: 'follow'
       };
       
-      return fetch(`http://wenestor.rachitpahwa.codes/api/blog/${id}`, requestOptions)
+      return fetch(`https://edunomics.in/api/blog/${id}`, requestOptions)
         .then(response => response.json())
         .then(result => {return result})
         .catch(error => console.log('error', error));
@@ -85,4 +87,15 @@ export const getSuggestions=()=>{
         .then(response => response.json())
         .then(result => {return result})
         .catch(error => {return error});
+}
+
+
+//api to get video link
+export const getVideo=async()=>{
+    try {
+        const res =await axios.get('')
+        return res
+    } catch (error) {
+        console.log(error)
+    }
 }

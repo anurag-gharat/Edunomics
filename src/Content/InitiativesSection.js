@@ -1,11 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Heading from '../Components/Heading'
 import SemiBlock from '../Components/SemiBlock'
 import Education from '../images/education.png'
 import Wenester from '../images/wenester.png'
 import SemiBlockReverse from '../Components/SemiBlockReverse'
+import {getVideo} from '../API/BlogRequests'
+import Loading from '../Components/Loading'
 
 export default function InitiativesSection() {
+
+    const[video,setVideo]=useState('https://www.youtube.com/embed/MzHCsji0LNc')
+    const[loading,setLoading]=useState(false)
+
+    
+    // useEffect(()=>{
+    //     getVideo()
+    //     .then(res=>{
+    //         console.log(res)
+    //         if(res.success){
+    //             setVideo(res.link)
+    //         }
+    //         else{
+    //             setVideo('https://www.youtube.com/embed/MzHCsji0LNc')
+    //         }
+    //     })
+    //     .catch(error=>console.log(error))
+    //     .finally(()=>setLoading(false))
+    // },[])
+
     return (
 <section className="section" id="initiatives">
     <Heading title="CURRENT INITIATIVES" />
@@ -46,9 +68,23 @@ alt="Build New Skills"
  
     >
         <div className="lower" style={{marginTop:60}} >
-        <div className="video-container ">
-        <iframe title="Initiative" width="640" height="360" src="https://www.youtube.com/embed/MzHCsji0LNc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        {loading ? (
+            <div className="preloader-wrapper big active">
+            <div className="spinner-layer spinner-green-only">
+              <div className="circle-clipper left">
+                <div className="circle"></div>
+              </div><div className="gap-patch">
+                <div className="circle"></div>
+              </div><div className="circle-clipper right">
+                <div className="circle"></div>
+              </div>
+            </div>
+          </div>
+        ) : (
+            <div className="video-container ">
+        <iframe title="Initiative" width="640" height="360" src={video} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
+        )}
         </div>
 
     </SemiBlock>
