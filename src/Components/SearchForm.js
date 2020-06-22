@@ -97,11 +97,11 @@ export default function SearchForm() {
                 
                     <div className="input-field">
                         <input type="text" id="autocomplete-input" className="autocomplete1" onChange={handleChange} autoComplete='off'/>
-                        <label htmlFor="autocomplete-input">Enter Your Query</label>
+                        <label htmlFor="autocomplete-input">How to get a Career?</label>
                 </div>
             </div>
             <div className="col s12 l2 m-t-10">
-                <button type="submit" className="button-search m-t-10 gradient1 white-text hoverable">Search Career</button>
+                <button type="submit" className="btn-floating m-t-10 light-green accent-4 white-text hoverable waves-effect waves-light btn-large"><i class="material-icons">search</i></button>
             </div>
             <div className="row">
                 <div className="col l6 s6 right-align">
@@ -120,11 +120,11 @@ export default function SearchForm() {
                 
                     <div className="input-field">
                         <input type="text" id="autocomplete-input" className="autocomplete2" onChange={handleChange} autoComplete="off"/>
-                        <label htmlFor="autocomplete-input">Enter Your Query</label>
+                        <label htmlFor="autocomplete-input">How to Learn a Skill?</label>
                 </div>
             </div>
             <div className="col s12 l2 m-t-10">
-                <button type="submit" className="button-search m-t-10 gradient1 white-text hoverable">Search Skill</button>
+            <button type="submit" className="btn-floating m-t-10 light-green accent-4 white-text hoverable waves-effect waves-light btn-large"><i class="material-icons">search</i></button>
             </div>
             <div className="row">
                 <div className="col l6 s6 right-align">
