@@ -46,6 +46,7 @@ export const loginUser=(user)=>async(dispatch)=>{
     })
     try {
         const res=await axios.post('https://edunomics.in/api/core/user/login',body,{headers:headers})
+        console.log(res)
         if(res.data.success){
             console.log(res)
             localStorage.setItem('token',res.data.token)

@@ -26,6 +26,7 @@ import Signup from './Pages/Signup'
 // import Test from './Components/Test';
 import UserResume from './Pages/UserResume';
 import PrivateRoutes from './PrivateRoutes';
+import Routes from './router';
 
 
 
@@ -45,15 +46,14 @@ useEffect(()=>{
           <Navbar />
           
           <Switch>
-              <Route path="/" exact component={Home}    />
+          <Route path="/" exact component={Home}    />
               <Route path="/knowmore" exact component={Knowmore}    />
               <Route path="/applynow" component={Application}    />
               <Route path="/search" component={Search}    />
               <PrivateRoutes path="/user/dashboard" component={UserDashboard}    />
               <PrivateRoutes path="/user/resume/" exact component={UserResume}    />
               <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-              {/* <Route path="/allblogs" component={AllBlogs} />
+              <Route path="/signup" component={Signup} />              {/* <Route path="/allblogs" component={AllBlogs} />
               <Route path="/allcategories" component={AllCategories} />
               <Route path="/newblog" component={NewBlog} />
               <Route path="/category/:categoryId" component={Category} />

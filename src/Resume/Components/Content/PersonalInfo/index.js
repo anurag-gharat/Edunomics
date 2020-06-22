@@ -77,7 +77,7 @@ export default function PersonalInfo({
               disableUnderline: isEdit ? false : true,
             }}
             className={classes.nameField}
-            value={info.highestEducation}
+            value={info.highest_education}
             name="highest_education"
             placeholder="Add your highest education"
             onChange={onChange}

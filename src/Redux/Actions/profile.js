@@ -7,14 +7,15 @@ export const getProfile=()=>async(dispatch)=>{
         type:SET_LOADING
     })
     try {
-        let token=localStorage.getItem('token')
+        let token=await localStorage.getItem('token')
         console.log(token)
-        const headers={
+        const headers=await {
             Accept:"application/json",
             "Content-Type":"application/json",
             "x-access-token":token
         }
         const res =await axios.get('https://edunomics.in/api/core/user/getuserdetail',{headers:headers})
+        console.log(headers)
         console.log(res)
         dispatch({
             type:GET_PROFILE,
@@ -38,10 +39,12 @@ export const getUserResume=()=>async(dispatch)=>{
     })
     try {
         let token=localStorage.getItem('token')
+        console.log(token)
         const headers={
             Accept:"application/json",
             "Content-Type":"application/json",
             "x-access-token":token
+
         }
         const res =await axios.get('https://edunomics.in/api/core/user/getuserdetail',{headers:headers})
         console.log(res)
