@@ -27,6 +27,7 @@ import Test from './Components/Test';
 import UserResume from './Pages/UserResume';
 import PrivateRoutes from './PrivateRoutes';
 import Routes from './router';
+import Faqs from './Pages/Faqs';
 
 
 
@@ -59,7 +60,7 @@ useEffect(()=>{
               <Route path="/newblog" component={NewBlog} />
               <Route path="/category/:categoryId" component={Category} />
               <Route path="/blogs/:categoryId" component={CategorizedBlogs} /> 
-              
+              <Route path="/faqs" component={Faqs} />              
 
 
 

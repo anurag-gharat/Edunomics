@@ -29,9 +29,9 @@ export default function Footer() {
                 <div className="d-flex justify-content-center reverse">
                     <Link className="border-left" to="#">TERMS OF USE</Link>
                     <Link  className="border-left" to="#">COOKIE POLICY</Link>
-                    <Link className="border-left" to="http://tech.edunomics.in/" target="_blank">TECH</Link>
+                    <a className="border-left" href="http://tech.edunomics.in/" target="_blank">TECH</a>
                     <Link className="border-left" to="#">PRIVACY POLICY</Link>
-                    <Link className="border-left-0" to="#">FAQ's</Link>
+                    <Link className="border-left-0" to="/faqs">FAQ's</Link>
                 </div>
                 <div className="footer-copyright green darken-4 white-text p-10 m-t-10" >
                     <div className="container">Copyright 2020 &copy; | All rights reserved. </div>
